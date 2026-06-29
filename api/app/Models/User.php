@@ -13,13 +13,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 #[Fillable(['uuid', 'name', 'email', 'phone', 'password', 'role_id', 'is_active'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * Get the attributes that should be cast.
@@ -48,5 +49,10 @@ class User extends Authenticatable
     public function agencyUsers(): HasMany
     {
         return $this->hasMany(AgencyUser::class);
+    }
+
+    public function hasRole(string ...$slugs): bool
+    {
+        return in_array($this->role?->slug, $slugs, true);
     }
 }

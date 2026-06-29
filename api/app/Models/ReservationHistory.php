@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 #[Fillable(['reservation_id', 'from_status', 'to_status', 'changed_by', 'reason'])]
 class ReservationHistory extends Model
 {
+    protected $table = 'reservation_history';
+
     public function reservation(): BelongsTo
     {
         return $this->belongsTo(Reservation::class);
