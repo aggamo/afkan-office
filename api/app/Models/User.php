@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->hasMany(AgencyUser::class);
     }
 
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     public function hasRole(string ...$slugs): bool
     {
         return in_array($this->role?->slug, $slugs, true);

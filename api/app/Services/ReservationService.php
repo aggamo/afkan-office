@@ -9,6 +9,7 @@ use App\Models\Reservation;
 use App\Models\ReservationHistory;
 use App\Models\User;
 use App\Models\Worker;
+use App\Services\NotificationService;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -17,6 +18,10 @@ class ReservationService
 {
     public const CUSTOMER_HOLD_HOURS = 24;
     public const AGENCY_HOLD_HOURS = 72;
+
+    public function __construct(private readonly NotificationService $notifications = new NotificationService())
+    {
+    }
 
     /**
      * An individual customer reserves a worker for 24 hours.
@@ -41,6 +46,16 @@ class ReservationService
             $worker->update(['reservation_status' => 'reserved_customer']);
 
             $this->logHistory($reservation, null, 'active', $actor, 'حجز عميل جديد');
+
+            $this->notifications->notifyReservationEvent($reservation, 'reservation.created', [
+                'ar' => 'تم حجز العاملة بنجاح',
+                'en' => 'Worker reserved successfully',
+                'am' => 'ሰራተኛው በተሳካ ሁኔታ ተይዟል',
+            ], [
+                'ar' => 'لديك 24 ساعة لإتمام الإجراءات قبل انتهاء الحجز.',
+                'en' => 'You have 24 hours to complete the process before the hold expires.',
+                'am' => 'ቦታ ማስያዝ ከማብቃቱ በፊት ሂደቱን ለማጠናቀቅ 24 ሰዓታት አሉዎት።',
+            ]);
 
             return $reservation;
         });
@@ -70,6 +85,16 @@ class ReservationService
 
             $this->logHistory($reservation, null, 'active', $actor, 'حجز مكتب مباشر');
 
+            $this->notifications->notifyReservationEvent($reservation, 'reservation.created', [
+                'ar' => 'تم حجز العاملة لمكتبكم بنجاح',
+                'en' => 'Worker reserved for your agency successfully',
+                'am' => 'ሰራተኛው ለኤጀንሲዎ በተሳካ ሁኔታ ተይዟል',
+            ], [
+                'ar' => 'لديكم 72 ساعة لإتمام الإجراءات قبل انتهاء الحجز.',
+                'en' => 'You have 72 hours to complete the process before the hold expires.',
+                'am' => 'ቦታ ማስያዝ ከማብቃቱ በፊት ሂደቱን ለማጠናቀቅ 72 ሰዓታት አሎት።',
+            ]);
+
             return $reservation;
         });
     }
@@ -96,6 +121,12 @@ class ReservationService
             ]);
             $this->logHistory($customerReservation, 'active', 'converted', $actor, 'تم التحويل إلى حجز مكتب');
 
+            $this->notifications->notifyReservationEvent($customerReservation, 'reservation.converted', [
+                'ar' => 'تم تحويل حجزك إلى مكتب التوظيف',
+                'en' => 'Your reservation has been transferred to an agency',
+                'am' => 'ቦታ ማስያዝዎ ለኤጀንሲ ተላልፏል',
+            ]);
+
             $agencyReservation = Reservation::create([
                 'uuid' => (string) Str::uuid(),
                 'worker_id' => $worker->id,
@@ -108,6 +139,12 @@ class ReservationService
                 'created_by' => $actor?->id,
             ]);
             $this->logHistory($agencyReservation, null, 'active', $actor, 'حجز مكتب ناتج عن تحويل');
+
+            $this->notifications->notifyReservationEvent($agencyReservation, 'reservation.created', [
+                'ar' => 'تم تحويل العاملة إلى مكتبكم بنجاح',
+                'en' => 'Worker transferred to your agency successfully',
+                'am' => 'ሰራተኛው ለኤጀንሲዎ በተሳካ ሁኔታ ተላልፏል',
+            ]);
 
             $worker->update(['reservation_status' => 'reserved_agency']);
 
@@ -126,6 +163,12 @@ class ReservationService
 
             $reservation->update(['status' => 'cancelled', 'resolved_at' => now()]);
             $this->logHistory($reservation, 'active', 'cancelled', $actor, $reason);
+
+            $this->notifications->notifyReservationEvent($reservation, 'reservation.cancelled', [
+                'ar' => 'تم إلغاء الحجز',
+                'en' => 'Reservation cancelled',
+                'am' => 'ቦታ ማስያዝ ተሰርዟል',
+            ]);
 
             $this->revertWorkerToAvailable($reservation->worker_id);
 
@@ -168,6 +211,12 @@ class ReservationService
 
                     $reservation->update(['status' => 'expired', 'resolved_at' => now()]);
                     $this->logHistory($reservation, 'active', 'expired', null, 'انتهت المدة الزمنية للحجز تلقائياً');
+
+                    $this->notifications->notifyReservationEvent($reservation, 'reservation.expired', [
+                        'ar' => 'انتهت مدة الحجز',
+                        'en' => 'Reservation hold expired',
+                        'am' => 'ቦታ ማስያዝ ጊዜው አልፎበታል',
+                    ]);
 
                     $this->revertWorkerToAvailable($reservation->worker_id);
                 });

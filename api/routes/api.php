@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
 use App\Http\Controllers\Api\WorkerController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,9 @@ Route::prefix('v1')->group(function () {
 
         Route::get('/reservations/{reservation}', [ReservationController::class, 'show']);
         Route::post('/reservations/{reservation}/cancel', [ReservationController::class, 'cancel']);
+
+        Route::get('/notifications', [NotificationController::class, 'index']);
+        Route::post('/notifications/{notification}/read', [NotificationController::class, 'markAsRead']);
 
         Route::middleware('role:customer')->group(function () {
             Route::post('/reservations/customer', [ReservationController::class, 'storeAsCustomer']);
