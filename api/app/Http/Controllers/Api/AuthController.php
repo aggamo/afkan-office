@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Concerns\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterAgencyRequest;
 use App\Http\Requests\RegisterCustomerRequest;
+use App\Models\Agency;
+use App\Models\AgencyUser;
 use App\Models\Customer;
 use App\Models\Role;
 use App\Models\User;
@@ -49,6 +52,50 @@ class AuthController extends Controller
             'user' => $user->load('role'),
             'token' => $token,
         ], 'تم إنشاء الحساب بنجاح', 201);
+    }
+
+    public function registerAgency(RegisterAgencyRequest $request)
+    {
+        $role = Role::where('slug', 'agency')->firstOrFail();
+
+        $user = DB::transaction(function () use ($request, $role) {
+            $agency = Agency::create([
+                'uuid' => (string) Str::uuid(),
+                'name' => $request->string('agency_name'),
+                'license_number' => $request->string('license_number'),
+                'country' => $request->string('country') ?: null,
+                'city' => $request->string('city') ?: null,
+                'phone' => $request->string('agency_phone') ?: null,
+                'email' => $request->string('agency_email') ?: null,
+                'is_verified' => false,
+                'is_active' => true,
+            ]);
+
+            $user = User::create([
+                'uuid' => (string) Str::uuid(),
+                'name' => $request->string('name'),
+                'email' => $request->string('email'),
+                'phone' => $request->string('phone') ?: null,
+                'password' => $request->string('password'),
+                'role_id' => $role->id,
+            ]);
+
+            AgencyUser::create([
+                'agency_id' => $agency->id,
+                'user_id' => $user->id,
+                'position' => $request->string('position') ?: null,
+                'is_primary_contact' => true,
+            ]);
+
+            return $user;
+        });
+
+        $token = $user->createToken('api')->plainTextToken;
+
+        return $this->success([
+            'user' => $user->load('role'),
+            'token' => $token,
+        ], 'تم إنشاء حساب المكتب بنجاح. سيتم التحقق منه قبل تفعيل كل الصلاحيات.', 201);
     }
 
     public function login(LoginRequest $request)

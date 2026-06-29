@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::post('/auth/register', [AuthController::class, 'registerCustomer']);
+    Route::post('/auth/register-agency', [AuthController::class, 'registerAgency']);
     Route::post('/auth/login', [AuthController::class, 'login']);
 
     Route::get('/workers', [WorkerController::class, 'index']);
