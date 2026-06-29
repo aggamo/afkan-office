@@ -3,6 +3,13 @@
     "siteName": "Afkan Foreign Employment Agency",
     "tagline": "Connecting Ethiopian Talent with Trusted Recruitment Partners"
   },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log In",
+    "submitting": "Logging in...",
+    "error": "Invalid login credentials."
+  },
   "nav": {
     "home": "Home",
     "about": "About",

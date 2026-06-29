@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
+use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
@@ -16,7 +17,10 @@ Route::prefix('v1')->group(function () {
     Route::post('/auth/login', [AuthController::class, 'login']);
 
     Route::get('/workers', [WorkerController::class, 'index']);
+    Route::get('/workers/track', [WorkerController::class, 'track']);
     Route::get('/workers/{worker}', [WorkerController::class, 'show']);
+
+    Route::get('/agencies', [AgencyController::class, 'index']);
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/auth/logout', [AuthController::class, 'logout']);

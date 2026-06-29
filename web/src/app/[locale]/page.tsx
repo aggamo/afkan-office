@@ -6,7 +6,6 @@ import {
   Zap,
   Headphones,
   Lock,
-  ChefHat,
   Building2,
   Users,
   FileText,
@@ -17,7 +16,8 @@ import { Link } from "@/i18n/navigation";
 import { WorkerCard } from "@/components/worker-card";
 import { StatsCounter } from "@/components/home/stats-counter";
 import { FaqAccordion } from "@/components/home/faq-accordion";
-import { workers, agencies } from "@/lib/mock-data";
+import { fetchAgencies, fetchWorkers } from "@/lib/api";
+import { adaptAgency, adaptWorker } from "@/lib/worker-adapter";
 import { getFaq } from "@/lib/faq-data";
 import { getTestimonials } from "@/lib/testimonials-data";
 import type { Locale } from "@/i18n/config";
@@ -38,8 +38,12 @@ export default async function HomePage({
   const t = await getTranslations("home");
   const faq = getFaq(locale as Locale);
   const testimonials = getTestimonials(locale as Locale);
-  const featuredWorkers = workers.filter((w) => w.reservationStatus === "available").slice(0, 4);
-  const topAgencies = agencies.slice(0, 3);
+  const [workersResult, agenciesResult] = await Promise.all([
+    fetchWorkers({ reservation_status: "available", per_page: 4 }),
+    fetchAgencies(),
+  ]);
+  const featuredWorkers = workersResult.items.map(adaptWorker);
+  const topAgencies = agenciesResult.slice(0, 3).map(adaptAgency);
 
   return (
     <div>

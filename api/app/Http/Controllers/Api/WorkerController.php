@@ -65,4 +65,34 @@ class WorkerController extends Controller
 
         return $this->success(new WorkerResource($worker));
     }
+
+    /**
+     * Public tracking lookup by internal number: exposes only recruitment
+     * progress, never passport, price, or other sensitive worker data.
+     */
+    public function track(Request $request)
+    {
+        $request->validate(['internal_number' => ['required', 'string']]);
+
+        $worker = Worker::where('internal_number', $request->string('internal_number'))
+            ->where('is_active', true)
+            ->with('currentRecruitmentStage')
+            ->first();
+
+        if (! $worker) {
+            return $this->fail('لم يتم العثور على طلب بهذا الرقم.', null, 404);
+        }
+
+        return $this->success([
+            'internal_number' => $worker->internal_number,
+            'reservation_status' => $worker->reservation_status,
+            'current_recruitment_stage' => $worker->currentRecruitmentStage ? [
+                'slug' => $worker->currentRecruitmentStage->slug,
+                'step_number' => $worker->currentRecruitmentStage->step_number,
+                'name_ar' => $worker->currentRecruitmentStage->name_ar,
+                'name_en' => $worker->currentRecruitmentStage->name_en,
+                'name_am' => $worker->currentRecruitmentStage->name_am,
+            ] : null,
+        ]);
+    }
 }

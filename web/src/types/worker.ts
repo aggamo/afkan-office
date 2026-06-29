@@ -19,7 +19,6 @@ export type Worker = {
   gender: "female" | "male";
   maritalStatus: LocalizedText;
   childrenCount: number;
-  education: LocalizedText;
   religion: LocalizedText;
   experienceYears: number;
   languages: { name: LocalizedText; level: "basic" | "intermediate" | "fluent" }[];
@@ -29,7 +28,9 @@ export type Worker = {
   reservedUntil?: string;
   agencyId?: string;
   videoUrl?: string;
+  education?: LocalizedText;
 };
+
 
 export type Agency = {
   id: string;

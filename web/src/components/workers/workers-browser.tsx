@@ -3,14 +3,13 @@
 import { useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Search } from "lucide-react";
-import { workers } from "@/lib/mock-data";
 import { WorkerCard } from "@/components/worker-card";
 import type { Locale } from "@/i18n/config";
-import type { ReservationStatus } from "@/types/worker";
+import type { ReservationStatus, Worker } from "@/types/worker";
 
 const PAGE_SIZE = 8;
 
-export function WorkersBrowser() {
+export function WorkersBrowser({ workers }: { workers: Worker[] }) {
   const t = useTranslations("workers");
   const locale = useLocale() as Locale;
 
@@ -24,7 +23,7 @@ export function WorkersBrowser() {
     const set = new Map<string, { ar: string; en: string; am: string }>();
     workers.forEach((w) => w.skills.forEach((s) => set.set(s.name.en, s.name)));
     return Array.from(set.values());
-  }, []);
+  }, [workers]);
   const [skillFilter, setSkillFilter] = useState<string>("all");
 
   const filtered = useMemo(() => {
@@ -41,7 +40,7 @@ export function WorkersBrowser() {
 
       return matchesQuery && matchesStatus && matchesAge && matchesSkill;
     });
-  }, [query, statusFilter, minAge, maxAge, skillFilter, locale]);
+  }, [workers, query, statusFilter, minAge, maxAge, skillFilter, locale]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageItems = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);

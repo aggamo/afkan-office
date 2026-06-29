@@ -63,7 +63,7 @@ export function WorkerProfileView({ worker, backLabel }: { worker: Worker; backL
               <Field label={t("fields.nationality")} value={worker.nationality[locale]} />
               <Field label={t("fields.maritalStatus")} value={worker.maritalStatus[locale]} />
               <Field label={t("fields.children")} value={String(worker.childrenCount)} />
-              <Field label={t("fields.education")} value={worker.education[locale]} />
+              {worker.education && <Field label={t("fields.education")} value={worker.education[locale]} />}
               <Field label={t("fields.religion")} value={worker.religion[locale]} />
               <Field label={t("fields.experienceYears")} value={String(worker.experienceYears)} />
             </dl>

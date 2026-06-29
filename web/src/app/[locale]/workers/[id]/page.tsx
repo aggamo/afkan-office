@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getWorkerById } from "@/lib/mock-data";
+import { ApiError, fetchWorker } from "@/lib/api";
+import { adaptWorker } from "@/lib/worker-adapter";
 import { WorkerProfileView } from "@/components/workers/worker-profile-view";
 
 export default async function WorkerProfilePage({
@@ -10,8 +11,14 @@ export default async function WorkerProfilePage({
 }) {
   const { locale, id } = await params;
   setRequestLocale(locale);
-  const worker = getWorkerById(id);
-  if (!worker) notFound();
+
+  let worker;
+  try {
+    worker = adaptWorker(await fetchWorker(id));
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) notFound();
+    throw error;
+  }
 
   const t = await getTranslations("workerProfile");
 
