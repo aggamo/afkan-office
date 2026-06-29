@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\WorkerAdminController;
+use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ReservationController;
 use App\Http\Controllers\Api\WorkerController;
@@ -27,6 +29,20 @@ Route::prefix('v1')->group(function () {
         Route::middleware('role:agency')->group(function () {
             Route::post('/reservations/agency', [ReservationController::class, 'storeAsAgency']);
             Route::post('/reservations/{reservation}/convert-to-agency', [ReservationController::class, 'convertToAgency']);
+        });
+
+        Route::get('/worker-documents/{workerDocument}/download', [WorkerDocumentController::class, 'download'])
+            ->name('worker-documents.download');
+
+        Route::middleware('role:employee,super_admin')->prefix('admin')->group(function () {
+            Route::get('/workers', [WorkerAdminController::class, 'index']);
+            Route::post('/workers', [WorkerAdminController::class, 'store']);
+            Route::get('/workers/{worker}', [WorkerAdminController::class, 'show']);
+            Route::put('/workers/{worker}', [WorkerAdminController::class, 'update']);
+            Route::delete('/workers/{worker}', [WorkerAdminController::class, 'destroy']);
+
+            Route::post('/workers/{worker}/documents', [WorkerDocumentController::class, 'store']);
+            Route::delete('/worker-documents/{workerDocument}', [WorkerDocumentController::class, 'destroy']);
         });
     });
 });
