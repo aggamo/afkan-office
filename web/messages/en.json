@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "siteName": "Afkan Foreign Employment Agency",
+    "tagline": "Connecting Ethiopian Talent with Trusted Recruitment Partners"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "workers": "Workers",
+    "agencies": "Agencies",
+    "process": "Recruitment Process",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "track": "Track",
+    "login": "Login",
+    "register": "Register",
+    "requestWorker": "Request a Worker"
+  },
+  "home": {
+    "hero": {
+      "headline": "Connecting Ethiopian Talent with Trusted Recruitment Partners",
+      "subheadline": "Licensed Ethiopian Foreign Employment Agency serving Saudi Arabia, UAE and Kuwait.",
+      "browseWorkers": "Browse Workers",
+      "requestRecruitment": "Request Recruitment",
+      "trackApplication": "Track Application",
+      "becomeAgency": "Become an Agency Partner"
+    },
+    "stats": {
+      "available": "Workers Available",
+      "recruited": "Workers Successfully Recruited",
+      "agencies": "Partner Agencies",
+      "experience": "Years of Experience",
+      "countries": "Countries Served",
+      "satisfaction": "Customer Satisfaction"
+    },
+    "why": {
+      "title": "Why Choose Afkan",
+      "licensed": { "title": "Licensed Agency", "desc": "Fully licensed by the Ethiopian government." },
+      "verified": { "title": "Verified Workers", "desc": "Every worker profile is verified and documented." },
+      "transparent": { "title": "Transparent Process", "desc": "Clear stages from reservation to arrival." },
+      "fast": { "title": "Fast Recruitment", "desc": "Streamlined workflow reduces processing time." },
+      "support": { "title": "Professional Support", "desc": "Dedicated support throughout the journey." },
+      "secure": { "title": "Secure Documentation", "desc": "All documents handled with strict confidentiality." }
+    },
+    "services": {
+      "title": "Our Services",
+      "domestic": "Domestic Workers",
+      "agencyRecruitment": "Recruitment for Agencies",
+      "customerRecruitment": "Customer Recruitment",
+      "documents": "Document Processing",
+      "visa": "Visa Coordination",
+      "travel": "Travel Arrangement"
+    },
+    "featured": {
+      "title": "Featured Workers",
+      "viewProfile": "View Profile"
+    },
+    "process": {
+      "title": "Recruitment Process",
+      "step1": "Choose Worker",
+      "step2": "Reserve Worker",
+      "step3": "Agency Confirmation",
+      "step4": "Medical Examination",
+      "step5": "Visa",
+      "step6": "Travel",
+      "step7": "Arrival"
+    },
+    "agencies": {
+      "title": "Partner Agencies",
+      "viewAgency": "View Agency"
+    },
+    "testimonials": { "title": "Customer Testimonials" },
+    "faq": { "title": "Frequently Asked Questions" },
+    "cta": {
+      "title": "Ready to Start Recruitment?",
+      "browse": "Browse Workers",
+      "contact": "Contact Us"
+    }
+  },
+  "footer": {
+    "companyInfo": "Licensed Ethiopian Foreign Employment Agency headquartered in Addis Ababa, serving Saudi Arabia, UAE and Kuwait.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "social": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "workers": {
+    "title": "Workers",
+    "search": "Search by name, skill or worker ID",
+    "filters": {
+      "title": "Filters",
+      "age": "Age",
+      "experience": "Experience",
+      "language": "Language",
+      "skills": "Skills",
+      "maritalStatus": "Marital Status",
+      "availability": "Availability",
+      "reservationStatus": "Reservation Status",
+      "country": "Country",
+      "apply": "Apply Filters",
+      "reset": "Reset"
+    },
+    "card": {
+      "age": "Age",
+      "experience": "Experience",
+      "viewDetails": "View Details",
+      "reserveNow": "Reserve Now"
+    },
+    "noResults": "No workers match your search.",
+    "status": {
+      "available": "Available",
+      "reserved_agency": "Reserved by Agency",
+      "reserved_customer": "Reserved by Customer",
+      "in_progress": "Recruitment in Progress"
+    }
+  },
+  "workerProfile": {
+    "backToWorkers": "Back to Workers",
+    "personalInfo": "Personal Information",
+    "skills": "Skills",
+    "languages": "Languages",
+    "experience": "Experience",
+    "video": "Video Introduction",
+    "availability": "Availability",
+    "timeline": "Recruitment Timeline",
+    "reserve": "Reserve Worker",
+    "share": "Share Profile",
+    "print": "Print Profile",
+    "reservedUntil": "Reserved Until",
+    "reservedByCustomer": "Reserved by Customer",
+    "inProgress": "Recruitment In Progress",
+    "fields": {
+      "workerId": "Worker ID",
+      "age": "Age",
+      "nationality": "Nationality",
+      "maritalStatus": "Marital Status",
+      "children": "Children",
+      "education": "Education",
+      "religion": "Religion",
+      "experienceYears": "Years of Experience"
+    }
+  },
+  "track": {
+    "title": "Track Your Application",
+    "subtitle": "Enter your tracking number or passport number to view current status.",
+    "inputLabel": "Tracking Number or Passport Number",
+    "button": "Track",
+    "currentStage": "Current Stage",
+    "progress": "Progress",
+    "estimatedCompletion": "Estimated Completion",
+    "support": "Need Help?",
+    "notFound": "No record found for this number. Please check and try again."
+  },
+  "about": {
+    "title": "About Afkan",
+    "mission": "Our Mission",
+    "missionText": "To connect skilled, verified Ethiopian domestic workers with trusted Saudi recruitment partners through a transparent, professional process.",
+    "vision": "Our Vision",
+    "visionText": "To become the most trusted Ethiopian foreign employment agency in the region.",
+    "history": "Company History",
+    "license": "License Information",
+    "message": "Management Message",
+    "values": "Our Values"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Office Address",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Email",
+    "hours": "Working Hours",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Your message has been sent. We will contact you soon."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "currency": "Price available on invoice only"
+  }
+}

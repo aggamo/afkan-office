@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "siteName": "አፍካን በውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ",
+    "tagline": "የኢትዮጵያ ሰራተኞችን ከታማኝ የቅጥር ኤጀንሲዎች ጋር እናገናኛለን"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "about": "ስለ እኛ",
+    "services": "አገልግሎቶች",
+    "workers": "ሰራተኞች",
+    "agencies": "ኤጀንሲዎች",
+    "process": "የቅጥር ሂደት",
+    "faq": "ተደጋጋሚ ጥያቄዎች",
+    "blog": "ጦማር",
+    "contact": "አግኙን",
+    "track": "ይከታተሉ",
+    "login": "ግባ",
+    "register": "ተመዝገብ",
+    "requestWorker": "ሰራተኛ ይጠይቁ"
+  },
+  "home": {
+    "hero": {
+      "headline": "የኢትዮጵያ ሰራተኞችን ከታማኝ የቅጥር ኤጀንሲዎች ጋር እናገናኛለን",
+      "subheadline": "ለሳዑዲ አረቢያ፣ ለተባበሩት አረብ ኤምሬትስ እና ለኩዌት የሚያገልግል ፈቃድ ያለው የኢትዮጵያ የውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ።",
+      "browseWorkers": "ሰራተኞችን ይዩ",
+      "requestRecruitment": "ቅጥር ይጠይቁ",
+      "trackApplication": "ማመልከቻ ይከታተሉ",
+      "becomeAgency": "የስራ ተባባሪ ይሁኑ"
+    },
+    "stats": {
+      "available": "ዝግጁ ሰራተኞች",
+      "recruited": "በተሳካ ሁኔታ የተቀጠሩ",
+      "agencies": "የስራ ተባባሪ ኤጀንሲዎች",
+      "experience": "የስራ ልምድ ዓመታት",
+      "countries": "የምናገልግላቸው ሀገሮች",
+      "satisfaction": "የደንበኞች እርካታ"
+    },
+    "why": {
+      "title": "ለምን አፍካንን ይምረጡ",
+      "licensed": { "title": "ፈቃድ ያለው ኤጀንሲ", "desc": "ከኢትዮጵያ መንግስት ሙሉ ፈቃድ ያለው።" },
+      "verified": { "title": "የተረጋገጡ ሰራተኞች", "desc": "እያንዳንዱ የሰራተኛ መረጃ የተረጋገጠ ነው።" },
+      "transparent": { "title": "ግልጽ ሂደት", "desc": "ከመያዝ እስከ መድረሻ ግልጽ ደረጃዎች።" },
+      "fast": { "title": "ፈጣን ቅጥር", "desc": "የተደራጀ ስርዓት ጊዜን ይቀንሳል።" },
+      "support": { "title": "ሙያዊ ድጋፍ", "desc": "በሙሉ ሂደቱ የተወሰነ ድጋፍ ቡድን።" },
+      "secure": { "title": "ደህንነቱ የተጠበቀ ሰነድ አስተዳደር", "desc": "ሁሉም ሰነዶች በሚስጥራዊነት ይያዛሉ።" }
+    },
+    "services": {
+      "title": "አገልግሎቶቻችን",
+      "domestic": "የቤት ሰራተኞች",
+      "agencyRecruitment": "ለኤጀንሲዎች ቅጥር",
+      "customerRecruitment": "ለግል ደንበኞች ቅጥር",
+      "documents": "ሰነድ ማስተናገድ",
+      "visa": "ቪዛ ማስተባበር",
+      "travel": "የመንገድ ዝግጅት"
+    },
+    "featured": {
+      "title": "ተለይተው የቀረቡ ሰራተኞች",
+      "viewProfile": "መገለጫ ይዩ"
+    },
+    "process": {
+      "title": "የቅጥር ሂደት",
+      "step1": "ሰራተኛ ይምረጡ",
+      "step2": "ሰራተኛ ይያዙ",
+      "step3": "የኤጀንሲ ማረጋገጫ",
+      "step4": "የጤና ምርመራ",
+      "step5": "ቪዛ",
+      "step6": "ጉዞ",
+      "step7": "መድረሻ"
+    },
+    "agencies": {
+      "title": "የስራ ተባባሪ ኤጀንሲዎች",
+      "viewAgency": "ኤጀንሲ ይዩ"
+    },
+    "testimonials": { "title": "የደንበኞች አስተያየት" },
+    "faq": { "title": "ተደጋጋሚ ጥያቄዎች" },
+    "cta": {
+      "title": "ቅጥር ለመጀመር ዝግጁ ነዎት?",
+      "browse": "ሰራተኞችን ይዩ",
+      "contact": "አግኙን"
+    }
+  },
+  "footer": {
+    "companyInfo": "በአዲስ አበባ የተመሰረተ ፈቃድ ያለው የኢትዮጵያ የውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ፣ ለሳዑዲ አረቢያ፣ ኤምሬትስ እና ኩዌት የሚያገልግል።",
+    "navigation": "አሰሳ",
+    "contact": "አግኙን",
+    "social": "ይከተሉን",
+    "privacy": "የግላዊነት መርሆ",
+    "terms": "የአገልግሎት ውሎች",
+    "rights": "ሁሉም መብቶች የተጠበቁ ናቸው።"
+  },
+  "workers": {
+    "title": "ሰራተኞች",
+    "search": "በስም፣ ችሎታ ወይም መታወቂያ ቁጥር ይፈልጉ",
+    "filters": {
+      "title": "ማጣሪያዎች",
+      "age": "ዕድሜ",
+      "experience": "ልምድ",
+      "language": "ቋንቋ",
+      "skills": "ችሎታዎች",
+      "maritalStatus": "የትዳር ሁኔታ",
+      "availability": "ዝግጁነት",
+      "reservationStatus": "የመያዝ ሁኔታ",
+      "country": "ሀገር",
+      "apply": "ማጣሪያ ይተግብሩ",
+      "reset": "ዳግም አስጀምር"
+    },
+    "card": {
+      "age": "ዕድሜ",
+      "experience": "ልምድ",
+      "viewDetails": "ዝርዝር ይዩ",
+      "reserveNow": "አሁን ይያዙ"
+    },
+    "noResults": "ከፍለጋዎ ጋር የሚስማማ ሰራተኛ አልተገኘም።",
+    "status": {
+      "available": "ዝግጁ",
+      "reserved_agency": "በኤጀንሲ ተይዟል",
+      "reserved_customer": "በደንበኛ ተይዟል",
+      "in_progress": "ቅጥር በሂደት ላይ"
+    }
+  },
+  "workerProfile": {
+    "backToWorkers": "ወደ ሰራተኞች ተመለስ",
+    "personalInfo": "የግል መረጃ",
+    "skills": "ችሎታዎች",
+    "languages": "ቋንቋዎች",
+    "experience": "ልምድ",
+    "video": "የመግቢያ ቪዲዮ",
+    "availability": "ዝግጁነት",
+    "timeline": "የቅጥር የጊዜ መስመር",
+    "reserve": "ሰራተኛ ይያዙ",
+    "share": "መገለጫ ያጋሩ",
+    "print": "መገለጫ ያትሙ",
+    "reservedUntil": "እስከ ተይዟል",
+    "reservedByCustomer": "በደንበኛ ተይዟል",
+    "inProgress": "ቅጥር በሂደት ላይ",
+    "fields": {
+      "workerId": "የሰራተኛ መታወቂያ",
+      "age": "ዕድሜ",
+      "nationality": "ዜግነት",
+      "maritalStatus": "የትዳር ሁኔታ",
+      "children": "የልጆች ቁጥር",
+      "education": "የትምህርት ደረጃ",
+      "religion": "ሃይማኖት",
+      "experienceYears": "የልምድ ዓመታት"
+    }
+  },
+  "track": {
+    "title": "ማመልከቻዎን ይከታተሉ",
+    "subtitle": "የአሁኑን ሁኔታ ለማየት የመከታተያ ቁጥር ወይም የፓስፖርት ቁጥር ያስገቡ።",
+    "inputLabel": "የመከታተያ ቁጥር ወይም የፓስፖርት ቁጥር",
+    "button": "ይከታተሉ",
+    "currentStage": "የአሁኑ ደረጃ",
+    "progress": "የመጓዣ መጠን",
+    "estimatedCompletion": "የሚጠበቀው የመጨረሻ ቀን",
+    "support": "እርዳታ ይፈልጋሉ?",
+    "notFound": "ለዚህ ቁጥር ምንም መዝገብ አልተገኘም። እባክዎ ያረጋግጡ እና እንደገና ይሞክሩ።"
+  },
+  "about": {
+    "title": "ስለ አፍካን",
+    "mission": "ተልዕኮአችን",
+    "missionText": "የተመረቱና የተረጋገጡ የኢትዮጵያ የቤት ሰራተኞችን ከታማኝ የሳዑዲ ቅጥር ተባባሪዎች ጋር በግልጽና ሙያዊ ሂደት ማገናኘት።",
+    "vision": "ራዕያችን",
+    "visionText": "በአካባቢው በቅጥር ዘርፍ በጣም ታማኝ የኢትዮጵያ ኤጀንሲ መሆን።",
+    "history": "የድርጅት ታሪክ",
+    "license": "የፈቃድ መረጃ",
+    "message": "የአስተዳደር መልዕክት",
+    "values": "እሴቶቻችን"
+  },
+  "contact": {
+    "title": "አግኙን",
+    "address": "የቢሮ አድራሻ",
+    "phone": "ስልክ",
+    "whatsapp": "ዋትስአፕ",
+    "telegram": "ቴሌግራም",
+    "email": "ኢሜይል",
+    "hours": "የስራ ሰዓቶች",
+    "form": {
+      "name": "ሙሉ ስም",
+      "email": "ኢሜይል",
+      "phone": "ስልክ ቁጥር",
+      "message": "መልዕክት",
+      "send": "መልዕክት ይላኩ",
+      "success": "መልዕክትዎ በተሳካ ሁኔታ ተልኳል። በቅርቡ እናገኝዎታለን።"
+    }
+  },
+  "common": {
+    "loading": "በመጫን ላይ...",
+    "currency": "ዋጋ የሚታየው በደረሰኝ ላይ ብቻ ነው"
+  }
+}
