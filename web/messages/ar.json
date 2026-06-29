@@ -23,7 +23,8 @@
     "track": "تتبع الطلب",
     "login": "تسجيل الدخول",
     "register": "إنشاء حساب",
-    "requestWorker": "طلب عاملة"
+    "requestWorker": "طلب عاملة",
+    "favorites": "المفضلة"
   },
   "home": {
     "hero": {
@@ -115,7 +116,9 @@
       "age": "العمر",
       "experience": "الخبرة",
       "viewDetails": "عرض التفاصيل",
-      "reserveNow": "احجز الآن"
+      "reserveNow": "احجز الآن",
+      "favorite": "إضافة إلى المفضلة",
+      "compare": "إضافة للمقارنة"
     },
     "noResults": "لا توجد عاملات مطابقة لبحثك.",
     "status": {
@@ -193,5 +196,29 @@
   "common": {
     "loading": "جارٍ التحميل...",
     "currency": "السعر متاح فقط ضمن الفاتورة"
+  },
+  "favorites": {
+    "title": "العاملات المفضلة",
+    "empty": "لا توجد عاملات في المفضلة حتى الآن.",
+    "loginRequired": "يجب تسجيل الدخول كعميل لاستخدام المفضلة.",
+    "browse": "تصفح العاملات"
+  },
+  "compare": {
+    "title": "مقارنة العاملات",
+    "selected": "{count, plural, =0{لا يوجد عاملات محددة} other {# عاملة محددة}}",
+    "remove": "إزالة",
+    "clear": "إفراغ القائمة",
+    "viewComparison": "عرض المقارنة",
+    "empty": "أضف عاملات للمقارنة من صفحة العاملات.",
+    "browse": "تصفح العاملات",
+    "fields": {
+      "age": "العمر",
+      "experience": "سنوات الخبرة",
+      "languages": "اللغات",
+      "skills": "المهارات",
+      "education": "المستوى التعليمي",
+      "readinessScore": "درجة الجاهزية",
+      "reservationStatus": "حالة الحجز"
+    }
   }
 }

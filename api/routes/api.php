@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
 use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
 use App\Http\Controllers\Api\WorkerController;
@@ -34,6 +35,10 @@ Route::prefix('v1')->group(function () {
 
         Route::middleware('role:customer')->group(function () {
             Route::post('/reservations/customer', [ReservationController::class, 'storeAsCustomer']);
+
+            Route::get('/favorites', [FavoriteController::class, 'index']);
+            Route::post('/favorites/{worker}', [FavoriteController::class, 'store']);
+            Route::delete('/favorites/{worker}', [FavoriteController::class, 'destroy']);
         });
 
         Route::middleware('role:agency')->group(function () {

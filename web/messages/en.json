@@ -23,7 +23,8 @@
     "track": "Track",
     "login": "Login",
     "register": "Register",
-    "requestWorker": "Request a Worker"
+    "requestWorker": "Request a Worker",
+    "favorites": "Favorites"
   },
   "home": {
     "hero": {
@@ -115,7 +116,9 @@
       "age": "Age",
       "experience": "Experience",
       "viewDetails": "View Details",
-      "reserveNow": "Reserve Now"
+      "reserveNow": "Reserve Now",
+      "favorite": "Add to favorites",
+      "compare": "Add to compare"
     },
     "noResults": "No workers match your search.",
     "status": {
@@ -193,5 +196,29 @@
   "common": {
     "loading": "Loading...",
     "currency": "Price available on invoice only"
+  },
+  "favorites": {
+    "title": "Favorite Workers",
+    "empty": "No favorite workers yet.",
+    "loginRequired": "You must be logged in as a customer to use favorites.",
+    "browse": "Browse Workers"
+  },
+  "compare": {
+    "title": "Compare Workers",
+    "selected": "{count, plural, =0{No workers selected} other {# worker(s) selected}}",
+    "remove": "Remove",
+    "clear": "Clear list",
+    "viewComparison": "View Comparison",
+    "empty": "Add workers to compare from the workers page.",
+    "browse": "Browse Workers",
+    "fields": {
+      "age": "Age",
+      "experience": "Years of Experience",
+      "languages": "Languages",
+      "skills": "Skills",
+      "education": "Education",
+      "readinessScore": "Readiness Score",
+      "reservationStatus": "Reservation Status"
+    }
   }
 }

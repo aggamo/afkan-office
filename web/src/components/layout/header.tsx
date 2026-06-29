@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 
@@ -41,6 +41,9 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link href="/favorites" aria-label="favorites" className="text-brand-dark hover:text-brand-green">
+            <Heart size={20} />
+          </Link>
           <LanguageSwitcher />
           <Link href="/login" className="text-sm font-medium text-brand-dark hover:text-brand-green">
             {t("login")}
@@ -76,6 +79,9 @@ export function Header() {
                 {t(item.key)}
               </Link>
             ))}
+            <Link href="/favorites" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
+              {t("favorites")}
+            </Link>
             <Link href="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
               {t("login")}
             </Link>

@@ -90,4 +90,9 @@ class Worker extends Model
     {
         return $this->reservations()->where('status', 'active');
     }
+
+    public function favoritedBy(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'worker_favorites')->withTimestamps();
+    }
 }

@@ -1,13 +1,34 @@
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Heart, Scale } from "lucide-react";
+import { Link, useRouter } from "@/i18n/navigation";
 import { AvatarPlaceholder } from "@/components/ui/avatar-placeholder";
 import { ReservationBadge } from "@/components/ui/reservation-badge";
+import { useFavorites } from "@/components/collections/favorites-context";
+import { useCompare } from "@/components/collections/compare-context";
 import type { Locale } from "@/i18n/config";
 import type { Worker } from "@/types/worker";
 
 export function WorkerCard({ worker }: { worker: Worker }) {
   const t = useTranslations("workers.card");
   const locale = useLocale() as Locale;
+  const router = useRouter();
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const { isInCompare, toggleCompare } = useCompare();
+  const favorite = isFavorite(worker.id);
+  const inCompare = isInCompare(worker.id);
+
+  async function handleFavoriteClick() {
+    const result = await toggleFavorite(worker.id);
+    if (result.requiresAuth) {
+      router.push("/login");
+    }
+  }
+
+  function handleCompareClick() {
+    toggleCompare(worker.id);
+  }
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
@@ -15,6 +36,28 @@ export function WorkerCard({ worker }: { worker: Worker }) {
         <AvatarPlaceholder name={worker.photo} className="h-full w-full text-3xl" />
         <div className="absolute top-2 end-2">
           <ReservationBadge status={worker.reservationStatus} />
+        </div>
+        <div className="absolute top-2 start-2 flex gap-1.5">
+          <button
+            type="button"
+            onClick={handleFavoriteClick}
+            aria-label={t("favorite")}
+            className={`flex h-8 w-8 items-center justify-center rounded-full shadow-sm transition ${
+              favorite ? "bg-red-500 text-white" : "bg-white/90 text-gray-500 hover:text-red-500"
+            }`}
+          >
+            <Heart size={16} fill={favorite ? "currentColor" : "none"} />
+          </button>
+          <button
+            type="button"
+            onClick={handleCompareClick}
+            aria-label={t("compare")}
+            className={`flex h-8 w-8 items-center justify-center rounded-full shadow-sm transition ${
+              inCompare ? "bg-brand-green text-white" : "bg-white/90 text-gray-500 hover:text-brand-green"
+            }`}
+          >
+            <Scale size={16} />
+          </button>
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-4">

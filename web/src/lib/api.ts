@@ -107,3 +107,19 @@ export function login(email: string, password: string) {
     { method: "POST", body: JSON.stringify({ email, password }) },
   );
 }
+
+function authHeaders(token: string) {
+  return { Authorization: `Bearer ${token}` };
+}
+
+export function fetchFavorites(token: string) {
+  return request<ApiWorker[]>("/favorites", { cache: "no-store", headers: authHeaders(token) });
+}
+
+export function addFavorite(workerId: string | number, token: string) {
+  return request<null>(`/favorites/${workerId}`, { method: "POST", headers: authHeaders(token) });
+}
+
+export function removeFavorite(workerId: string | number, token: string) {
+  return request<null>(`/favorites/${workerId}`, { method: "DELETE", headers: authHeaders(token) });
+}

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { locales, isRtl, type Locale } from "@/i18n/config";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CollectionsProvider } from "@/components/collections/collections-provider";
 import "../globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -59,9 +60,11 @@ export default async function LocaleLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <CollectionsProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </CollectionsProvider>
         </NextIntlClientProvider>
       </body>
     </html>

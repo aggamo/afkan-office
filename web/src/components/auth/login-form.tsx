@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { ApiError, login } from "@/lib/api";
-import { setAuthToken } from "@/lib/auth-client";
+import { setAuthToken, setAuthRole } from "@/lib/auth-client";
 
 export function LoginForm() {
   const t = useTranslations("auth");
@@ -19,8 +19,10 @@ export function LoginForm() {
     setLoading(true);
     setError(null);
     try {
-      const { token } = await login(email, password);
+      const { token, user } = await login(email, password);
       setAuthToken(token);
+      setAuthRole(user.role.slug);
+      window.dispatchEvent(new Event("afkan-auth-changed"));
       router.push("/");
     } catch (err) {
       setError(err instanceof ApiError ? err.message : t("error"));

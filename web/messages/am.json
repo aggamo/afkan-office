@@ -23,7 +23,8 @@
     "track": "ይከታተሉ",
     "login": "ግባ",
     "register": "ተመዝገብ",
-    "requestWorker": "ሰራተኛ ይጠይቁ"
+    "requestWorker": "ሰራተኛ ይጠይቁ",
+    "favorites": "ተወዳጆች"
   },
   "home": {
     "hero": {
@@ -115,7 +116,9 @@
       "age": "ዕድሜ",
       "experience": "ልምድ",
       "viewDetails": "ዝርዝር ይዩ",
-      "reserveNow": "አሁን ይያዙ"
+      "reserveNow": "አሁን ይያዙ",
+      "favorite": "ወደ ተወዳጆች ጨምር",
+      "compare": "ለማነፃፅር ጨምር"
     },
     "noResults": "ከፍለጋዎ ጋር የሚስማማ ሰራተኛ አልተገኘም።",
     "status": {
@@ -193,5 +196,29 @@
   "common": {
     "loading": "በመጫን ላይ...",
     "currency": "ዋጋ የሚታየው በደረሰኝ ላይ ብቻ ነው"
+  },
+  "favorites": {
+    "title": "ተወዳጅ ሰራተኞች",
+    "empty": "እስካሁን ምንም ተወዳጅ ሰራተኛ የለም።",
+    "loginRequired": "ተወዳጆችን ለመጠቀም እንደ ደንበኛ መግባት አለብዎት።",
+    "browse": "ሰራተኞችን ይዩ"
+  },
+  "compare": {
+    "title": "ሰራተኞችን ያነፃፅሩ",
+    "selected": "{count, plural, =0{ምንም ሰራተኛ አልተመረጠም} other {# ሰራተኛ ተመርጧል}}",
+    "remove": "አስወግድ",
+    "clear": "ዝርዝሩን አጽዳ",
+    "viewComparison": "ማነፃፅሩን ይዩ",
+    "empty": "ለማነፃፅር ከሰራተኞች ገጽ ሰራተኞችን ይጨምሩ።",
+    "browse": "ሰራተኞችን ይዩ",
+    "fields": {
+      "age": "ዕድሜ",
+      "experience": "የልምድ ዓመታት",
+      "languages": "ቋንቋዎች",
+      "skills": "ችሎታዎች",
+      "education": "የትምህርት ደረጃ",
+      "readinessScore": "የዝግጁነት ደረጅ",
+      "reservationStatus": "የመያዝ ሁኔታ"
+    }
   }
 }
