@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Concerns\Auditable;
 
 #[Fillable([
     'uuid', 'worker_id', 'reserved_by_type', 'customer_id', 'agency_id',
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 ])]
 class Reservation extends Model
 {
+    use Auditable;
+
     protected function casts(): array
     {
         return [

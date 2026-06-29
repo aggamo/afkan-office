@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Concerns\Auditable;
 
 #[Fillable([
     'uuid', 'name', 'license_number', 'country', 'city', 'phone', 'email',
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 ])]
 class Agency extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Auditable;
 
     protected function casts(): array
     {

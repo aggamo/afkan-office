@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Concerns\Auditable;
 
 #[Fillable([
     'uuid', 'internal_number', 'full_name_ar', 'full_name_en', 'full_name_am',
@@ -22,7 +23,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 #[Hidden(['passport_number'])]
 class Worker extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Auditable;
+
+    protected array $auditHidden = ['password', 'passport_number'];
 
     protected function casts(): array
     {
