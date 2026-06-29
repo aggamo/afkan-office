@@ -49,8 +49,13 @@ class NotificationService
             return $reservation->customer?->user;
         }
 
-        $primaryContact = $reservation->agency?->agencyUsers()->where('is_primary_contact', true)->first()
-            ?? $reservation->agency?->agencyUsers()->first();
+        return $this->resolveAgencyPrimaryContact($reservation->agency);
+    }
+
+    public function resolveAgencyPrimaryContact(?\App\Models\Agency $agency): ?User
+    {
+        $primaryContact = $agency?->agencyUsers()->where('is_primary_contact', true)->first()
+            ?? $agency?->agencyUsers()->first();
 
         return $primaryContact?->user;
     }
@@ -64,5 +69,16 @@ class NotificationService
         }
 
         return $this->send($user, $event, $titles, $bodies, $reservation);
+    }
+
+    public function notifyInvoiceEvent(\App\Models\Invoice $invoice, string $event, array $titles, array $bodies = []): ?Notification
+    {
+        $user = $this->resolveAgencyPrimaryContact($invoice->agency);
+
+        if (! $user) {
+            return null;
+        }
+
+        return $this->send($user, $event, $titles, $bodies, $invoice);
     }
 }

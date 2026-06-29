@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
+use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
@@ -33,6 +35,9 @@ Route::prefix('v1')->group(function () {
         Route::middleware('role:agency')->group(function () {
             Route::post('/reservations/agency', [ReservationController::class, 'storeAsAgency']);
             Route::post('/reservations/{reservation}/convert-to-agency', [ReservationController::class, 'convertToAgency']);
+
+            Route::get('/agency/invoices', [AgencyInvoiceController::class, 'index']);
+            Route::get('/agency/invoices/{invoice}', [AgencyInvoiceController::class, 'show']);
         });
 
         Route::get('/worker-documents/{workerDocument}/download', [WorkerDocumentController::class, 'download'])
@@ -47,6 +52,12 @@ Route::prefix('v1')->group(function () {
 
             Route::post('/workers/{worker}/documents', [WorkerDocumentController::class, 'store']);
             Route::delete('/worker-documents/{workerDocument}', [WorkerDocumentController::class, 'destroy']);
+
+            Route::get('/invoices', [AdminInvoiceController::class, 'index']);
+            Route::post('/invoices', [AdminInvoiceController::class, 'store']);
+            Route::get('/invoices/{invoice}', [AdminInvoiceController::class, 'show']);
+            Route::post('/invoices/{invoice}/mark-paid', [AdminInvoiceController::class, 'markPaid']);
+            Route::post('/invoices/{invoice}/cancel', [AdminInvoiceController::class, 'cancel']);
         });
     });
 });

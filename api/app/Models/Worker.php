@@ -17,10 +17,10 @@ use App\Models\Concerns\Auditable;
     'nationality_id', 'worker_type_id', 'experience_years', 'height_cm', 'weight_kg',
     'religion', 'marital_status', 'number_of_children', 'reservation_status',
     'readiness_score', 'agency_id', 'current_recruitment_stage_id',
-    'is_published', 'is_active',
+    'is_published', 'is_active', 'price', 'price_currency',
 ])]
-// Passport number is sensitive: never expose it through public-facing API resources.
-#[Hidden(['passport_number'])]
+// Passport number and price are sensitive: never expose them through public-facing API resources.
+#[Hidden(['passport_number', 'price', 'price_currency'])]
 class Worker extends Model
 {
     use SoftDeletes, Auditable;
@@ -35,9 +35,15 @@ class Worker extends Model
             'height_cm' => 'decimal:1',
             'weight_kg' => 'decimal:1',
             'readiness_score' => 'decimal:2',
+            'price' => 'decimal:2',
             'is_published' => 'boolean',
             'is_active' => 'boolean',
         ];
+    }
+
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(Invoice::class);
     }
 
     public function nationality(): BelongsTo

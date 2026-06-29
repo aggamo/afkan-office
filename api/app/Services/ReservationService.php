@@ -9,6 +9,7 @@ use App\Models\Reservation;
 use App\Models\ReservationHistory;
 use App\Models\User;
 use App\Models\Worker;
+use App\Services\InvoiceService;
 use App\Services\NotificationService;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -19,8 +20,10 @@ class ReservationService
     public const CUSTOMER_HOLD_HOURS = 24;
     public const AGENCY_HOLD_HOURS = 72;
 
-    public function __construct(private readonly NotificationService $notifications = new NotificationService())
-    {
+    public function __construct(
+        private readonly NotificationService $notifications = new NotificationService(),
+        private readonly InvoiceService $invoices = new InvoiceService(),
+    ) {
     }
 
     /**
@@ -176,15 +179,26 @@ class ReservationService
         });
     }
 
-    public function complete(Reservation $reservation, ?User $actor = null): Reservation
+    /**
+     * Complete a reservation (worker hired). For agency reservations, an
+     * invoice is auto-issued by default since this is the closest concrete
+     * "worker delivered" event in the system; staff can also always create
+     * invoices manually at any other time via the InvoiceService directly.
+     */
+    public function complete(Reservation $reservation, ?User $actor = null, bool $autoInvoice = true): Reservation
     {
-        return DB::transaction(function () use ($reservation, $actor) {
+        return DB::transaction(function () use ($reservation, $actor, $autoInvoice) {
             $reservation = Reservation::where('id', $reservation->id)->lockForUpdate()->firstOrFail();
 
             $reservation->update(['status' => 'completed', 'resolved_at' => now()]);
             $this->logHistory($reservation, 'active', 'completed', $actor, 'تم إتمام التوظيف');
 
-            Worker::where('id', $reservation->worker_id)->update(['reservation_status' => 'hired']);
+            $worker = Worker::where('id', $reservation->worker_id)->lockForUpdate()->firstOrFail();
+            $worker->update(['reservation_status' => 'hired']);
+
+            if ($autoInvoice && $reservation->reserved_by_type === 'agency' && $reservation->agency_id && $worker->price !== null) {
+                $this->invoices->createInvoice($worker, $reservation->agency, $reservation, null, $actor);
+            }
 
             return $reservation;
         });

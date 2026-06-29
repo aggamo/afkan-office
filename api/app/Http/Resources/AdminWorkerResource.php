@@ -35,6 +35,8 @@ class AdminWorkerResource extends JsonResource
             'readiness_score' => $this->readiness_score,
             'agency_id' => $this->agency_id,
             'current_recruitment_stage' => $this->whenLoaded('currentRecruitmentStage'),
+            'price' => $this->price,
+            'price_currency' => $this->price_currency,
             'is_published' => $this->is_published,
             'is_active' => $this->is_active,
             'languages' => $this->whenLoaded('languages'),

@@ -39,4 +39,9 @@ class Agency extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

@@ -60,7 +60,7 @@ class WorkerAdminController extends Controller
                     'date_of_birth', 'gender', 'passport_number', 'passport_expiry',
                     'nationality_id', 'worker_type_id', 'experience_years', 'height_cm', 'weight_kg',
                     'religion', 'marital_status', 'number_of_children', 'agency_id',
-                    'current_recruitment_stage_id',
+                    'current_recruitment_stage_id', 'price', 'price_currency',
                 ]),
                 'is_published' => $request->boolean('is_published'),
                 'is_active' => $request->boolean('is_active', true),
@@ -87,7 +87,7 @@ class WorkerAdminController extends Controller
                 'date_of_birth', 'gender', 'passport_number', 'passport_expiry',
                 'nationality_id', 'worker_type_id', 'experience_years', 'height_cm', 'weight_kg',
                 'religion', 'marital_status', 'number_of_children', 'agency_id',
-                'current_recruitment_stage_id', 'is_published', 'is_active',
+                'current_recruitment_stage_id', 'price', 'price_currency', 'is_published', 'is_active',
             ]));
 
             $this->syncLanguagesAndSkills($worker, $request);

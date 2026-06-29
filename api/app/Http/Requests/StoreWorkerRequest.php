@@ -32,6 +32,8 @@ class StoreWorkerRequest extends FormRequest
             'number_of_children' => ['nullable', 'integer', 'min:0'],
             'agency_id' => ['nullable', 'integer', 'exists:agencies,id'],
             'current_recruitment_stage_id' => ['nullable', 'integer', 'exists:recruitment_stages,id'],
+            'price' => ['nullable', 'numeric', 'min:0'],
+            'price_currency' => ['nullable', 'string', 'size:3'],
             'is_published' => ['nullable', 'boolean'],
             'is_active' => ['nullable', 'boolean'],
             'languages' => ['nullable', 'array'],
