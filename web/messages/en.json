@@ -390,7 +390,8 @@
     "nav": {
       "dashboard": "Dashboard",
       "reservations": "My Reservations",
-      "profile": "My Profile"
+      "profile": "My Profile",
+      "notifications": "Notifications"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -454,6 +455,11 @@
       "save": "Save",
       "saving": "Saving...",
       "saved": "Changes saved"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "empty": "No notifications.",
+      "markRead": "Mark as read"
     }
   }
 }

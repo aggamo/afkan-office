@@ -390,7 +390,8 @@
     "nav": {
       "dashboard": "لوحتي",
       "reservations": "حجوزاتي",
-      "profile": "ملفي الشخصي"
+      "profile": "ملفي الشخصي",
+      "notifications": "الإشعارات"
     },
     "dashboard": {
       "welcome": "مرحباً بك",
@@ -454,6 +455,11 @@
       "save": "حفظ",
       "saving": "جارٍ الحفظ...",
       "saved": "تم حفظ التغييرات"
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "empty": "لا توجد إشعارات.",
+      "markRead": "تعليم كمقروء"
     }
   }
 }

@@ -390,7 +390,8 @@
     "nav": {
       "dashboard": "ዳሽቦርድ",
       "reservations": "ማስያዣዎቼ",
-      "profile": "የግል መገለጫዬ"
+      "profile": "የግል መገለጫዬ",
+      "notifications": "ማሳወቂያዎች"
     },
     "dashboard": {
       "welcome": "እንኳን ደህና መጡ",
@@ -454,6 +455,11 @@
       "save": "አስቀምጥ",
       "saving": "በማስቀመጥ ላይ...",
       "saved": "ለውጦች ተቀምጠዋል"
+    },
+    "notifications": {
+      "title": "ማሳወቂያዎች",
+      "empty": "ምንም ማሳወቂያ የለም።",
+      "markRead": "እንደተነበበ ምልክት አድርግ"
     }
   }
 }

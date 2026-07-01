@@ -94,3 +94,27 @@ export function fetchCustomerProfile() {
 export function updateCustomerProfile(payload: Partial<Pick<CustomerProfile, "name" | "phone" | "country" | "city">>) {
   return customerRequest<null>("/customer/profile", { method: "PUT", body: JSON.stringify(payload) });
 }
+
+export type Notification = {
+  id: number;
+  uuid: string;
+  event: string;
+  title: { ar: string; en: string; am: string };
+  body: { ar: string | null; en: string | null; am: string | null };
+  status: string;
+  read_at: string | null;
+  created_at: string | null;
+};
+
+export type NotificationsPage = {
+  items: Notification[];
+  meta: { current_page: number; per_page: number; total: number; last_page: number };
+};
+
+export function fetchNotifications(page = 1, perPage = 20) {
+  return customerRequest<NotificationsPage>(`/notifications?page=${page}&per_page=${perPage}`);
+}
+
+export function markNotificationRead(id: number) {
+  return customerRequest<Notification>(`/notifications/${id}/read`, { method: "POST" });
+}
