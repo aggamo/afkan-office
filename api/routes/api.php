@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\Admin\DashboardController;
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\ReferenceDataController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
+use App\Http\Controllers\Api\Admin\WorkflowController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\Agency\AuthorizationController as AgencyAuthorizationController;
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
@@ -78,6 +79,12 @@ Route::prefix('v1')->group(function () {
 
             Route::post('/workers/{worker}/documents', [WorkerDocumentController::class, 'store']);
             Route::delete('/worker-documents/{workerDocument}', [WorkerDocumentController::class, 'destroy']);
+
+            // Recruitment workflow (17-stage tracking)
+            Route::get('/stages', [WorkflowController::class, 'stages']);
+            Route::get('/workers/{worker}/workflow', [WorkflowController::class, 'show']);
+            Route::post('/workers/{worker}/workflow/start', [WorkflowController::class, 'start']);
+            Route::post('/workers/{worker}/workflow/advance', [WorkflowController::class, 'advance']);
 
             Route::get('/invoices', [AdminInvoiceController::class, 'index']);
             Route::post('/invoices', [AdminInvoiceController::class, 'store']);

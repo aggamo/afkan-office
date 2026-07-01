@@ -94,20 +94,42 @@ class MasterDataSeeder extends Seeder
         }
     }
 
+    /**
+     * The 17 official recruitment stages (Document 8). All are core stages that
+     * cannot be deleted; sla_days feeds Smart ETA and delay detection.
+     */
     private function seedRecruitmentStages(): void
     {
         $stages = [
-            ['slug' => 'registration', 'step_number' => 1, 'name_ar' => 'التسجيل', 'name_en' => 'Registration', 'name_am' => 'ምዝገባ'],
-            ['slug' => 'medical_check', 'step_number' => 2, 'name_ar' => 'الفحص الطبي', 'name_en' => 'Medical Check', 'name_am' => 'የሕክምና ምርመራ'],
-            ['slug' => 'training', 'step_number' => 3, 'name_ar' => 'التدريب', 'name_en' => 'Training', 'name_am' => 'ስልጠና'],
-            ['slug' => 'documentation', 'step_number' => 4, 'name_ar' => 'استكمال الوثائق', 'name_en' => 'Documentation', 'name_am' => 'ሰነዶች'],
-            ['slug' => 'visa_processing', 'step_number' => 5, 'name_ar' => 'إجراءات التأشيرة', 'name_en' => 'Visa Processing', 'name_am' => 'ቪዛ ሂደት'],
-            ['slug' => 'travel_arrangement', 'step_number' => 6, 'name_ar' => 'ترتيب السفر', 'name_en' => 'Travel Arrangement', 'name_am' => 'የጉዞ ዝግጅት'],
-            ['slug' => 'deployed', 'step_number' => 7, 'name_ar' => 'تم السفر', 'name_en' => 'Deployed', 'name_am' => 'ተሰማርቷል'],
+            ['slug' => 'file_received', 'name_ar' => 'استلام الملف', 'name_en' => 'File Received', 'name_am' => 'ፋይል ተቀብሏል', 'sla_days' => 1, 'color' => '#0B6B3A'],
+            ['slug' => 'medical_examination', 'name_ar' => 'الفحص الطبي', 'name_en' => 'Medical Examination', 'name_am' => 'የሕክምና ምርመራ', 'sla_days' => 2, 'color' => '#0B6B3A'],
+            ['slug' => 'waiting_medical_result', 'name_ar' => 'انتظار نتيجة الفحص', 'name_en' => 'Waiting Medical Result', 'name_am' => 'የሕክምና ውጤት በመጠበቅ', 'sla_days' => 3, 'color' => '#C8A951'],
+            ['slug' => 'fingerprint_appointment', 'name_ar' => 'موعد البصمة', 'name_en' => 'Fingerprint Appointment', 'name_am' => 'የጣት አሻራ ቀጠሮ', 'sla_days' => 3, 'color' => '#0B6B3A'],
+            ['slug' => 'fingerprint_completed', 'name_ar' => 'اكتمال البصمة', 'name_en' => 'Fingerprint Completed', 'name_am' => 'የጣት አሻራ ተጠናቅቋል', 'sla_days' => 1, 'color' => '#0B6B3A'],
+            ['slug' => 'sent_to_embassy', 'name_ar' => 'إرسال إلى السفارة', 'name_en' => 'Sent to Embassy', 'name_am' => 'ወደ ኤምባሲ ተልኳል', 'sla_days' => 2, 'color' => '#0B6B3A'],
+            ['slug' => 'waiting_embassy_approval', 'name_ar' => 'انتظار موافقة السفارة', 'name_en' => 'Waiting Embassy Approval', 'name_am' => 'የኤምባሲ ማጽደቅ በመጠበቅ', 'sla_days' => 10, 'color' => '#C8A951'],
+            ['slug' => 'visa_issued', 'name_ar' => 'صدور التأشيرة', 'name_en' => 'Visa Issued', 'name_am' => 'ቪዛ ወጥቷል', 'sla_days' => 2, 'color' => '#0B6B3A'],
+            ['slug' => 'passport_returned', 'name_ar' => 'استلام الجواز', 'name_en' => 'Passport Returned', 'name_am' => 'ፓስፖርት ተመልሷል', 'sla_days' => 2, 'color' => '#0B6B3A'],
+            ['slug' => 'labor_office_processing', 'name_ar' => 'إجراءات مكتب العمل', 'name_en' => 'Labor Office Processing', 'name_am' => 'የሠራተኛ ቢሮ ሂደት', 'sla_days' => 5, 'color' => '#0B6B3A'],
+            ['slug' => 'travel_permit', 'name_ar' => 'تصريح السفر', 'name_en' => 'Travel Permit', 'name_am' => 'የጉዞ ፍቃድ', 'sla_days' => 3, 'color' => '#0B6B3A'],
+            ['slug' => 'waiting_flight', 'name_ar' => 'انتظار الرحلة', 'name_en' => 'Waiting Flight', 'name_am' => 'በረራ በመጠበቅ', 'sla_days' => 4, 'color' => '#C8A951'],
+            ['slug' => 'flight_confirmed', 'name_ar' => 'تأكيد الرحلة', 'name_en' => 'Flight Confirmed', 'name_am' => 'በረራ ተረጋግጧል', 'sla_days' => 2, 'color' => '#0B6B3A'],
+            ['slug' => 'documents_delivered', 'name_ar' => 'تسليم الوثائق', 'name_en' => 'Documents Delivered', 'name_am' => 'ሰነዶች ተሰጥተዋል', 'sla_days' => 1, 'color' => '#0B6B3A'],
+            ['slug' => 'worker_at_airport', 'name_ar' => 'العاملة في المطار', 'name_en' => 'Worker at Airport', 'name_am' => 'ሰራተኛዋ በአየር ማረፊያ', 'sla_days' => 1, 'color' => '#2563EB'],
+            ['slug' => 'worker_arrived', 'name_ar' => 'وصول العاملة', 'name_en' => 'Worker Arrived', 'name_am' => 'ሰራተኛዋ ደርሳለች', 'sla_days' => 1, 'color' => '#2563EB'],
+            ['slug' => 'warranty_period', 'name_ar' => 'فترة الضمان (90 يوماً)', 'name_en' => 'Warranty Period (90 Days)', 'name_am' => 'የዋስትና ጊዜ (90 ቀናት)', 'sla_days' => 90, 'color' => '#7C3AED'],
         ];
 
-        foreach ($stages as $data) {
-            RecruitmentStage::firstOrCreate(['slug' => $data['slug']], $data);
+        foreach ($stages as $index => $data) {
+            RecruitmentStage::updateOrCreate(
+                ['slug' => $data['slug']],
+                array_merge($data, [
+                    'step_number' => $index + 1,
+                    'is_core' => true,
+                    'is_public' => true,
+                    'is_active' => true,
+                ])
+            );
         }
     }
 

@@ -2,16 +2,26 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\Auditable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['slug', 'name_ar', 'name_en', 'name_am', 'step_number', 'is_active'])]
+#[Fillable([
+    'slug', 'name_ar', 'name_en', 'name_am', 'step_number',
+    'is_core', 'is_public', 'color', 'sla_days', 'is_active',
+])]
 class RecruitmentStage extends Model
 {
+    use Auditable;
+
     protected function casts(): array
     {
-        return ['is_active' => 'boolean'];
+        return [
+            'is_active' => 'boolean',
+            'is_core' => 'boolean',
+            'is_public' => 'boolean',
+        ];
     }
 
     public function workers(): HasMany

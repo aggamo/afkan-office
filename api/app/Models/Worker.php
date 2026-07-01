@@ -17,6 +17,7 @@ use App\Models\Concerns\Auditable;
     'nationality_id', 'worker_type_id', 'experience_years', 'height_cm', 'weight_kg',
     'religion', 'marital_status', 'number_of_children', 'reservation_status',
     'readiness_score', 'agency_id', 'current_recruitment_stage_id',
+    'tracking_number', 'warranty_started_at', 'warranty_ends_at',
     'is_published', 'is_active', 'price', 'price_currency',
 ])]
 // Passport number and price are sensitive: never expose them through public-facing API resources.
@@ -38,6 +39,8 @@ class Worker extends Model
             'price' => 'decimal:2',
             'is_published' => 'boolean',
             'is_active' => 'boolean',
+            'warranty_started_at' => 'datetime',
+            'warranty_ends_at' => 'datetime',
         ];
     }
 
@@ -64,6 +67,11 @@ class Worker extends Model
     public function currentRecruitmentStage(): BelongsTo
     {
         return $this->belongsTo(RecruitmentStage::class, 'current_recruitment_stage_id');
+    }
+
+    public function stageHistory(): HasMany
+    {
+        return $this->hasMany(WorkerStageHistory::class)->orderBy('entered_at');
     }
 
     public function languages(): BelongsToMany
