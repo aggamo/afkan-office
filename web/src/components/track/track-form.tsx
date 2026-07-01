@@ -1,17 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { Search, CheckCircle2, Circle } from "lucide-react";
-import { ApiError, trackWorker } from "@/lib/api";
+import { useLocale, useTranslations } from "next-intl";
+import { Search, CheckCircle2, Circle, LoaderCircle, AlertTriangle } from "lucide-react";
+import { ApiError, trackWorker, type ApiTrackResult } from "@/lib/api";
+import type { Locale } from "@/i18n/config";
 
-const STAGE_KEYS = ["step1", "step2", "step3", "step4", "step5", "step6", "step7"] as const;
+const STATUS_ICON = {
+  completed: <CheckCircle2 size={18} className="text-emerald-600" />,
+  current: <LoaderCircle size={18} className="text-blue-600" />,
+  delayed: <AlertTriangle size={18} className="text-red-600" />,
+  upcoming: <Circle size={18} className="text-gray-300" />,
+} as const;
 
 export function TrackForm() {
   const t = useTranslations("track");
-  const tProcess = useTranslations("home.process");
+  const locale = useLocale() as Locale;
   const [value, setValue] = useState("");
-  const [result, setResult] = useState<{ stageIndex: number; progress: number; estimatedCompletion: number } | null>(null);
+  const [result, setResult] = useState<ApiTrackResult | null>(null);
   const [searched, setSearched] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -21,23 +27,19 @@ export function TrackForm() {
     setSearched(true);
     try {
       const data = await trackWorker(value.trim());
-      const stepNumber = data.current_recruitment_stage?.step_number ?? 1;
-      const stageIndex = Math.min(Math.max(stepNumber - 1, 0), STAGE_KEYS.length - 1);
-      setResult({
-        stageIndex,
-        progress: Math.round(((stageIndex + 1) / STAGE_KEYS.length) * 100),
-        estimatedCompletion: Date.now() + 14 * 86400000,
-      });
+      setResult(data);
     } catch (error) {
       if (error instanceof ApiError && error.status === 404) {
         setResult(null);
       } else {
-        throw error;
+        setResult(null);
       }
     } finally {
       setLoading(false);
     }
   }
+
+  const eta = result?.eta;
 
   return (
     <div>
@@ -61,18 +63,33 @@ export function TrackForm() {
           <Search size={16} /> {t("button")}
         </button>
       </div>
-      <p className="mt-2 text-center text-xs text-gray-400">e.g. AFK-1000</p>
+      <p className="mt-2 text-center text-xs text-gray-400">e.g. AFK-2026-000001</p>
 
-      {searched && !result && (
+      {searched && !loading && !result && (
         <p className="mt-8 rounded-xl border border-gray-100 p-6 text-center text-gray-500">{t("notFound")}</p>
       )}
 
       {result && (
         <div className="mt-8 rounded-xl border border-gray-100 p-6">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
             <span className="text-sm text-gray-500">{t("currentStage")}</span>
-            <span className="font-semibold text-brand-green">{tProcess(STAGE_KEYS[result.stageIndex])}</span>
+            <span className="font-semibold text-brand-green">
+              {result.current_recruitment_stage
+                ? result.timeline.find((s) => s.slug === result.current_recruitment_stage?.slug)?.name[locale] ??
+                  result.current_recruitment_stage[`name_${locale}`]
+                : "—"}
+            </span>
           </div>
+
+          {result.tracking_number && (
+            <p className="mb-4 text-xs text-gray-400">{result.tracking_number}</p>
+          )}
+
+          {result.is_delayed && (
+            <p className="mb-4 flex items-center gap-1.5 rounded-md bg-red-50 px-3 py-2 text-sm text-red-600">
+              <AlertTriangle size={15} /> {t("delayed")}
+            </p>
+          )}
 
           <div className="mb-6">
             <div className="mb-1 flex items-center justify-between text-xs text-gray-400">
@@ -80,28 +97,37 @@ export function TrackForm() {
               <span>{result.progress}%</span>
             </div>
             <div className="h-2 w-full rounded-full bg-gray-100">
-              <div className="h-2 rounded-full bg-brand-green" style={{ width: `${result.progress}%` }} />
+              <div className="h-2 rounded-full bg-brand-green transition-all" style={{ width: `${result.progress}%` }} />
             </div>
           </div>
 
           <ol className="space-y-3">
-            {STAGE_KEYS.map((key, i) => (
-              <li key={key} className="flex items-center gap-2 text-sm">
-                {i <= result.stageIndex ? (
-                  <CheckCircle2 size={18} className="text-brand-green" />
-                ) : (
-                  <Circle size={18} className="text-gray-300" />
-                )}
-                <span className={i <= result.stageIndex ? "text-brand-dark" : "text-gray-400"}>
-                  {tProcess(key)}
+            {result.timeline.map((stage) => (
+              <li key={stage.slug} className="flex items-center gap-2 text-sm">
+                {STATUS_ICON[stage.status]}
+                <span
+                  className={
+                    stage.status === "upcoming"
+                      ? "text-gray-400"
+                      : stage.status === "delayed"
+                        ? "font-medium text-red-600"
+                        : stage.status === "current"
+                          ? "font-semibold text-blue-700"
+                          : "text-brand-dark"
+                  }
+                >
+                  {stage.name[locale]}
                 </span>
               </li>
             ))}
           </ol>
 
-          <p className="mt-6 text-sm text-gray-500">
-            {t("estimatedCompletion")}: {new Date(result.estimatedCompletion).toLocaleDateString()}
-          </p>
+          {eta?.estimated_completion && (
+            <p className="mt-6 text-sm text-gray-500">
+              {t("estimatedCompletion")}: {new Date(eta.estimated_completion).toLocaleDateString(locale)}{" "}
+              <span className="text-xs text-gray-400">({t(`confidence.${eta.confidence}`)})</span>
+            </p>
+          )}
         </div>
       )}
     </div>

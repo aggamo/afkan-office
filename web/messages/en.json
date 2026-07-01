@@ -187,7 +187,13 @@
     "progress": "Progress",
     "estimatedCompletion": "Estimated Completion",
     "support": "Need Help?",
-    "notFound": "No record found for this number. Please check and try again."
+    "notFound": "No record found for this number. Please check and try again.",
+    "delayed": "This stage is delayed",
+    "confidence": {
+      "high": "high confidence",
+      "medium": "medium confidence",
+      "low": "low confidence"
+    }
   },
   "about": {
     "title": "About Afkan",

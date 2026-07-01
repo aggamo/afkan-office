@@ -72,10 +72,26 @@ export type ApiAgency = {
   is_verified: boolean;
 };
 
+export type ApiLocalizedName = { ar: string; en: string; am: string };
+
+export type ApiTimelineStage = {
+  step_number: number;
+  slug: string;
+  name: ApiLocalizedName;
+  color: string | null;
+  status: "completed" | "current" | "delayed" | "upcoming";
+  entered_at: string | null;
+};
+
 export type ApiTrackResult = {
   internal_number: string;
+  tracking_number: string | null;
   reservation_status: string;
   current_recruitment_stage: { slug: string; step_number: number; name_ar: string; name_en: string; name_am: string } | null;
+  progress: number;
+  eta: { estimated_completion: string | null; remaining_days: number; confidence: "high" | "medium" | "low" };
+  is_delayed: boolean;
+  timeline: ApiTimelineStage[];
 };
 
 export function fetchWorkers(params: Record<string, string | number | undefined> = {}) {
@@ -95,8 +111,8 @@ export function fetchAgencies() {
   return request<ApiAgency[]>("/agencies", { cache: "no-store" });
 }
 
-export function trackWorker(internalNumber: string) {
-  return request<ApiTrackResult>(`/workers/track?internal_number=${encodeURIComponent(internalNumber)}`, {
+export function trackWorker(trackingNumber: string) {
+  return request<ApiTrackResult>(`/workers/track?tracking=${encodeURIComponent(trackingNumber)}`, {
     cache: "no-store",
   });
 }
