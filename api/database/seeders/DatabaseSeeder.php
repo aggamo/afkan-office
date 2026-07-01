@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@afkanagent.com',
             'role_id' => $superAdminRole->id,
         ]);
+
+        $this->call(DemoSeeder::class);
     }
 }

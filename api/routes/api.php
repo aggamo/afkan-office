@@ -5,9 +5,11 @@ use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\ReferenceDataController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
+use App\Http\Controllers\Api\Agency\AuthorizationController as AgencyAuthorizationController;
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
 use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CustomerPortalController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
@@ -37,6 +39,12 @@ Route::prefix('v1')->group(function () {
 
         Route::middleware('role:customer')->group(function () {
             Route::post('/reservations/customer', [ReservationController::class, 'storeAsCustomer']);
+            Route::post('/reservations/{reservation}/authorize', [ReservationController::class, 'authorizeAgency']);
+
+            Route::get('/customer/dashboard', [CustomerPortalController::class, 'dashboard']);
+            Route::get('/customer/reservations', [CustomerPortalController::class, 'reservations']);
+            Route::get('/customer/profile', [CustomerPortalController::class, 'profile']);
+            Route::put('/customer/profile', [CustomerPortalController::class, 'updateProfile']);
 
             Route::get('/favorites', [FavoriteController::class, 'index']);
             Route::post('/favorites/{worker}', [FavoriteController::class, 'store']);
@@ -46,6 +54,10 @@ Route::prefix('v1')->group(function () {
         Route::middleware('role:agency')->group(function () {
             Route::post('/reservations/agency', [ReservationController::class, 'storeAsAgency']);
             Route::post('/reservations/{reservation}/convert-to-agency', [ReservationController::class, 'convertToAgency']);
+
+            Route::get('/agency/authorizations', [AgencyAuthorizationController::class, 'index']);
+            Route::post('/agency/authorizations/{reservation}/accept', [AgencyAuthorizationController::class, 'accept']);
+            Route::post('/agency/authorizations/{reservation}/reject', [AgencyAuthorizationController::class, 'reject']);
 
             Route::get('/agency/invoices', [AgencyInvoiceController::class, 'index']);
             Route::get('/agency/invoices/{invoice}', [AgencyInvoiceController::class, 'show']);

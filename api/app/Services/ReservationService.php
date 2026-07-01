@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Exceptions\ReservationAuthorizationException;
 use App\Exceptions\WorkerNotAvailableException;
 use App\Models\Agency;
 use App\Models\Customer;
@@ -152,6 +153,107 @@ class ReservationService
             $worker->update(['reservation_status' => 'reserved_agency']);
 
             return $agencyReservation;
+        });
+    }
+
+    /**
+     * A customer authorizes exactly one approved Saudi agency to complete the
+     * recruitment for their active 24h reservation (Document 7). The agency is
+     * notified and must accept or reject. Re-authorizing a different agency is
+     * allowed until an agency has accepted.
+     */
+    public function authorizeAgency(Reservation $reservation, Agency $agency, ?User $actor = null): Reservation
+    {
+        return DB::transaction(function () use ($reservation, $agency, $actor) {
+            $reservation = Reservation::where('id', $reservation->id)->lockForUpdate()->firstOrFail();
+
+            if ($reservation->status !== 'active' || $reservation->reserved_by_type !== 'customer') {
+                throw new ReservationAuthorizationException('لا يمكن تفويض مكتب لهذا الحجز، فهو غير نشط أو ليس حجز عميل.');
+            }
+            if ($reservation->authorization_status === 'accepted') {
+                throw new ReservationAuthorizationException('تم قبول التفويض من المكتب بالفعل.');
+            }
+            if (! $agency->is_verified || ! $agency->is_active) {
+                throw new ReservationAuthorizationException('المكتب المختار غير معتمد.');
+            }
+
+            $reservation->update([
+                'authorized_agency_id' => $agency->id,
+                'authorization_status' => 'pending',
+                'authorized_at' => now(),
+            ]);
+
+            $agencyUser = $this->notifications->resolveAgencyPrimaryContact($agency);
+            if ($agencyUser) {
+                $this->notifications->send($agencyUser, 'authorization.requested', [
+                    'ar' => 'طلب تفويض جديد من عميل',
+                    'en' => 'New authorization request from a customer',
+                    'am' => 'ከደንበኛ አዲስ የፈቃድ ጥያቄ',
+                ], [
+                    'ar' => 'قام عميل بتفويض مكتبكم لإتمام استقدام عاملة. يرجى القبول أو الرفض.',
+                    'en' => 'A customer authorized your agency to complete a recruitment. Please accept or reject.',
+                    'am' => 'አንድ ደንበኛ ኤጀንሲዎን ቅጥርን እንዲያጠናቅቅ ፈቅዷል። እባክዎ ይቀበሉ ወይም ይከልክሉ።',
+                ], $reservation);
+            }
+
+            return $reservation;
+        });
+    }
+
+    /**
+     * The authorized agency accepts the customer request: the 24h customer
+     * hold converts into a fresh 72h agency reservation.
+     */
+    public function acceptAuthorization(Reservation $reservation, Agency $agency, ?User $actor = null): Reservation
+    {
+        return DB::transaction(function () use ($reservation, $agency, $actor) {
+            $reservation = Reservation::where('id', $reservation->id)->lockForUpdate()->firstOrFail();
+
+            if ($reservation->authorization_status !== 'pending'
+                || (int) $reservation->authorized_agency_id !== (int) $agency->id) {
+                throw new ReservationAuthorizationException('لا يوجد طلب تفويض معلّق لمكتبكم على هذا الحجز.');
+            }
+
+            $reservation->update(['authorization_status' => 'accepted']);
+
+            return $this->convertCustomerReservationToAgency($reservation, $agency, $actor);
+        });
+    }
+
+    /**
+     * The authorized agency rejects the request. The reservation stays active
+     * (until its original 24h expiry) so the customer may choose another agency.
+     */
+    public function rejectAuthorization(Reservation $reservation, Agency $agency, ?User $actor = null): Reservation
+    {
+        return DB::transaction(function () use ($reservation, $agency, $actor) {
+            $reservation = Reservation::where('id', $reservation->id)->lockForUpdate()->firstOrFail();
+
+            if ($reservation->authorization_status !== 'pending'
+                || (int) $reservation->authorized_agency_id !== (int) $agency->id) {
+                throw new ReservationAuthorizationException('لا يوجد طلب تفويض معلّق لمكتبكم على هذا الحجز.');
+            }
+
+            $reservation->update([
+                'authorization_status' => 'rejected',
+                'authorized_agency_id' => null,
+                'authorized_at' => null,
+            ]);
+
+            $customerUser = $reservation->customer?->user;
+            if ($customerUser) {
+                $this->notifications->send($customerUser, 'authorization.rejected', [
+                    'ar' => 'اعتذر المكتب عن طلبك',
+                    'en' => 'The agency declined your request',
+                    'am' => 'ኤጀንሲው ጥያቄዎን አልተቀበለም',
+                ], [
+                    'ar' => 'يمكنك اختيار مكتب آخر قبل انتهاء مدة الحجز.',
+                    'en' => 'You may choose another agency before the reservation expires.',
+                    'am' => 'ማስያዣው ከማብቃቱ በፊት ሌላ ኤጀንሲ መምረጥ ይችላሉ።',
+                ], $reservation);
+            }
+
+            return $reservation;
         });
     }
 

@@ -10,6 +10,7 @@ use App\Models\Concerns\Auditable;
 
 #[Fillable([
     'uuid', 'worker_id', 'reserved_by_type', 'customer_id', 'agency_id',
+    'authorized_agency_id', 'authorization_status', 'authorized_at',
     'converted_from_reservation_id', 'status', 'reserved_at', 'expires_at',
     'resolved_at', 'created_by',
 ])]
@@ -23,7 +24,13 @@ class Reservation extends Model
             'reserved_at' => 'datetime',
             'expires_at' => 'datetime',
             'resolved_at' => 'datetime',
+            'authorized_at' => 'datetime',
         ];
+    }
+
+    public function authorizedAgency(): BelongsTo
+    {
+        return $this->belongsTo(Agency::class, 'authorized_agency_id');
     }
 
     public function worker(): BelongsTo
