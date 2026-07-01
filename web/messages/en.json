@@ -263,7 +263,8 @@
     "nav": {
       "dashboard": "Dashboard",
       "referenceData": "Reference Data",
-      "activity": "Activity Log"
+      "activity": "Activity Log",
+      "workflow": "Workflow"
     },
     "dashboard": {
       "title": "Dashboard",
@@ -383,6 +384,28 @@
         "is_public": "Public",
         "sort_order": "Order",
         "country_id": "Country"
+      }
+    },
+    "workflow": {
+      "title": "Recruitment Workflow",
+      "subtitle": "Manage and track the 17 official recruitment stages.",
+      "search": "Search a worker...",
+      "noWorkers": "No workers.",
+      "currentStage": "Current stage",
+      "eta": "Estimated completion",
+      "warranty": "Warranty",
+      "days": "days",
+      "delayed": "Delayed",
+      "start": "Start recruitment file",
+      "moveTo": "Move to",
+      "notes": "Notes (optional)",
+      "advance": "Update stage",
+      "timeline": "Timeline",
+      "history": "Stage history",
+      "confidence": {
+        "high": "high confidence",
+        "medium": "medium confidence",
+        "low": "low confidence"
       }
     }
   },

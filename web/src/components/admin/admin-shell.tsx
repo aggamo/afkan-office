@@ -1,11 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Activity, Database, LayoutDashboard } from "lucide-react";
+import { Activity, Database, LayoutDashboard, Route } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { href: "/admin", key: "dashboard", icon: LayoutDashboard, exact: true },
+  { href: "/admin/workflow", key: "workflow", icon: Route, exact: false },
   { href: "/admin/reference", key: "referenceData", icon: Database, exact: false },
   { href: "/admin/activity", key: "activity", icon: Activity, exact: false },
 ] as const;

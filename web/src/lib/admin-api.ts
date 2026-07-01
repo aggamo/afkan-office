@@ -158,3 +158,84 @@ export function fetchActivity(page = 1, perPage = 25, action?: string) {
   if (action) params.set("action", action);
   return adminRequest<ActivityPage>(`/admin/activity?${params.toString()}`);
 }
+
+// ---- Recruitment Workflow ----
+
+export type LocalizedName = { ar: string; en: string; am: string };
+
+export type WorkflowStage = {
+  id: number;
+  slug: string;
+  step_number: number;
+  name_ar: string;
+  name_en: string;
+  name_am: string;
+  color: string | null;
+  sla_days: number | null;
+  is_core: boolean;
+  is_public: boolean;
+};
+
+export type WorkflowTimelineStage = {
+  step_number: number;
+  slug: string;
+  name: LocalizedName;
+  color: string | null;
+  status: "completed" | "current" | "delayed" | "upcoming";
+  entered_at: string | null;
+};
+
+export type WorkflowHistoryEntry = {
+  id: number;
+  from: LocalizedName | null;
+  to: LocalizedName | null;
+  by: string | null;
+  notes: string | null;
+  entered_at: string | null;
+};
+
+export type WorkerWorkflow = {
+  worker: { id: number; internal_number: string; tracking_number: string | null; full_name: LocalizedName };
+  current_stage: { step_number: number; slug: string; name: LocalizedName } | null;
+  progress: number;
+  eta: { estimated_completion: string | null; remaining_days: number; confidence: string };
+  is_delayed: boolean;
+  warranty: { started_at: string | null; ends_at: string | null; remaining_days: number };
+  timeline: WorkflowTimelineStage[];
+  history: WorkflowHistoryEntry[];
+};
+
+export type AdminWorkerListItem = {
+  id: number;
+  internal_number: string;
+  tracking_number?: string | null;
+  full_name_ar: string;
+  full_name_en: string;
+  full_name_am: string;
+  reservation_status: string;
+  current_recruitment_stage?: { step_number: number; name_ar: string; name_en: string; name_am: string } | null;
+};
+
+export function fetchWorkflowStages() {
+  return adminRequest<WorkflowStage[]>("/admin/stages");
+}
+
+export function fetchAdminWorkers(q?: string) {
+  const qs = q ? `?q=${encodeURIComponent(q)}&per_page=50` : "?per_page=50";
+  return adminRequest<{ items: AdminWorkerListItem[]; meta: unknown }>(`/admin/workers${qs}`);
+}
+
+export function fetchWorkerWorkflow(workerId: number) {
+  return adminRequest<WorkerWorkflow>(`/admin/workers/${workerId}/workflow`);
+}
+
+export function startWorkerWorkflow(workerId: number) {
+  return adminRequest<WorkerWorkflow>(`/admin/workers/${workerId}/workflow/start`, { method: "POST" });
+}
+
+export function advanceWorkerStage(workerId: number, stageId: number, notes?: string) {
+  return adminRequest<WorkerWorkflow>(`/admin/workers/${workerId}/workflow/advance`, {
+    method: "POST",
+    body: JSON.stringify({ stage_id: stageId, notes: notes || undefined }),
+  });
+}

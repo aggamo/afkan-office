@@ -263,7 +263,8 @@
     "nav": {
       "dashboard": "ዳሽቦርድ",
       "referenceData": "የማጣቀሻ መረጃ",
-      "activity": "የእንቅስቃሴ መዝገብ"
+      "activity": "የእንቅስቃሴ መዝገብ",
+      "workflow": "የሥራ ፍሰት"
     },
     "dashboard": {
       "title": "ዳሽቦርድ",
@@ -383,6 +384,28 @@
         "is_public": "ይፋዊ",
         "sort_order": "ቅደም ተከተል",
         "country_id": "ሀገር"
+      }
+    },
+    "workflow": {
+      "title": "የቅጥር ሥራ ፍሰት",
+      "subtitle": "17ቱን ኦፊሴላዊ የቅጥር ደረጃዎች ያስተዳድሩ እና ይከታተሉ።",
+      "search": "ሰራተኛ ይፈልጉ...",
+      "noWorkers": "ሰራተኞች የሉም።",
+      "currentStage": "የአሁኑ ደረጃ",
+      "eta": "የሚጠበቀው መጨረሻ",
+      "warranty": "ዋስትና",
+      "days": "ቀናት",
+      "delayed": "ዘግይቷል",
+      "start": "የቅጥር ፋይል ጀምር",
+      "moveTo": "ወደ አንቀሳቅስ",
+      "notes": "ማስታወሻ (አማራጭ)",
+      "advance": "ደረጃ አዘምን",
+      "timeline": "የጊዜ መስመር",
+      "history": "የደረጃ ታሪክ",
+      "confidence": {
+        "high": "ከፍተኛ እርግጠኝነት",
+        "medium": "መካከለኛ እርግጠኝነት",
+        "low": "ዝቅተኛ እርግጠኝነት"
       }
     }
   },
