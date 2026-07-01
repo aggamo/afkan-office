@@ -1,0 +1,96 @@
+import { ApiError, type ApiEnvelope } from "@/lib/api";
+import { getAuthToken } from "@/lib/auth-client";
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+
+async function customerRequest<T>(path: string, options: RequestInit = {}): Promise<T> {
+  const token = getAuthToken();
+  const res = await fetch(`${API_BASE_URL}${path}`, {
+    cache: "no-store",
+    ...options,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(options.headers ?? {}),
+    },
+  });
+  const body = (await res.json()) as ApiEnvelope<T>;
+  if (!res.ok || body.status === "error") {
+    throw new ApiError(body.message ?? "Request failed", res.status, body.errors);
+  }
+  return body.data;
+}
+
+export type CustomerDashboard = {
+  active_reservations: number;
+  pending_authorization: number;
+  in_recruitment: number;
+  completed: number;
+  favorites: number;
+};
+
+export type AuthorizationStatus = "none" | "pending" | "accepted" | "rejected";
+export type ReservationStatus = "active" | "converted" | "expired" | "cancelled" | "completed";
+
+export type CustomerReservation = {
+  id: number;
+  uuid: string;
+  worker_id: number;
+  reserved_by_type: "customer" | "agency";
+  status: ReservationStatus;
+  authorization_status: AuthorizationStatus;
+  authorized_agency_id: number | null;
+  reserved_at: string | null;
+  expires_at: string | null;
+  worker?: {
+    id: number;
+    internal_number: string;
+    full_name: { ar: string; en: string; am: string };
+    reservation_status: string;
+  };
+  authorized_agency?: { id: number; name: string; city: string | null; rating: string } | null;
+};
+
+export type CustomerProfile = {
+  name: string;
+  email: string;
+  phone: string | null;
+  national_id: string | null;
+  country: string | null;
+  city: string | null;
+};
+
+export function fetchCustomerDashboard() {
+  return customerRequest<CustomerDashboard>("/customer/dashboard");
+}
+
+export function fetchCustomerReservations() {
+  return customerRequest<CustomerReservation[]>("/customer/reservations");
+}
+
+export function reserveWorker(workerId: number) {
+  return customerRequest<CustomerReservation>("/reservations/customer", {
+    method: "POST",
+    body: JSON.stringify({ worker_id: workerId }),
+  });
+}
+
+export function authorizeReservationAgency(reservationId: number, agencyId: number) {
+  return customerRequest<CustomerReservation>(`/reservations/${reservationId}/authorize`, {
+    method: "POST",
+    body: JSON.stringify({ agency_id: agencyId }),
+  });
+}
+
+export function cancelReservation(reservationId: number) {
+  return customerRequest<CustomerReservation>(`/reservations/${reservationId}/cancel`, { method: "POST" });
+}
+
+export function fetchCustomerProfile() {
+  return customerRequest<CustomerProfile>("/customer/profile");
+}
+
+export function updateCustomerProfile(payload: Partial<Pick<CustomerProfile, "name" | "phone" | "country" | "city">>) {
+  return customerRequest<null>("/customer/profile", { method: "PUT", body: JSON.stringify(payload) });
+}

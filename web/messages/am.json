@@ -25,7 +25,8 @@
     "register": "ተመዝገብ",
     "requestWorker": "ሰራተኛ ይጠይቁ",
     "favorites": "ተወዳጆች",
-    "admin": "የአስተዳደር ፓነል"
+    "admin": "የአስተዳደር ፓነል",
+    "account": "መለያዬ"
   },
   "home": {
     "hero": {
@@ -46,12 +47,30 @@
     },
     "why": {
       "title": "ለምን አፍካንን ይምረጡ",
-      "licensed": { "title": "ፈቃድ ያለው ኤጀንሲ", "desc": "ከኢትዮጵያ መንግስት ሙሉ ፈቃድ ያለው።" },
-      "verified": { "title": "የተረጋገጡ ሰራተኞች", "desc": "እያንዳንዱ የሰራተኛ መረጃ የተረጋገጠ ነው።" },
-      "transparent": { "title": "ግልጽ ሂደት", "desc": "ከመያዝ እስከ መድረሻ ግልጽ ደረጃዎች።" },
-      "fast": { "title": "ፈጣን ቅጥር", "desc": "የተደራጀ ስርዓት ጊዜን ይቀንሳል።" },
-      "support": { "title": "ሙያዊ ድጋፍ", "desc": "በሙሉ ሂደቱ የተወሰነ ድጋፍ ቡድን።" },
-      "secure": { "title": "ደህንነቱ የተጠበቀ ሰነድ አስተዳደር", "desc": "ሁሉም ሰነዶች በሚስጥራዊነት ይያዛሉ።" }
+      "licensed": {
+        "title": "ፈቃድ ያለው ኤጀንሲ",
+        "desc": "ከኢትዮጵያ መንግስት ሙሉ ፈቃድ ያለው።"
+      },
+      "verified": {
+        "title": "የተረጋገጡ ሰራተኞች",
+        "desc": "እያንዳንዱ የሰራተኛ መረጃ የተረጋገጠ ነው።"
+      },
+      "transparent": {
+        "title": "ግልጽ ሂደት",
+        "desc": "ከመያዝ እስከ መድረሻ ግልጽ ደረጃዎች።"
+      },
+      "fast": {
+        "title": "ፈጣን ቅጥር",
+        "desc": "የተደራጀ ስርዓት ጊዜን ይቀንሳል።"
+      },
+      "support": {
+        "title": "ሙያዊ ድጋፍ",
+        "desc": "በሙሉ ሂደቱ የተወሰነ ድጋፍ ቡድን።"
+      },
+      "secure": {
+        "title": "ደህንነቱ የተጠበቀ ሰነድ አስተዳደር",
+        "desc": "ሁሉም ሰነዶች በሚስጥራዊነት ይያዛሉ።"
+      }
     },
     "services": {
       "title": "አገልግሎቶቻችን",
@@ -80,8 +99,12 @@
       "title": "የስራ ተባባሪ ኤጀንሲዎች",
       "viewAgency": "ኤጀንሲ ይዩ"
     },
-    "testimonials": { "title": "የደንበኞች አስተያየት" },
-    "faq": { "title": "ተደጋጋሚ ጥያቄዎች" },
+    "testimonials": {
+      "title": "የደንበኞች አስተያየት"
+    },
+    "faq": {
+      "title": "ተደጋጋሚ ጥያቄዎች"
+    },
     "cta": {
       "title": "ቅጥር ለመጀመር ዝግጁ ነዎት?",
       "browse": "ሰራተኞችን ይዩ",
@@ -231,7 +254,11 @@
     "loginCta": "ግባ",
     "accessDenied": "ይህን ገጽ ለመድረስ ፈቃድ የለዎትም።",
     "backHome": "ወደ መነሻ ተመለስ",
-    "nav": { "dashboard": "ዳሽቦርድ", "referenceData": "የማጣቀሻ መረጃ", "activity": "የእንቅስቃሴ መዝገብ" },
+    "nav": {
+      "dashboard": "ዳሽቦርድ",
+      "referenceData": "የማጣቀሻ መረጃ",
+      "activity": "የእንቅስቃሴ መዝገብ"
+    },
     "dashboard": {
       "title": "ዳሽቦርድ",
       "subtitle": "የመድረኩ አፈጻጸም ቀጥታ አጠቃላይ እይታ።",
@@ -278,8 +305,15 @@
         "customers": "ደንበኞች",
         "employees": "ሰራተኞች"
       },
-      "monthly": { "workersCreated": "አዲስ ሰራተኞች", "completed": "የተጠናቀቁ ጉዳዮች" },
-      "agency": { "activeReservations": "ንቁ ማስያዣዎች", "completedCases": "የተጠናቀቁ ጉዳዮች", "rating": "ደረጃ" },
+      "monthly": {
+        "workersCreated": "አዲስ ሰራተኞች",
+        "completed": "የተጠናቀቁ ጉዳዮች"
+      },
+      "agency": {
+        "activeReservations": "ንቁ ማስያዣዎች",
+        "completedCases": "የተጠናቀቁ ጉዳዮች",
+        "rating": "ደረጃ"
+      },
       "quick": {
         "referenceData": "የማጣቀሻ መረጃ",
         "viewActivity": "የእንቅስቃሴ መዝገብ",
@@ -344,6 +378,82 @@
         "sort_order": "ቅደም ተከተል",
         "country_id": "ሀገር"
       }
+    }
+  },
+  "customer": {
+    "title": "የእኔ መለያ",
+    "loading": "በመጫን ላይ...",
+    "loginRequired": "መለያዎን ለመድረስ መግባት አለብዎት።",
+    "loginCta": "ግባ",
+    "accessDenied": "ይህ ገጽ ለደንበኞች ብቻ ነው።",
+    "backHome": "ወደ መነሻ ተመለስ",
+    "nav": {
+      "dashboard": "ዳሽቦርድ",
+      "reservations": "ማስያዣዎቼ",
+      "profile": "የግል መገለጫዬ"
+    },
+    "dashboard": {
+      "welcome": "እንኳን ደህና መጡ",
+      "subtitle": "ማስያዣዎችዎን እና ቅጥርዎን ከአንድ ቦታ ይከታተሉ።",
+      "activeReservations": "ንቁ ማስያዣዎች",
+      "pendingAuthorization": "የኤጀንሲ ምላሽ በመጠባበቅ ላይ",
+      "inRecruitment": "በቅጥር ሂደት",
+      "completed": "የተጠናቀቀ",
+      "favorites": "ተወዳጆች",
+      "quick": {
+        "browse": "ሰራተኞችን ይዩ",
+        "reservations": "ማስያዣዎቼ",
+        "favorites": "ተወዳጆች",
+        "profile": "መገለጫዬ"
+      }
+    },
+    "reservations": {
+      "title": "ማስያዣዎቼ",
+      "empty": "እስካሁን ማስያዣ የለም።",
+      "browse": "ሰራተኞችን ይዩ",
+      "status": {
+        "active": "ንቁ",
+        "converted": "ለኤጀንሲ ተላልፏል",
+        "expired": "ጊዜው አልፎበታል",
+        "cancelled": "ተሰርዟል",
+        "completed": "ተጠናቅቋል"
+      },
+      "authStatus": {
+        "none": "ኤጀንሲ አልተመረጠም",
+        "pending": "የኤጀንሲ ምላሽ በመጠባበቅ ላይ",
+        "accepted": "ኤጀንሲው ተቀብሏል",
+        "rejected": "ኤጀንሲው አልተቀበለም"
+      },
+      "expiresIn": "የሚያበቃው በ",
+      "expired": "ጊዜው አልፏል",
+      "selectAgency": "የተመሰከረለት የቅጥር ኤጀንሲ ይምረጡ",
+      "selectAgencyHint": "ካስያዙ በኋላ ቅጥሩን ለማጠናቀቅ የተመሰከረለት የሳዑዲ ኤጀንሲ መምረጥ አለብዎት።",
+      "chooseAgencyPlaceholder": "— ኤጀንሲ ይምረጡ —",
+      "authorize": "ኤጀንሲ ፍቀድ",
+      "authorizing": "በመፍቀድ ላይ...",
+      "authorizedTo": "የተፈቀደ ኤጀንሲ",
+      "awaitingResponse": "ኤጀንሲው ለጥያቄዎ ምላሽ እስኪሰጥ በመጠባበቅ ላይ።",
+      "rejectedRetry": "ኤጀንሲው አልተቀበለም፤ ሌላ ኤጀንሲ መምረጥ ይችላሉ።",
+      "acceptedInfo": "ኤጀንሲው ጥያቄዎን ተቀብሎ ቅጥሩ ተጀምሯል።",
+      "changeAgency": "ኤጀንሲ ቀይር",
+      "cancel": "ማስያዣ ሰርዝ",
+      "cancelConfirm": "መሰረዙን ያረጋግጡ?",
+      "confirm": "አረጋግጥ",
+      "back": "ተመለስ",
+      "rating": "ደረጃ",
+      "completedCases": "የተጠናቀቁ ጉዳዮች"
+    },
+    "profile": {
+      "title": "የግል መገለጫዬ",
+      "name": "ስም",
+      "email": "ኢሜይል",
+      "phone": "ስልክ",
+      "country": "ሀገር",
+      "city": "ከተማ",
+      "nationalId": "የመታወቂያ ቁጥር",
+      "save": "አስቀምጥ",
+      "saving": "በማስቀመጥ ላይ...",
+      "saved": "ለውጦች ተቀምጠዋል"
     }
   }
 }

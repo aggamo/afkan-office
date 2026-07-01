@@ -25,7 +25,8 @@
     "register": "إنشاء حساب",
     "requestWorker": "طلب عاملة",
     "favorites": "المفضلة",
-    "admin": "لوحة الإدارة"
+    "admin": "لوحة الإدارة",
+    "account": "حسابي"
   },
   "home": {
     "hero": {
@@ -46,12 +47,30 @@
     },
     "why": {
       "title": "لماذا تختار أفكان",
-      "licensed": { "title": "مكتب مرخّص", "desc": "مرخّص بالكامل من الحكومة الإثيوبية." },
-      "verified": { "title": "عاملات موثقات", "desc": "كل ملف عاملة موثّق ومُحقق منه." },
-      "transparent": { "title": "إجراءات شفافة", "desc": "مراحل واضحة من الحجز حتى الوصول." },
-      "fast": { "title": "استقدام سريع", "desc": "إجراءات منظمة تقلل زمن المعالجة." },
-      "support": { "title": "دعم متخصص", "desc": "فريق دعم مخصص خلال كل الرحلة." },
-      "secure": { "title": "حفظ آمن للوثائق", "desc": "كل الوثائق تُعامل بسرية تامة." }
+      "licensed": {
+        "title": "مكتب مرخّص",
+        "desc": "مرخّص بالكامل من الحكومة الإثيوبية."
+      },
+      "verified": {
+        "title": "عاملات موثقات",
+        "desc": "كل ملف عاملة موثّق ومُحقق منه."
+      },
+      "transparent": {
+        "title": "إجراءات شفافة",
+        "desc": "مراحل واضحة من الحجز حتى الوصول."
+      },
+      "fast": {
+        "title": "استقدام سريع",
+        "desc": "إجراءات منظمة تقلل زمن المعالجة."
+      },
+      "support": {
+        "title": "دعم متخصص",
+        "desc": "فريق دعم مخصص خلال كل الرحلة."
+      },
+      "secure": {
+        "title": "حفظ آمن للوثائق",
+        "desc": "كل الوثائق تُعامل بسرية تامة."
+      }
     },
     "services": {
       "title": "خدماتنا",
@@ -80,8 +99,12 @@
       "title": "المكاتب الشريكة",
       "viewAgency": "عرض المكتب"
     },
-    "testimonials": { "title": "آراء عملائنا" },
-    "faq": { "title": "الأسئلة الشائعة" },
+    "testimonials": {
+      "title": "آراء عملائنا"
+    },
+    "faq": {
+      "title": "الأسئلة الشائعة"
+    },
     "cta": {
       "title": "مستعد لبدء الاستقدام؟",
       "browse": "تصفح العاملات",
@@ -231,7 +254,11 @@
     "loginCta": "تسجيل الدخول",
     "accessDenied": "ليس لديك صلاحية الوصول إلى هذه الصفحة.",
     "backHome": "العودة إلى الرئيسية",
-    "nav": { "dashboard": "الرئيسية", "referenceData": "البيانات المرجعية", "activity": "سجل النشاط" },
+    "nav": {
+      "dashboard": "الرئيسية",
+      "referenceData": "البيانات المرجعية",
+      "activity": "سجل النشاط"
+    },
     "dashboard": {
       "title": "لوحة التحكم",
       "subtitle": "نظرة شاملة على أداء المنصة في الوقت الفعلي.",
@@ -278,8 +305,15 @@
         "customers": "العملاء",
         "employees": "الموظفون"
       },
-      "monthly": { "workersCreated": "عاملات جديدة", "completed": "حالات مكتملة" },
-      "agency": { "activeReservations": "حجوزات نشطة", "completedCases": "حالات مكتملة", "rating": "التقييم" },
+      "monthly": {
+        "workersCreated": "عاملات جديدة",
+        "completed": "حالات مكتملة"
+      },
+      "agency": {
+        "activeReservations": "حجوزات نشطة",
+        "completedCases": "حالات مكتملة",
+        "rating": "التقييم"
+      },
       "quick": {
         "referenceData": "البيانات المرجعية",
         "viewActivity": "سجل النشاط",
@@ -344,6 +378,82 @@
         "sort_order": "الترتيب",
         "country_id": "الدولة"
       }
+    }
+  },
+  "customer": {
+    "title": "حسابي",
+    "loading": "جارٍ التحميل...",
+    "loginRequired": "يجب تسجيل الدخول للوصول إلى حسابك.",
+    "loginCta": "تسجيل الدخول",
+    "accessDenied": "هذه الصفحة مخصصة للعملاء فقط.",
+    "backHome": "العودة إلى الرئيسية",
+    "nav": {
+      "dashboard": "لوحتي",
+      "reservations": "حجوزاتي",
+      "profile": "ملفي الشخصي"
+    },
+    "dashboard": {
+      "welcome": "مرحباً بك",
+      "subtitle": "تابع حجوزاتك واستقداماتك من مكان واحد.",
+      "activeReservations": "حجوزات نشطة",
+      "pendingAuthorization": "بانتظار موافقة المكتب",
+      "inRecruitment": "قيد الاستقدام",
+      "completed": "مكتملة",
+      "favorites": "المفضلة",
+      "quick": {
+        "browse": "تصفح العاملات",
+        "reservations": "حجوزاتي",
+        "favorites": "المفضلة",
+        "profile": "ملفي"
+      }
+    },
+    "reservations": {
+      "title": "حجوزاتي",
+      "empty": "لا توجد حجوزات بعد.",
+      "browse": "تصفح العاملات",
+      "status": {
+        "active": "نشط",
+        "converted": "محوّل لمكتب",
+        "expired": "منتهٍ",
+        "cancelled": "ملغى",
+        "completed": "مكتمل"
+      },
+      "authStatus": {
+        "none": "لم يُختر مكتب",
+        "pending": "بانتظار موافقة المكتب",
+        "accepted": "قبل المكتب",
+        "rejected": "رفض المكتب"
+      },
+      "expiresIn": "ينتهي خلال",
+      "expired": "انتهت المدة",
+      "selectAgency": "اختر مكتب استقدام معتمد",
+      "selectAgencyHint": "بعد الحجز يجب اختيار مكتب سعودي معتمد لإتمام الاستقدام.",
+      "chooseAgencyPlaceholder": "— اختر مكتباً —",
+      "authorize": "تفويض المكتب",
+      "authorizing": "جارٍ التفويض...",
+      "authorizedTo": "المكتب المفوّض",
+      "awaitingResponse": "بانتظار رد المكتب على طلبك.",
+      "rejectedRetry": "اعتذر المكتب، يمكنك اختيار مكتب آخر.",
+      "acceptedInfo": "قبل المكتب طلبك وبدأ الاستقدام.",
+      "changeAgency": "تغيير المكتب",
+      "cancel": "إلغاء الحجز",
+      "cancelConfirm": "تأكيد إلغاء الحجز؟",
+      "confirm": "تأكيد",
+      "back": "رجوع",
+      "rating": "التقييم",
+      "completedCases": "حالات مكتملة"
+    },
+    "profile": {
+      "title": "ملفي الشخصي",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "country": "الدولة",
+      "city": "المدينة",
+      "nationalId": "رقم الهوية",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ...",
+      "saved": "تم حفظ التغييرات"
     }
   }
 }

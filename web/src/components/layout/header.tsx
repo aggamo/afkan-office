@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X, Heart, Shield } from "lucide-react";
+import { Menu, X, Heart, Shield, UserCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getAuthRole } from "@/lib/auth-client";
 import { LanguageSwitcher } from "./language-switcher";
@@ -23,6 +23,7 @@ export function Header() {
   const t = useTranslations("nav");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isStaff, setIsStaff] = useState(false);
+  const [isCustomer, setIsCustomer] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,6 +32,7 @@ export function Header() {
       if (cancelled) return;
       const role = getAuthRole();
       setIsStaff(role !== null && STAFF_ROLES.includes(role));
+      setIsCustomer(role === "customer");
     }
     syncRole();
     window.addEventListener("afkan-auth-changed", syncRole);
@@ -65,6 +67,12 @@ export function Header() {
             <Link href="/admin" className="flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
               <Shield size={18} />
               {t("admin")}
+            </Link>
+          )}
+          {isCustomer && (
+            <Link href="/customer" className="flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+              <UserCircle size={18} />
+              {t("account")}
             </Link>
           )}
           <Link href="/favorites" aria-label="favorites" className="text-brand-dark hover:text-brand-green">
@@ -111,6 +119,11 @@ export function Header() {
             {isStaff && (
               <Link href="/admin" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-green">
                 {t("admin")}
+              </Link>
+            )}
+            {isCustomer && (
+              <Link href="/customer" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-green">
+                {t("account")}
               </Link>
             )}
             <Link href="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">

@@ -25,7 +25,8 @@
     "register": "Register",
     "requestWorker": "Request a Worker",
     "favorites": "Favorites",
-    "admin": "Admin Panel"
+    "admin": "Admin Panel",
+    "account": "My Account"
   },
   "home": {
     "hero": {
@@ -46,12 +47,30 @@
     },
     "why": {
       "title": "Why Choose Afkan",
-      "licensed": { "title": "Licensed Agency", "desc": "Fully licensed by the Ethiopian government." },
-      "verified": { "title": "Verified Workers", "desc": "Every worker profile is verified and documented." },
-      "transparent": { "title": "Transparent Process", "desc": "Clear stages from reservation to arrival." },
-      "fast": { "title": "Fast Recruitment", "desc": "Streamlined workflow reduces processing time." },
-      "support": { "title": "Professional Support", "desc": "Dedicated support throughout the journey." },
-      "secure": { "title": "Secure Documentation", "desc": "All documents handled with strict confidentiality." }
+      "licensed": {
+        "title": "Licensed Agency",
+        "desc": "Fully licensed by the Ethiopian government."
+      },
+      "verified": {
+        "title": "Verified Workers",
+        "desc": "Every worker profile is verified and documented."
+      },
+      "transparent": {
+        "title": "Transparent Process",
+        "desc": "Clear stages from reservation to arrival."
+      },
+      "fast": {
+        "title": "Fast Recruitment",
+        "desc": "Streamlined workflow reduces processing time."
+      },
+      "support": {
+        "title": "Professional Support",
+        "desc": "Dedicated support throughout the journey."
+      },
+      "secure": {
+        "title": "Secure Documentation",
+        "desc": "All documents handled with strict confidentiality."
+      }
     },
     "services": {
       "title": "Our Services",
@@ -80,8 +99,12 @@
       "title": "Partner Agencies",
       "viewAgency": "View Agency"
     },
-    "testimonials": { "title": "Customer Testimonials" },
-    "faq": { "title": "Frequently Asked Questions" },
+    "testimonials": {
+      "title": "Customer Testimonials"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    },
     "cta": {
       "title": "Ready to Start Recruitment?",
       "browse": "Browse Workers",
@@ -231,7 +254,11 @@
     "loginCta": "Log In",
     "accessDenied": "You do not have permission to access this page.",
     "backHome": "Back to Home",
-    "nav": { "dashboard": "Dashboard", "referenceData": "Reference Data", "activity": "Activity Log" },
+    "nav": {
+      "dashboard": "Dashboard",
+      "referenceData": "Reference Data",
+      "activity": "Activity Log"
+    },
     "dashboard": {
       "title": "Dashboard",
       "subtitle": "Real-time overview of platform performance.",
@@ -278,8 +305,15 @@
         "customers": "Customers",
         "employees": "Staff"
       },
-      "monthly": { "workersCreated": "New Workers", "completed": "Completed Cases" },
-      "agency": { "activeReservations": "Active Reservations", "completedCases": "Completed Cases", "rating": "Rating" },
+      "monthly": {
+        "workersCreated": "New Workers",
+        "completed": "Completed Cases"
+      },
+      "agency": {
+        "activeReservations": "Active Reservations",
+        "completedCases": "Completed Cases",
+        "rating": "Rating"
+      },
       "quick": {
         "referenceData": "Reference Data",
         "viewActivity": "Activity Log",
@@ -344,6 +378,82 @@
         "sort_order": "Order",
         "country_id": "Country"
       }
+    }
+  },
+  "customer": {
+    "title": "My Account",
+    "loading": "Loading...",
+    "loginRequired": "You must be logged in to access your account.",
+    "loginCta": "Log In",
+    "accessDenied": "This page is for customers only.",
+    "backHome": "Back to Home",
+    "nav": {
+      "dashboard": "Dashboard",
+      "reservations": "My Reservations",
+      "profile": "My Profile"
+    },
+    "dashboard": {
+      "welcome": "Welcome",
+      "subtitle": "Track your reservations and recruitment in one place.",
+      "activeReservations": "Active Reservations",
+      "pendingAuthorization": "Awaiting Agency Response",
+      "inRecruitment": "In Recruitment",
+      "completed": "Completed",
+      "favorites": "Favorites",
+      "quick": {
+        "browse": "Browse Workers",
+        "reservations": "My Reservations",
+        "favorites": "Favorites",
+        "profile": "My Profile"
+      }
+    },
+    "reservations": {
+      "title": "My Reservations",
+      "empty": "No reservations yet.",
+      "browse": "Browse Workers",
+      "status": {
+        "active": "Active",
+        "converted": "Handed to Agency",
+        "expired": "Expired",
+        "cancelled": "Cancelled",
+        "completed": "Completed"
+      },
+      "authStatus": {
+        "none": "No agency chosen",
+        "pending": "Awaiting agency response",
+        "accepted": "Agency accepted",
+        "rejected": "Agency declined"
+      },
+      "expiresIn": "Expires in",
+      "expired": "Expired",
+      "selectAgency": "Select an approved recruitment agency",
+      "selectAgencyHint": "After reserving you must choose an approved Saudi agency to complete the recruitment.",
+      "chooseAgencyPlaceholder": "— Choose an agency —",
+      "authorize": "Authorize Agency",
+      "authorizing": "Authorizing...",
+      "authorizedTo": "Authorized agency",
+      "awaitingResponse": "Awaiting the agency's response to your request.",
+      "rejectedRetry": "The agency declined; you may choose another agency.",
+      "acceptedInfo": "The agency accepted your request and recruitment has started.",
+      "changeAgency": "Change Agency",
+      "cancel": "Cancel Reservation",
+      "cancelConfirm": "Confirm cancellation?",
+      "confirm": "Confirm",
+      "back": "Back",
+      "rating": "Rating",
+      "completedCases": "Completed Cases"
+    },
+    "profile": {
+      "title": "My Profile",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "country": "Country",
+      "city": "City",
+      "nationalId": "National ID",
+      "save": "Save",
+      "saving": "Saving...",
+      "saved": "Changes saved"
     }
   }
 }

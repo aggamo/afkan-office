@@ -1,20 +1,44 @@
 "use client";
 
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, ArrowLeft, Share2, Printer } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { AvatarPlaceholder } from "@/components/ui/avatar-placeholder";
 import { ReservationBadge } from "@/components/ui/reservation-badge";
+import { ApiError } from "@/lib/api";
+import { getAuthRole, getAuthToken } from "@/lib/auth-client";
+import { reserveWorker } from "@/lib/customer-api";
 import type { Locale } from "@/i18n/config";
 import type { Worker } from "@/types/worker";
 
 export function WorkerProfileView({ worker, backLabel }: { worker: Worker; backLabel: string }) {
   const t = useTranslations("workerProfile");
   const locale = useLocale() as Locale;
+  const router = useRouter();
   const isRtl = locale === "ar";
   const BackIcon = isRtl ? ArrowRight : ArrowLeft;
 
-  const reserveDisabled = worker.reservationStatus !== "available";
+  const [reserving, setReserving] = useState(false);
+  const [reserveError, setReserveError] = useState<string | null>(null);
+
+  const reserveDisabled = worker.reservationStatus !== "available" || reserving;
+
+  async function handleReserve() {
+    if (!getAuthToken() || getAuthRole() !== "customer") {
+      router.push("/login");
+      return;
+    }
+    setReserving(true);
+    setReserveError(null);
+    try {
+      await reserveWorker(Number(worker.id));
+      router.push("/customer/reservations");
+    } catch (err) {
+      setReserveError(err instanceof ApiError ? err.message : "error");
+      setReserving(false);
+    }
+  }
 
   return (
     <div>
@@ -36,6 +60,7 @@ export function WorkerProfileView({ worker, backLabel }: { worker: Worker; backL
 
           <button
             type="button"
+            onClick={handleReserve}
             disabled={reserveDisabled}
             className={`mt-4 w-full rounded-md px-4 py-3 text-sm font-semibold text-white ${
               reserveDisabled ? "cursor-not-allowed bg-gray-300" : "bg-brand-green hover:bg-brand-green-dark"
@@ -43,6 +68,7 @@ export function WorkerProfileView({ worker, backLabel }: { worker: Worker; backL
           >
             {t("reserve")}
           </button>
+          {reserveError && <p className="mt-2 text-sm text-red-600">{reserveError}</p>}
 
           <div className="mt-3 flex gap-2">
             <button type="button" className="flex flex-1 items-center justify-center gap-1.5 rounded-md border border-gray-200 py-2 text-sm text-brand-dark hover:bg-brand-light">
