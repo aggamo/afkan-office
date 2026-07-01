@@ -1,12 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Database, LayoutDashboard } from "lucide-react";
+import { Activity, Database, LayoutDashboard } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { href: "/admin", key: "dashboard", icon: LayoutDashboard, exact: true },
   { href: "/admin/reference", key: "referenceData", icon: Database, exact: false },
+  { href: "/admin/activity", key: "activity", icon: Activity, exact: false },
 ] as const;
 
 export function AdminShell({ children }: { children: React.ReactNode }) {

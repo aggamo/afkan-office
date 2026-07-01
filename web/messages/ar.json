@@ -231,7 +231,79 @@
     "loginCta": "تسجيل الدخول",
     "accessDenied": "ليس لديك صلاحية الوصول إلى هذه الصفحة.",
     "backHome": "العودة إلى الرئيسية",
-    "nav": { "dashboard": "الرئيسية", "referenceData": "البيانات المرجعية" },
+    "nav": { "dashboard": "الرئيسية", "referenceData": "البيانات المرجعية", "activity": "سجل النشاط" },
+    "dashboard": {
+      "title": "لوحة التحكم",
+      "subtitle": "نظرة شاملة على أداء المنصة في الوقت الفعلي.",
+      "sections": {
+        "workers": "العاملات",
+        "reservations": "الحجوزات",
+        "finance": "المالية",
+        "entities": "الكيانات",
+        "workerStatus": "توزيع حالات العاملات",
+        "monthly": "الاتجاه الشهري",
+        "topAgencies": "أكثر المكاتب نشاطاً",
+        "recentActivity": "النشاط الأخير",
+        "quickActions": "إجراءات سريعة"
+      },
+      "workers": {
+        "total": "إجمالي العاملات",
+        "available": "متاحة",
+        "reserved_customer": "محجوزة من عميل",
+        "reserved_agency": "محجوزة من مكتب",
+        "hired": "قيد الاستقدام",
+        "unavailable": "غير متاحة",
+        "published": "منشورة",
+        "unpublished": "غير منشورة"
+      },
+      "reservations": {
+        "active": "حجوزات نشطة",
+        "activeCustomer": "نشطة (عملاء)",
+        "activeAgency": "نشطة (مكاتب)",
+        "createdToday": "حجوزات اليوم",
+        "expiringToday": "تنتهي اليوم",
+        "expiredTotal": "منتهية (الإجمالي)",
+        "convertedTotal": "محوّلة إلى مكتب",
+        "conversionRate": "نسبة التحويل"
+      },
+      "finance": {
+        "outstanding": "فواتير مستحقة",
+        "paidThisMonth": "مدفوعة هذا الشهر",
+        "revenueTotal": "إجمالي الإيرادات",
+        "drafts": "مسودات"
+      },
+      "entities": {
+        "agencies": "المكاتب",
+        "verified": "موثّقة",
+        "customers": "العملاء",
+        "employees": "الموظفون"
+      },
+      "monthly": { "workersCreated": "عاملات جديدة", "completed": "حالات مكتملة" },
+      "agency": { "activeReservations": "حجوزات نشطة", "completedCases": "حالات مكتملة", "rating": "التقييم" },
+      "quick": {
+        "referenceData": "البيانات المرجعية",
+        "viewActivity": "سجل النشاط",
+        "browseWorkers": "تصفح العاملات",
+        "invoices": "الفواتير"
+      },
+      "noActivity": "لا يوجد نشاط بعد.",
+      "empty": "لا توجد بيانات."
+    },
+    "activity": {
+      "title": "سجل النشاط",
+      "subtitle": "سجل تدقيق دائم لكل العمليات المهمة.",
+      "action": "العملية",
+      "type": "النوع",
+      "user": "المستخدم",
+      "ip": "عنوان IP",
+      "date": "التاريخ",
+      "empty": "لا يوجد نشاط مسجل.",
+      "system": "النظام",
+      "filterPlaceholder": "تصفية حسب العملية...",
+      "prev": "السابق",
+      "next": "التالي",
+      "page": "صفحة {page} من {total}"
+    },
     "reference": {
       "title": "البيانات المرجعية",
       "subtitle": "إدارة القوائم الأساسية: الدول والمدن واللغات والمهارات وأنواع العاملات وأنواع الوثائق وقنوات الإشعارات.",

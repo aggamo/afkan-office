@@ -87,3 +87,74 @@ export function reorderReference(resource: string, order: number[]) {
     body: JSON.stringify({ order }),
   });
 }
+
+// ---- Dashboard & Activity ----
+
+export type ActivityLog = {
+  id: number;
+  action: string;
+  auditable_type: string;
+  auditable_id: number | null;
+  user: string | null;
+  ip_address: string | null;
+  created_at: string | null;
+};
+
+export type DashboardData = {
+  workers: {
+    total: number;
+    available: number;
+    reserved_customer: number;
+    reserved_agency: number;
+    hired: number;
+    unavailable: number;
+    published: number;
+    unpublished: number;
+  };
+  reservations: {
+    active: number;
+    active_customer: number;
+    active_agency: number;
+    created_today: number;
+    expiring_today: number;
+    expired_total: number;
+    converted_total: number;
+    conversion_rate: number;
+  };
+  finance: {
+    currency: string;
+    outstanding_count: number;
+    outstanding_amount: number;
+    paid_this_month_count: number;
+    paid_this_month_amount: number;
+    revenue_total: number;
+    draft_count: number;
+  };
+  entities: {
+    agencies: number;
+    agencies_verified: number;
+    customers: number;
+    employees: number;
+  };
+  charts: {
+    worker_status: { key: string; count: number }[];
+    monthly: { month: string; workers_created: number; completed: number }[];
+    top_agencies: { id: number; name: string; completed_cases: number; rating: number; active_reservations: number }[];
+  };
+  recent_activity: ActivityLog[];
+};
+
+export type ActivityPage = {
+  items: ActivityLog[];
+  meta: { current_page: number; per_page: number; total: number; last_page: number };
+};
+
+export function fetchDashboard() {
+  return adminRequest<DashboardData>("/admin/dashboard");
+}
+
+export function fetchActivity(page = 1, perPage = 25, action?: string) {
+  const params = new URLSearchParams({ page: String(page), per_page: String(perPage) });
+  if (action) params.set("action", action);
+  return adminRequest<ActivityPage>(`/admin/activity?${params.toString()}`);
+}

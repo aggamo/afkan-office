@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\DashboardController;
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\Api\Admin\ReferenceDataController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
@@ -54,6 +55,9 @@ Route::prefix('v1')->group(function () {
             ->name('worker-documents.download');
 
         Route::middleware('role:employee,super_admin')->prefix('admin')->group(function () {
+            Route::get('/dashboard', [DashboardController::class, 'index']);
+            Route::get('/activity', [DashboardController::class, 'activity']);
+
             Route::get('/workers', [WorkerAdminController::class, 'index']);
             Route::post('/workers', [WorkerAdminController::class, 'store']);
             Route::get('/workers/{worker}', [WorkerAdminController::class, 'show']);

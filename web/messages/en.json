@@ -231,7 +231,79 @@
     "loginCta": "Log In",
     "accessDenied": "You do not have permission to access this page.",
     "backHome": "Back to Home",
-    "nav": { "dashboard": "Dashboard", "referenceData": "Reference Data" },
+    "nav": { "dashboard": "Dashboard", "referenceData": "Reference Data", "activity": "Activity Log" },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Real-time overview of platform performance.",
+      "sections": {
+        "workers": "Workers",
+        "reservations": "Reservations",
+        "finance": "Finance",
+        "entities": "Entities",
+        "workerStatus": "Worker Status Distribution",
+        "monthly": "Monthly Trend",
+        "topAgencies": "Most Active Agencies",
+        "recentActivity": "Recent Activity",
+        "quickActions": "Quick Actions"
+      },
+      "workers": {
+        "total": "Total Workers",
+        "available": "Available",
+        "reserved_customer": "Reserved by Customer",
+        "reserved_agency": "Reserved by Agency",
+        "hired": "In Recruitment",
+        "unavailable": "Unavailable",
+        "published": "Published",
+        "unpublished": "Unpublished"
+      },
+      "reservations": {
+        "active": "Active Reservations",
+        "activeCustomer": "Active (Customers)",
+        "activeAgency": "Active (Agencies)",
+        "createdToday": "Created Today",
+        "expiringToday": "Expiring Today",
+        "expiredTotal": "Expired (Total)",
+        "convertedTotal": "Converted to Agency",
+        "conversionRate": "Conversion Rate"
+      },
+      "finance": {
+        "outstanding": "Outstanding Invoices",
+        "paidThisMonth": "Paid This Month",
+        "revenueTotal": "Total Revenue",
+        "drafts": "Drafts"
+      },
+      "entities": {
+        "agencies": "Agencies",
+        "verified": "Verified",
+        "customers": "Customers",
+        "employees": "Staff"
+      },
+      "monthly": { "workersCreated": "New Workers", "completed": "Completed Cases" },
+      "agency": { "activeReservations": "Active Reservations", "completedCases": "Completed Cases", "rating": "Rating" },
+      "quick": {
+        "referenceData": "Reference Data",
+        "viewActivity": "Activity Log",
+        "browseWorkers": "Browse Workers",
+        "invoices": "Invoices"
+      },
+      "noActivity": "No activity yet.",
+      "empty": "No data."
+    },
+    "activity": {
+      "title": "Activity Log",
+      "subtitle": "Permanent audit trail of every important operation.",
+      "action": "Action",
+      "type": "Type",
+      "user": "User",
+      "ip": "IP Address",
+      "date": "Date",
+      "empty": "No recorded activity.",
+      "system": "System",
+      "filterPlaceholder": "Filter by action...",
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {page} of {total}"
+    },
     "reference": {
       "title": "Reference Data",
       "subtitle": "Manage the core lists: countries, cities, languages, skills, worker types, document types, notification channels.",

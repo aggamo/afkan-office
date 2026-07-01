@@ -231,7 +231,79 @@
     "loginCta": "ግባ",
     "accessDenied": "ይህን ገጽ ለመድረስ ፈቃድ የለዎትም።",
     "backHome": "ወደ መነሻ ተመለስ",
-    "nav": { "dashboard": "ዳሽቦርድ", "referenceData": "የማጣቀሻ መረጃ" },
+    "nav": { "dashboard": "ዳሽቦርድ", "referenceData": "የማጣቀሻ መረጃ", "activity": "የእንቅስቃሴ መዝገብ" },
+    "dashboard": {
+      "title": "ዳሽቦርድ",
+      "subtitle": "የመድረኩ አፈጻጸም ቀጥታ አጠቃላይ እይታ።",
+      "sections": {
+        "workers": "ሰራተኞች",
+        "reservations": "ማስያዣዎች",
+        "finance": "ፋይናንስ",
+        "entities": "አካላት",
+        "workerStatus": "የሰራተኛ ሁኔታ ስርጭት",
+        "monthly": "ወርሃዊ አዝማሚያ",
+        "topAgencies": "እጅግ ንቁ ኤጀንሲዎች",
+        "recentActivity": "የቅርብ ጊዜ እንቅስቃሴ",
+        "quickActions": "ፈጣን ድርጊቶች"
+      },
+      "workers": {
+        "total": "ጠቅላላ ሰራተኞች",
+        "available": "ዝግጁ",
+        "reserved_customer": "በደንበኛ ተይዟል",
+        "reserved_agency": "በኤጀንሲ ተይዟል",
+        "hired": "በቅጥር ሂደት",
+        "unavailable": "የማይገኝ",
+        "published": "የታተመ",
+        "unpublished": "ያልታተመ"
+      },
+      "reservations": {
+        "active": "ንቁ ማስያዣዎች",
+        "activeCustomer": "ንቁ (ደንበኞች)",
+        "activeAgency": "ንቁ (ኤጀንሲዎች)",
+        "createdToday": "ዛሬ የተፈጠሩ",
+        "expiringToday": "ዛሬ የሚያበቁ",
+        "expiredTotal": "ያለፉ (ጠቅላላ)",
+        "convertedTotal": "ወደ ኤጀንሲ የተቀየሩ",
+        "conversionRate": "የመቀየር መጠን"
+      },
+      "finance": {
+        "outstanding": "ያልተከፈሉ ደረሰኞች",
+        "paidThisMonth": "በዚህ ወር የተከፈለ",
+        "revenueTotal": "ጠቅላላ ገቢ",
+        "drafts": "ረቂቆች"
+      },
+      "entities": {
+        "agencies": "ኤጀንሲዎች",
+        "verified": "የተረጋገጠ",
+        "customers": "ደንበኞች",
+        "employees": "ሰራተኞች"
+      },
+      "monthly": { "workersCreated": "አዲስ ሰራተኞች", "completed": "የተጠናቀቁ ጉዳዮች" },
+      "agency": { "activeReservations": "ንቁ ማስያዣዎች", "completedCases": "የተጠናቀቁ ጉዳዮች", "rating": "ደረጃ" },
+      "quick": {
+        "referenceData": "የማጣቀሻ መረጃ",
+        "viewActivity": "የእንቅስቃሴ መዝገብ",
+        "browseWorkers": "ሰራተኞችን ይዩ",
+        "invoices": "ደረሰኞች"
+      },
+      "noActivity": "እስካሁን ምንም እንቅስቃሴ የለም።",
+      "empty": "ምንም መረጃ የለም።"
+    },
+    "activity": {
+      "title": "የእንቅስቃሴ መዝገብ",
+      "subtitle": "የእያንዳንዱ አስፈላጊ ክንውን ቋሚ የኦዲት መዝገብ።",
+      "action": "ድርጊት",
+      "type": "ዓይነት",
+      "user": "ተጠቃሚ",
+      "ip": "IP አድራሻ",
+      "date": "ቀን",
+      "empty": "የተመዘገበ እንቅስቃሴ የለም።",
+      "system": "ሲስተም",
+      "filterPlaceholder": "በድርጊት አጣራ...",
+      "prev": "ቀዳሚ",
+      "next": "ቀጣይ",
+      "page": "ገጽ {page} ከ {total}"
+    },
     "reference": {
       "title": "የማጣቀሻ መረጃ",
       "subtitle": "ዋና ዝርዝሮችን ያስተዳድሩ፦ ሀገራት፣ ከተሞች፣ ቋንቋዎች፣ ችሎታዎች፣ የሰራተኛ ዓይነቶች፣ የሰነድ ዓይነቶች፣ የማሳወቂያ መንገዶች።",
