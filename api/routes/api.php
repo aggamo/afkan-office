@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
+use App\Http\Controllers\Api\Admin\ReferenceDataController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkerDocumentController;
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
@@ -67,6 +68,15 @@ Route::prefix('v1')->group(function () {
             Route::get('/invoices/{invoice}', [AdminInvoiceController::class, 'show']);
             Route::post('/invoices/{invoice}/mark-paid', [AdminInvoiceController::class, 'markPaid']);
             Route::post('/invoices/{invoice}/cancel', [AdminInvoiceController::class, 'cancel']);
+
+            // Dynamic reference (master) data management — one controller for all types.
+            Route::get('/reference', [ReferenceDataController::class, 'resources']);
+            Route::get('/reference/{resource}', [ReferenceDataController::class, 'index']);
+            Route::post('/reference/{resource}', [ReferenceDataController::class, 'store']);
+            Route::put('/reference/{resource}/reorder', [ReferenceDataController::class, 'reorder']);
+            Route::put('/reference/{resource}/{id}', [ReferenceDataController::class, 'update']);
+            Route::post('/reference/{resource}/{id}/toggle', [ReferenceDataController::class, 'toggle']);
+            Route::delete('/reference/{resource}/{id}', [ReferenceDataController::class, 'destroy']);
         });
     });
 });

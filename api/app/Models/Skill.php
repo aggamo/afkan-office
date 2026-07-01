@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\Auditable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 #[Fillable(['slug', 'name_ar', 'name_en', 'name_am', 'is_active', 'sort_order'])]
 class Skill extends Model
 {
+    use Auditable;
+
     protected function casts(): array
     {
         return ['is_active' => 'boolean'];

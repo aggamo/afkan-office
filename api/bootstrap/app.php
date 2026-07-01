@@ -13,10 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->api(prepend: [
-            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-        ]);
-
+        // The SPA authenticates statelessly via `Authorization: Bearer` personal
+        // access tokens (read from JS and sent explicitly), not Sanctum's
+        // cookie/session SPA mode. Enabling EnsureFrontendRequestsAreStateful
+        // here would force CSRF/session on requests coming from the frontend
+        // origin (localhost:3000 is a default stateful domain) and break token
+        // login with 419 CSRF errors, so it is intentionally omitted.
         $middleware->alias([
             'role' => \App\Http\Middleware\EnsureUserHasRole::class,
         ]);

@@ -24,7 +24,8 @@
     "login": "ግባ",
     "register": "ተመዝገብ",
     "requestWorker": "ሰራተኛ ይጠይቁ",
-    "favorites": "ተወዳጆች"
+    "favorites": "ተወዳጆች",
+    "admin": "የአስተዳደር ፓነል"
   },
   "home": {
     "hero": {
@@ -219,6 +220,58 @@
       "education": "የትምህርት ደረጃ",
       "readinessScore": "የዝግጁነት ደረጅ",
       "reservationStatus": "የመያዝ ሁኔታ"
+    }
+  },
+  "admin": {
+    "title": "የአስተዳደር ፓነል",
+    "welcome": "ወደ አስተዳደር ፓነል እንኳን በደህና መጡ",
+    "welcomeSubtitle": "የመድረኩን መረጃ ከአንድ ቦታ ያስተዳድሩ።",
+    "loading": "በመጫን ላይ...",
+    "loginRequired": "ወደ አስተዳደር ፓነል ለመግባት መግባት አለብዎት።",
+    "loginCta": "ግባ",
+    "accessDenied": "ይህን ገጽ ለመድረስ ፈቃድ የለዎትም።",
+    "backHome": "ወደ መነሻ ተመለስ",
+    "nav": { "dashboard": "ዳሽቦርድ", "referenceData": "የማጣቀሻ መረጃ" },
+    "reference": {
+      "title": "የማጣቀሻ መረጃ",
+      "subtitle": "ዋና ዝርዝሮችን ያስተዳድሩ፦ ሀገራት፣ ከተሞች፣ ቋንቋዎች፣ ችሎታዎች፣ የሰራተኛ ዓይነቶች፣ የሰነድ ዓይነቶች፣ የማሳወቂያ መንገዶች።",
+      "search": "ፈልግ...",
+      "add": "ንጥል ጨምር",
+      "addTitle": "አዲስ ንጥል ጨምር",
+      "editTitle": "ንጥል አርትዕ",
+      "edit": "አርትዕ",
+      "delete": "ሰርዝ",
+      "save": "አስቀምጥ",
+      "cancel": "ተወው",
+      "saving": "በማስቀመጥ ላይ...",
+      "activate": "አግብር",
+      "deactivate": "አቦዝን",
+      "active": "የነቃ",
+      "inactive": "ያልነቃ",
+      "status": "ሁኔታ",
+      "actions": "ድርጊቶች",
+      "order": "ቅደም ተከተል",
+      "name": "ስም",
+      "identifier": "መለያ",
+      "inUse": "በጥቅም ላይ",
+      "empty": "ምንም ንጥሎች የሉም።",
+      "deleteConfirm": "መሰረዙን ያረጋግጡ?",
+      "confirm": "አረጋግጥ",
+      "created": "በተሳካ ሁኔታ ተጨምሯል",
+      "updated": "በተሳካ ሁኔታ ተዘምኗል",
+      "deleted": "በተሳካ ሁኔታ ተሰርዟል",
+      "fields": {
+        "slug": "መለያ",
+        "iso_code": "የሀገር ኮድ",
+        "name_ar": "ስም (አረብኛ)",
+        "name_en": "ስም (እንግሊዝኛ)",
+        "name_am": "ስም (አማርኛ)",
+        "is_active": "የነቃ",
+        "is_required": "አስፈላጊ",
+        "is_public": "ይፋዊ",
+        "sort_order": "ቅደም ተከተል",
+        "country_id": "ሀገር"
+      }
     }
   }
 }

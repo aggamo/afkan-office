@@ -24,7 +24,8 @@
     "login": "Login",
     "register": "Register",
     "requestWorker": "Request a Worker",
-    "favorites": "Favorites"
+    "favorites": "Favorites",
+    "admin": "Admin Panel"
   },
   "home": {
     "hero": {
@@ -219,6 +220,58 @@
       "education": "Education",
       "readinessScore": "Readiness Score",
       "reservationStatus": "Reservation Status"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "welcome": "Welcome to the admin panel",
+    "welcomeSubtitle": "Manage the platform data from one place.",
+    "loading": "Loading...",
+    "loginRequired": "You must be logged in to access the admin panel.",
+    "loginCta": "Log In",
+    "accessDenied": "You do not have permission to access this page.",
+    "backHome": "Back to Home",
+    "nav": { "dashboard": "Dashboard", "referenceData": "Reference Data" },
+    "reference": {
+      "title": "Reference Data",
+      "subtitle": "Manage the core lists: countries, cities, languages, skills, worker types, document types, notification channels.",
+      "search": "Search...",
+      "add": "Add Item",
+      "addTitle": "Add New Item",
+      "editTitle": "Edit Item",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "active": "Active",
+      "inactive": "Inactive",
+      "status": "Status",
+      "actions": "Actions",
+      "order": "Order",
+      "name": "Name",
+      "identifier": "Identifier",
+      "inUse": "In use",
+      "empty": "No items.",
+      "deleteConfirm": "Confirm delete?",
+      "confirm": "Confirm",
+      "created": "Added successfully",
+      "updated": "Updated successfully",
+      "deleted": "Deleted successfully",
+      "fields": {
+        "slug": "Identifier",
+        "iso_code": "Country Code",
+        "name_ar": "Name (Arabic)",
+        "name_en": "Name (English)",
+        "name_am": "Name (Amharic)",
+        "is_active": "Active",
+        "is_required": "Required",
+        "is_public": "Public",
+        "sort_order": "Order",
+        "country_id": "Country"
+      }
     }
   }
 }

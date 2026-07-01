@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Heart, Shield } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { getAuthRole } from "@/lib/auth-client";
 import { LanguageSwitcher } from "./language-switcher";
 
 const NAV_ITEMS = [
@@ -16,9 +17,28 @@ const NAV_ITEMS = [
   { href: "/contact", key: "contact" },
 ] as const;
 
+const STAFF_ROLES = ["employee", "super_admin"];
+
 export function Header() {
   const t = useTranslations("nav");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isStaff, setIsStaff] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function syncRole() {
+      await Promise.resolve();
+      if (cancelled) return;
+      const role = getAuthRole();
+      setIsStaff(role !== null && STAFF_ROLES.includes(role));
+    }
+    syncRole();
+    window.addEventListener("afkan-auth-changed", syncRole);
+    return () => {
+      cancelled = true;
+      window.removeEventListener("afkan-auth-changed", syncRole);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 border-b border-gray-100 bg-white/95 backdrop-blur">
@@ -41,6 +61,12 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          {isStaff && (
+            <Link href="/admin" className="flex items-center gap-1 text-sm font-medium text-brand-green hover:text-brand-green-dark">
+              <Shield size={18} />
+              {t("admin")}
+            </Link>
+          )}
           <Link href="/favorites" aria-label="favorites" className="text-brand-dark hover:text-brand-green">
             <Heart size={20} />
           </Link>
@@ -82,6 +108,11 @@ export function Header() {
             <Link href="/favorites" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
               {t("favorites")}
             </Link>
+            {isStaff && (
+              <Link href="/admin" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-green">
+                {t("admin")}
+              </Link>
+            )}
             <Link href="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
               {t("login")}
             </Link>
