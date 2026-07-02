@@ -420,7 +420,8 @@
       "dashboard": "ዳሽቦርድ",
       "reservations": "ማስያዣዎቼ",
       "profile": "የግል መገለጫዬ",
-      "notifications": "ማሳወቂያዎች"
+      "notifications": "ማሳወቂያዎች",
+      "recruitment": "የእኔ ቅጥር"
     },
     "dashboard": {
       "welcome": "እንኳን ደህና መጡ",
@@ -489,6 +490,14 @@
       "title": "ማሳወቂያዎች",
       "empty": "ምንም ማሳወቂያ የለም።",
       "markRead": "እንደተነበበ ምልክት አድርግ"
+    },
+    "recruitment": {
+      "title": "የእኔ ቅጥር",
+      "empty": "እስካሁን ንቁ ቅጥር የለም።",
+      "currentStage": "የአሁኑ ደረጃ",
+      "agency": "ኤጀንሲ",
+      "progress": "መሻሻል",
+      "eta": "የሚጠበቀው መጨረሻ"
     }
   }
 }

@@ -420,7 +420,8 @@
       "dashboard": "Dashboard",
       "reservations": "My Reservations",
       "profile": "My Profile",
-      "notifications": "Notifications"
+      "notifications": "Notifications",
+      "recruitment": "My Recruitment"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -489,6 +490,14 @@
       "title": "Notifications",
       "empty": "No notifications.",
       "markRead": "Mark as read"
+    },
+    "recruitment": {
+      "title": "My Recruitment",
+      "empty": "No active recruitment yet.",
+      "currentStage": "Current stage",
+      "agency": "Agency",
+      "progress": "Progress",
+      "eta": "Estimated completion"
     }
   }
 }

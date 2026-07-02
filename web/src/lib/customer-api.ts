@@ -1,4 +1,4 @@
-import { ApiError, type ApiEnvelope } from "@/lib/api";
+import { ApiError, type ApiEnvelope, type ApiTimelineStage } from "@/lib/api";
 import { getAuthToken } from "@/lib/auth-client";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
@@ -117,4 +117,18 @@ export function fetchNotifications(page = 1, perPage = 20) {
 
 export function markNotificationRead(id: number) {
   return customerRequest<Notification>(`/notifications/${id}/read`, { method: "POST" });
+}
+
+export type CustomerRecruitment = {
+  worker: { internal_number: string; tracking_number: string | null; full_name: { ar: string; en: string; am: string } };
+  agency: { name: string; city: string | null } | null;
+  reservation_status: string;
+  progress: number;
+  current_stage: { name: { ar: string; en: string; am: string } } | null;
+  eta: { estimated_completion: string | null; remaining_days: number; confidence: string };
+  timeline: ApiTimelineStage[];
+} | null;
+
+export function fetchCustomerRecruitment() {
+  return customerRequest<CustomerRecruitment>("/customer/recruitment");
 }

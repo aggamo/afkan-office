@@ -44,6 +44,7 @@ Route::prefix('v1')->group(function () {
 
             Route::get('/customer/dashboard', [CustomerPortalController::class, 'dashboard']);
             Route::get('/customer/reservations', [CustomerPortalController::class, 'reservations']);
+            Route::get('/customer/recruitment', [CustomerPortalController::class, 'recruitment']);
             Route::get('/customer/profile', [CustomerPortalController::class, 'profile']);
             Route::put('/customer/profile', [CustomerPortalController::class, 'updateProfile']);
 

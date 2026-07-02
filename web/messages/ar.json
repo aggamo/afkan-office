@@ -420,7 +420,8 @@
       "dashboard": "لوحتي",
       "reservations": "حجوزاتي",
       "profile": "ملفي الشخصي",
-      "notifications": "الإشعارات"
+      "notifications": "الإشعارات",
+      "recruitment": "استقدامي"
     },
     "dashboard": {
       "welcome": "مرحباً بك",
@@ -489,6 +490,14 @@
       "title": "الإشعارات",
       "empty": "لا توجد إشعارات.",
       "markRead": "تعليم كمقروء"
+    },
+    "recruitment": {
+      "title": "استقدامي",
+      "empty": "لا يوجد استقدام نشط حالياً.",
+      "currentStage": "المرحلة الحالية",
+      "agency": "المكتب",
+      "progress": "نسبة التقدم",
+      "eta": "التاريخ المتوقع للإنجاز"
     }
   }
 }

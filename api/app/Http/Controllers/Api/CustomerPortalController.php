@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Concerns\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ReservationResource;
+use App\Services\RecruitmentWorkflowService;
 use Illuminate\Http\Request;
 
 /**
@@ -52,6 +53,55 @@ class CustomerPortalController extends Controller
             ->get();
 
         return $this->success(ReservationResource::collection($reservations));
+    }
+
+    /**
+     * "My Recruitment" — the workflow status of the worker the customer is
+     * currently recruiting (their handed-over or active reservation). Only
+     * public-safe, customer-facing fields are returned.
+     */
+    public function recruitment(Request $request, RecruitmentWorkflowService $workflow)
+    {
+        $user = $request->user();
+        $customer = $user->customer;
+
+        if (! $customer) {
+            return $this->fail('لا يوجد حساب عميل مرتبط بهذا المستخدم.', null, 403);
+        }
+
+        $reservation = $customer->reservations()
+            ->whereIn('status', ['converted', 'active', 'completed'])
+            ->with(['worker.currentRecruitmentStage', 'authorizedAgency', 'agency'])
+            ->orderByRaw("CASE status WHEN 'converted' THEN 0 WHEN 'active' THEN 1 ELSE 2 END")
+            ->latest('id')
+            ->first();
+
+        if (! $reservation || ! $reservation->worker) {
+            return $this->success(null);
+        }
+
+        $worker = $reservation->worker;
+        $agency = $reservation->agency ?? $reservation->authorizedAgency;
+
+        return $this->success([
+            'worker' => [
+                'internal_number' => $worker->internal_number,
+                'tracking_number' => $worker->tracking_number,
+                'full_name' => ['ar' => $worker->full_name_ar, 'en' => $worker->full_name_en, 'am' => $worker->full_name_am],
+            ],
+            'agency' => $agency ? ['name' => $agency->name, 'city' => $agency->city] : null,
+            'reservation_status' => $reservation->status,
+            'progress' => $workflow->progress($worker),
+            'current_stage' => $worker->currentRecruitmentStage ? [
+                'name' => [
+                    'ar' => $worker->currentRecruitmentStage->name_ar,
+                    'en' => $worker->currentRecruitmentStage->name_en,
+                    'am' => $worker->currentRecruitmentStage->name_am,
+                ],
+            ] : null,
+            'eta' => $workflow->eta($worker),
+            'timeline' => $workflow->timeline($worker, publicOnly: true),
+        ]);
     }
 
     public function profile(Request $request)
