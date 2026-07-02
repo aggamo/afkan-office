@@ -239,6 +239,77 @@ export function fetchAdminWorkers(q?: string) {
   return adminRequest<{ items: AdminWorkerListItem[]; meta: unknown }>(`/admin/workers${qs}`);
 }
 
+export type AdminWorkerRef = { id: number; name_ar: string; name_en: string; name_am: string } | null;
+
+export type AdminWorkerFull = {
+  id: number;
+  internal_number: string;
+  full_name_ar: string;
+  full_name_en: string;
+  full_name_am: string;
+  date_of_birth: string | null;
+  gender: "male" | "female";
+  passport_number: string | null;
+  passport_expiry: string | null;
+  nationality: AdminWorkerRef;
+  worker_type: AdminWorkerRef;
+  experience_years: number | null;
+  height_cm: string | number | null;
+  weight_kg: string | number | null;
+  religion: string | null;
+  marital_status: string | null;
+  number_of_children: number | null;
+  reservation_status: string;
+  agency_id: number | null;
+  price: string | number | null;
+  price_currency: string | null;
+  is_published: boolean;
+  is_active: boolean;
+};
+
+export type WorkerFormPayload = {
+  internal_number: string;
+  full_name_ar: string;
+  full_name_en: string;
+  full_name_am: string;
+  date_of_birth: string;
+  gender: "male" | "female";
+  passport_number: string;
+  passport_expiry: string;
+  nationality_id: number;
+  worker_type_id: number;
+  experience_years?: number | null;
+  height_cm?: number | null;
+  weight_kg?: number | null;
+  religion?: string | null;
+  marital_status?: string | null;
+  number_of_children?: number | null;
+  agency_id?: number | null;
+  price?: number | null;
+  price_currency?: string | null;
+  is_published: boolean;
+  is_active: boolean;
+};
+
+export function fetchAdminWorkersFull(q?: string, reservationStatus?: string) {
+  const params = new URLSearchParams({ per_page: "50" });
+  if (q) params.set("q", q);
+  if (reservationStatus) params.set("reservation_status", reservationStatus);
+  return adminRequest<{ items: AdminWorkerFull[]; meta: unknown }>(`/admin/workers?${params.toString()}`);
+}
+
+export function createWorker(payload: WorkerFormPayload) {
+  return adminRequest<AdminWorkerFull>("/admin/workers", { method: "POST", body: JSON.stringify(payload) });
+}
+
+export function updateWorker(id: number, payload: WorkerFormPayload) {
+  return adminRequest<AdminWorkerFull>(`/admin/workers/${id}`, { method: "PUT", body: JSON.stringify(payload) });
+}
+
+export function deleteWorker(id: number) {
+  return adminRequest<null>(`/admin/workers/${id}`, { method: "DELETE" });
+}
+
 export function fetchWorkerWorkflow(workerId: number) {
   return adminRequest<WorkerWorkflow>(`/admin/workers/${workerId}/workflow`);
 }

@@ -291,7 +291,8 @@
             "messages": "المراسلات",
             "reviews": "التقييمات",
             "analytics": "التحليلات",
-            "agencies": "المكاتب"
+            "agencies": "المكاتب",
+            "workersManage": "إدارة العاملات"
         },
         "dashboard": {
             "title": "لوحة التحكم",
@@ -511,6 +512,39 @@
                 "verified": "معتمدة",
                 "suspended": "معلّقة"
             }
+        },
+        "workersManage": {
+            "title": "إدارة العاملات",
+            "subtitle": "إضافة وتعديل وأرشفة ملفات العاملات",
+            "add": "إضافة عاملة",
+            "search": "بحث بالاسم أو الرقم أو الجواز",
+            "empty": "لا توجد عاملات",
+            "internalNumber": "الرقم الداخلي",
+            "name": "الاسم",
+            "nationality": "الجنسية",
+            "workerType": "نوع العاملة",
+            "status": "الحالة",
+            "published": "منشورة",
+            "draft": "مسودة",
+            "active": "مفعّلة",
+            "editTitle": "تعديل ملف العاملة",
+            "gender": "الجنس",
+            "female": "أنثى",
+            "male": "ذكر",
+            "nameAr": "الاسم (عربي)",
+            "nameEn": "الاسم (إنجليزي)",
+            "nameAm": "الاسم (أمهري)",
+            "dateOfBirth": "تاريخ الميلاد",
+            "passportNumber": "رقم الجواز",
+            "passportExpiry": "انتهاء الجواز",
+            "agency": "المكتب",
+            "experienceYears": "سنوات الخبرة",
+            "price": "السعر",
+            "currency": "العملة",
+            "confirmDelete": "هل أنت متأكد من حذف ملف العاملة؟",
+            "cancel": "إلغاء",
+            "save": "حفظ",
+            "saving": "جارٍ الحفظ..."
         }
     },
     "customer": {

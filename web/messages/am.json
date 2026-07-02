@@ -291,7 +291,8 @@
             "messages": "መልእክቶች",
             "reviews": "ግምገማዎች",
             "analytics": "ትንታኔ",
-            "agencies": "ኤጀንሲዎች"
+            "agencies": "ኤጀንሲዎች",
+            "workersManage": "ሰራተኞች"
         },
         "dashboard": {
             "title": "ዳሽቦርድ",
@@ -511,6 +512,39 @@
                 "verified": "የተመሰከረ",
                 "suspended": "የታገደ"
             }
+        },
+        "workersManage": {
+            "title": "የሰራተኞች አስተዳደር",
+            "subtitle": "የሰራተኛ መገለጫዎችን ማከል፣ ማረም እና ማህደር",
+            "add": "ሰራተኛ ጨምር",
+            "search": "በስም፣ ቁጥር ወይም ፓስፖርት ይፈልጉ",
+            "empty": "ሰራተኞች የሉም",
+            "internalNumber": "የውስጥ ቁጥር",
+            "name": "ስም",
+            "nationality": "ዜግነት",
+            "workerType": "የሰራተኛ አይነት",
+            "status": "ሁኔታ",
+            "published": "ታትሟል",
+            "draft": "ረቂቅ",
+            "active": "ንቁ",
+            "editTitle": "የሰራተኛ መገለጫ ያርሙ",
+            "gender": "ጾታ",
+            "female": "ሴት",
+            "male": "ወንድ",
+            "nameAr": "ስም (አረብኛ)",
+            "nameEn": "ስም (እንግሊዝኛ)",
+            "nameAm": "ስም (አማርኛ)",
+            "dateOfBirth": "የትውልድ ቀን",
+            "passportNumber": "የፓስፖርት ቁጥር",
+            "passportExpiry": "የፓስፖርት ማብቂያ",
+            "agency": "ኤጀንሲ",
+            "experienceYears": "የልምድ ዓመታት",
+            "price": "ዋጋ",
+            "currency": "ገንዘብ",
+            "confirmDelete": "ይህን የሰራተኛ መገለጫ መሰረዝ እርግጠኛ ነዎት?",
+            "cancel": "ሰርዝ",
+            "save": "አስቀምጥ",
+            "saving": "በማስቀመጥ ላይ..."
         }
     },
     "customer": {

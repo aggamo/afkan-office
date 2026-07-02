@@ -291,7 +291,8 @@
             "messages": "Messages",
             "reviews": "Reviews",
             "analytics": "Analytics",
-            "agencies": "Agencies"
+            "agencies": "Agencies",
+            "workersManage": "Workers"
         },
         "dashboard": {
             "title": "Dashboard",
@@ -511,6 +512,39 @@
                 "verified": "Verified",
                 "suspended": "Suspended"
             }
+        },
+        "workersManage": {
+            "title": "Workers Management",
+            "subtitle": "Add, edit and archive worker profiles",
+            "add": "Add worker",
+            "search": "Search by name, number or passport",
+            "empty": "No workers",
+            "internalNumber": "Internal No.",
+            "name": "Name",
+            "nationality": "Nationality",
+            "workerType": "Worker type",
+            "status": "Status",
+            "published": "Published",
+            "draft": "Draft",
+            "active": "Active",
+            "editTitle": "Edit worker profile",
+            "gender": "Gender",
+            "female": "Female",
+            "male": "Male",
+            "nameAr": "Name (Arabic)",
+            "nameEn": "Name (English)",
+            "nameAm": "Name (Amharic)",
+            "dateOfBirth": "Date of birth",
+            "passportNumber": "Passport number",
+            "passportExpiry": "Passport expiry",
+            "agency": "Agency",
+            "experienceYears": "Years of experience",
+            "price": "Price",
+            "currency": "Currency",
+            "confirmDelete": "Are you sure you want to delete this worker profile?",
+            "cancel": "Cancel",
+            "save": "Save",
+            "saving": "Saving..."
         }
     },
     "customer": {

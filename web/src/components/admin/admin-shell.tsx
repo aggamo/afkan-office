@@ -1,11 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Activity, BarChart3, Building2, Database, LayoutDashboard, MessageCircle, Route, Star } from "lucide-react";
+import { Activity, BarChart3, Building2, Database, LayoutDashboard, MessageCircle, Route, Star, Users } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { href: "/admin", key: "dashboard", icon: LayoutDashboard, exact: true },
+  { href: "/admin/workers", key: "workersManage", icon: Users, exact: false },
   { href: "/admin/workflow", key: "workflow", icon: Route, exact: false },
   { href: "/admin/agencies", key: "agencies", icon: Building2, exact: false },
   { href: "/admin/analytics", key: "analytics", icon: BarChart3, exact: false },
