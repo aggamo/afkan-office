@@ -428,6 +428,74 @@ export function updateAgencyStatus(id: number, payload: { is_verified?: boolean;
   return adminRequest<AdminAgency>(`/admin/agencies/${id}`, { method: "PUT", body: JSON.stringify(payload) });
 }
 
+// ---- Reservations (admin) ----
+
+export type AdminReservation = {
+  id: number;
+  uuid: string;
+  status: string;
+  reserved_by_type: string;
+  authorization_status: string | null;
+  reserved_at: string | null;
+  expires_at: string | null;
+  worker: { id: number; internal_number: string; full_name_ar: string; full_name_en: string; full_name_am: string } | null;
+  customer: { id: number; name: string | null } | null;
+  agency: { id: number; name: string } | null;
+  authorized_agency: { id: number; name: string } | null;
+};
+
+export function fetchAdminReservations(status?: string, reservedByType?: string) {
+  const params = new URLSearchParams({ per_page: "50" });
+  if (status) params.set("status", status);
+  if (reservedByType) params.set("reserved_by_type", reservedByType);
+  return adminRequest<{ items: AdminReservation[]; meta: unknown }>(`/admin/reservations?${params.toString()}`);
+}
+
+// ---- Invoices (admin) ----
+
+export type AdminInvoice = {
+  id: number;
+  uuid: string;
+  invoice_number: string;
+  agency_id: number;
+  agency: { id: number; name: string } | null;
+  worker_id: number;
+  worker: { id: number; internal_number: string; full_name_ar: string; full_name_en: string; full_name_am: string } | null;
+  reservation_id: number | null;
+  amount: string | number | null;
+  currency: string | null;
+  status: string;
+  issued_at: string | null;
+  paid_at: string | null;
+  notes: string | null;
+};
+
+export function fetchAdminInvoices(status?: string, agencyId?: number) {
+  const params = new URLSearchParams({ per_page: "50" });
+  if (status) params.set("status", status);
+  if (agencyId) params.set("agency_id", String(agencyId));
+  return adminRequest<{ items: AdminInvoice[]; meta: unknown }>(`/admin/invoices?${params.toString()}`);
+}
+
+export function createInvoice(payload: {
+  agency_id: number;
+  worker_id: number;
+  reservation_id?: number | null;
+  amount?: number | null;
+  status?: "draft" | "issued";
+  notes?: string | null;
+}) {
+  return adminRequest<AdminInvoice>("/admin/invoices", { method: "POST", body: JSON.stringify(payload) });
+}
+
+export function markInvoicePaid(id: number) {
+  return adminRequest<AdminInvoice>(`/admin/invoices/${id}/mark-paid`, { method: "POST" });
+}
+
+export function cancelInvoice(id: number) {
+  return adminRequest<AdminInvoice>(`/admin/invoices/${id}/cancel`, { method: "POST" });
+}
+
 export async function downloadExport(resource: "workers" | "reservations" | "reviews"): Promise<void> {
   const token = getAuthToken();
   const res = await fetch(`${API_BASE_URL}/admin/export/${resource}`, {

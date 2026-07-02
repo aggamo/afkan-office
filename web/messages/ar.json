@@ -292,7 +292,9 @@
             "reviews": "التقييمات",
             "analytics": "التحليلات",
             "agencies": "المكاتب",
-            "workersManage": "إدارة العاملات"
+            "workersManage": "إدارة العاملات",
+            "reservations": "الحجوزات",
+            "invoices": "الفواتير"
         },
         "dashboard": {
             "title": "لوحة التحكم",
@@ -545,6 +547,54 @@
             "cancel": "إلغاء",
             "save": "حفظ",
             "saving": "جارٍ الحفظ..."
+        },
+        "reservations": {
+            "title": "إدارة الحجوزات",
+            "subtitle": "متابعة كل الحجوزات وحالاتها",
+            "empty": "لا توجد حجوزات",
+            "worker": "العاملة",
+            "reservedBy": "محجوز بواسطة",
+            "party": "الجهة",
+            "status": "الحالة",
+            "expiresAt": "ينتهي في",
+            "by": {
+                "customer": "عميل",
+                "agency": "مكتب"
+            },
+            "statuses": {
+                "all": "الكل",
+                "reserved": "محجوز",
+                "authorized": "مفوّض",
+                "expired": "منتهٍ",
+                "cancelled": "ملغى",
+                "completed": "مكتمل"
+            }
+        },
+        "invoices": {
+            "title": "إدارة الفواتير",
+            "subtitle": "إنشاء ومتابعة فواتير المكاتب",
+            "create": "فاتورة جديدة",
+            "empty": "لا توجد فواتير",
+            "number": "رقم الفاتورة",
+            "agency": "المكتب",
+            "worker": "العاملة",
+            "amount": "المبلغ",
+            "amountHint": "اتركه فارغاً لاستخدام سعر العاملة",
+            "status": "الحالة",
+            "notes": "ملاحظات",
+            "markPaid": "تعليم كمدفوعة",
+            "cancel": "إلغاء",
+            "cancelForm": "إلغاء",
+            "save": "حفظ",
+            "saving": "جارٍ الحفظ...",
+            "selectRequired": "يرجى اختيار المكتب والعاملة",
+            "statuses": {
+                "all": "الكل",
+                "draft": "مسودة",
+                "issued": "صادرة",
+                "paid": "مدفوعة",
+                "cancelled": "ملغاة"
+            }
         }
     },
     "customer": {

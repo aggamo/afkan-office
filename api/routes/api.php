@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\Admin\AgencyController as AdminAgencyController;
 use App\Http\Controllers\Api\Admin\DashboardController;
 use App\Http\Controllers\Api\Admin\ExportController;
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
+use App\Http\Controllers\Api\Admin\ReservationController as AdminReservationController;
 use App\Http\Controllers\Api\Admin\ReferenceDataController;
 use App\Http\Controllers\Api\Admin\WorkerAdminController;
 use App\Http\Controllers\Api\Admin\WorkflowController;
@@ -117,6 +118,8 @@ Route::prefix('v1')->group(function () {
             Route::get('/workers/{worker}/workflow', [WorkflowController::class, 'show']);
             Route::post('/workers/{worker}/workflow/start', [WorkflowController::class, 'start']);
             Route::post('/workers/{worker}/workflow/advance', [WorkflowController::class, 'advance']);
+
+            Route::get('/reservations', [AdminReservationController::class, 'index']);
 
             Route::get('/invoices', [AdminInvoiceController::class, 'index']);
             Route::post('/invoices', [AdminInvoiceController::class, 'store']);

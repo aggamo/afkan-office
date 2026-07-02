@@ -292,7 +292,9 @@
             "reviews": "Reviews",
             "analytics": "Analytics",
             "agencies": "Agencies",
-            "workersManage": "Workers"
+            "workersManage": "Workers",
+            "reservations": "Reservations",
+            "invoices": "Invoices"
         },
         "dashboard": {
             "title": "Dashboard",
@@ -545,6 +547,54 @@
             "cancel": "Cancel",
             "save": "Save",
             "saving": "Saving..."
+        },
+        "reservations": {
+            "title": "Reservations",
+            "subtitle": "Monitor all reservations and their statuses",
+            "empty": "No reservations",
+            "worker": "Worker",
+            "reservedBy": "Reserved by",
+            "party": "Party",
+            "status": "Status",
+            "expiresAt": "Expires at",
+            "by": {
+                "customer": "Customer",
+                "agency": "Agency"
+            },
+            "statuses": {
+                "all": "All",
+                "reserved": "Reserved",
+                "authorized": "Authorized",
+                "expired": "Expired",
+                "cancelled": "Cancelled",
+                "completed": "Completed"
+            }
+        },
+        "invoices": {
+            "title": "Invoices",
+            "subtitle": "Create and track agency invoices",
+            "create": "New invoice",
+            "empty": "No invoices",
+            "number": "Invoice No.",
+            "agency": "Agency",
+            "worker": "Worker",
+            "amount": "Amount",
+            "amountHint": "Leave empty to use worker price",
+            "status": "Status",
+            "notes": "Notes",
+            "markPaid": "Mark paid",
+            "cancel": "Cancel",
+            "cancelForm": "Cancel",
+            "save": "Save",
+            "saving": "Saving...",
+            "selectRequired": "Please select agency and worker",
+            "statuses": {
+                "all": "All",
+                "draft": "Draft",
+                "issued": "Issued",
+                "paid": "Paid",
+                "cancelled": "Cancelled"
+            }
         }
     },
     "customer": {

@@ -292,7 +292,9 @@
             "reviews": "ግምገማዎች",
             "analytics": "ትንታኔ",
             "agencies": "ኤጀንሲዎች",
-            "workersManage": "ሰራተኞች"
+            "workersManage": "ሰራተኞች",
+            "reservations": "ቦታ ማስያዣዎች",
+            "invoices": "ደረሰኞች"
         },
         "dashboard": {
             "title": "ዳሽቦርድ",
@@ -545,6 +547,54 @@
             "cancel": "ሰርዝ",
             "save": "አስቀምጥ",
             "saving": "በማስቀመጥ ላይ..."
+        },
+        "reservations": {
+            "title": "ቦታ ማስያዣዎች",
+            "subtitle": "ሁሉንም ቦታ ማስያዣዎች እና ሁኔታቸውን ይከታተሉ",
+            "empty": "ቦታ ማስያዣ የለም",
+            "worker": "ሰራተኛ",
+            "reservedBy": "የያዘው",
+            "party": "ወገን",
+            "status": "ሁኔታ",
+            "expiresAt": "የሚያበቃበት",
+            "by": {
+                "customer": "ደንበኛ",
+                "agency": "ኤጀንሲ"
+            },
+            "statuses": {
+                "all": "ሁሉም",
+                "reserved": "ተይዟል",
+                "authorized": "የተፈቀደ",
+                "expired": "ጊዜው አልፏል",
+                "cancelled": "ተሰርዟል",
+                "completed": "ተጠናቅቋል"
+            }
+        },
+        "invoices": {
+            "title": "ደረሰኞች",
+            "subtitle": "የኤጀንሲ ደረሰኞችን ይፍጠሩ እና ይከታተሉ",
+            "create": "አዲስ ደረሰኝ",
+            "empty": "ደረሰኝ የለም",
+            "number": "የደረሰኝ ቁጥር",
+            "agency": "ኤጀንሲ",
+            "worker": "ሰራተኛ",
+            "amount": "መጠን",
+            "amountHint": "የሰራተኛ ዋጋ ለመጠቀም ባዶ ይተዉ",
+            "status": "ሁኔታ",
+            "notes": "ማስታወሻዎች",
+            "markPaid": "እንደተከፈለ ምልክት",
+            "cancel": "ሰርዝ",
+            "cancelForm": "ሰርዝ",
+            "save": "አስቀምጥ",
+            "saving": "በማስቀመጥ ላይ...",
+            "selectRequired": "እባክዎ ኤጀንሲ እና ሰራተኛ ይምረጡ",
+            "statuses": {
+                "all": "ሁሉም",
+                "draft": "ረቂቅ",
+                "issued": "ተሰጥቷል",
+                "paid": "ተከፍሏል",
+                "cancelled": "ተሰርዟል"
+            }
         }
     },
     "customer": {
