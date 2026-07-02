@@ -265,7 +265,8 @@
       "referenceData": "የማጣቀሻ መረጃ",
       "activity": "የእንቅስቃሴ መዝገብ",
       "workflow": "የሥራ ፍሰት",
-      "messages": "መልእክቶች"
+      "messages": "መልእክቶች",
+      "reviews": "ግምገማዎች"
     },
     "dashboard": {
       "title": "ዳሽቦርድ",
@@ -424,6 +425,24 @@
       "empty": "ውይይቶች የሉም።",
       "placeholder": "ምላሽዎን ይጻፉ...",
       "send": "ላክ"
+    },
+    "reviews": {
+      "title": "የግምገማ ማጣራት",
+      "subtitle": "ከመታተማቸው በፊት የደንበኞችን ግምገማዎች ያጽድቁ ወይም ይከልክሉ።",
+      "empty": "ግምገማዎች የሉም።",
+      "approve": "አጽድቅ",
+      "reject": "ከልክል",
+      "filters": {
+        "pending": "በመጠባበቅ ላይ",
+        "approved": "የታተመ",
+        "rejected": "የተከለከለ",
+        "all": "ሁሉም"
+      },
+      "status": {
+        "pending": "በግምገማ ላይ",
+        "approved": "ታትሟል",
+        "rejected": "ተቀባይነት አላገኘም"
+      }
     }
   },
   "customer": {
@@ -440,7 +459,8 @@
       "notifications": "ማሳወቂያዎች",
       "recruitment": "የእኔ ቅጥር",
       "documents": "ሰነዶቼ",
-      "messages": "መልእክቶች"
+      "messages": "መልእክቶች",
+      "reviews": "ግምገማዎች"
     },
     "dashboard": {
       "welcome": "እንኳን ደህና መጡ",
@@ -548,6 +568,22 @@
       "empty": "እስካሁን መልእክቶች የሉም። ውይይቱን ይጀምሩ።",
       "placeholder": "መልእክትዎን ይጻፉ...",
       "send": "ላክ"
+    },
+    "reviews": {
+      "title": "ግምገማዎቼ",
+      "subtitle": "ከተጠናቀቀ በኋላ የቅጥር ተሞክሮዎን ይገምግሙ።",
+      "yourRating": "ደረጃዎ",
+      "commentPlaceholder": "አስተያየትዎን ይጻፉ (አማራጭ)...",
+      "submit": "ግምገማ ላክ",
+      "submitting": "በመላክ ላይ...",
+      "submitted": "ግምገማዎ ተልኳል፤ ከግምገማ በኋላ ይታያል።",
+      "mine": "ግምገማዎቼ",
+      "empty": "እስካሁን ግምገማዎች የሉም።",
+      "status": {
+        "pending": "በግምገማ ላይ",
+        "approved": "ታትሟል",
+        "rejected": "ተቀባይነት አላገኘም"
+      }
     }
   }
 }

@@ -11,9 +11,11 @@ use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController
 use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\Admin\MessageController as AdminMessageController;
+use App\Http\Controllers\Api\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Api\CustomerDocumentController;
 use App\Http\Controllers\Api\CustomerMessageController;
 use App\Http\Controllers\Api\CustomerPortalController;
+use App\Http\Controllers\Api\CustomerReviewController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\ReservationController;
@@ -59,6 +61,9 @@ Route::prefix('v1')->group(function () {
             Route::get('/customer/messages', [CustomerMessageController::class, 'index']);
             Route::post('/customer/messages', [CustomerMessageController::class, 'store']);
 
+            Route::get('/customer/reviews', [CustomerReviewController::class, 'index']);
+            Route::post('/customer/reviews', [CustomerReviewController::class, 'store']);
+
             Route::get('/favorites', [FavoriteController::class, 'index']);
             Route::post('/favorites/{worker}', [FavoriteController::class, 'store']);
             Route::delete('/favorites/{worker}', [FavoriteController::class, 'destroy']);
@@ -86,6 +91,9 @@ Route::prefix('v1')->group(function () {
             Route::get('/messages', [AdminMessageController::class, 'index']);
             Route::get('/messages/{customer}', [AdminMessageController::class, 'show']);
             Route::post('/messages/{customer}', [AdminMessageController::class, 'store']);
+
+            Route::get('/reviews', [AdminReviewController::class, 'index']);
+            Route::post('/reviews/{review}/moderate', [AdminReviewController::class, 'moderate']);
 
             Route::get('/workers', [WorkerAdminController::class, 'index']);
             Route::post('/workers', [WorkerAdminController::class, 'store']);

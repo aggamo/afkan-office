@@ -265,7 +265,8 @@
       "referenceData": "البيانات المرجعية",
       "activity": "سجل النشاط",
       "workflow": "سير العمل",
-      "messages": "المراسلات"
+      "messages": "المراسلات",
+      "reviews": "التقييمات"
     },
     "dashboard": {
       "title": "لوحة التحكم",
@@ -424,6 +425,24 @@
       "empty": "لا توجد محادثات.",
       "placeholder": "اكتب ردك...",
       "send": "إرسال"
+    },
+    "reviews": {
+      "title": "مراجعة التقييمات",
+      "subtitle": "اعتماد أو رفض تقييمات العملاء قبل نشرها.",
+      "empty": "لا توجد تقييمات.",
+      "approve": "اعتماد",
+      "reject": "رفض",
+      "filters": {
+        "pending": "قيد المراجعة",
+        "approved": "منشورة",
+        "rejected": "مرفوضة",
+        "all": "الكل"
+      },
+      "status": {
+        "pending": "قيد المراجعة",
+        "approved": "منشور",
+        "rejected": "مرفوض"
+      }
     }
   },
   "customer": {
@@ -440,7 +459,8 @@
       "notifications": "الإشعارات",
       "recruitment": "استقدامي",
       "documents": "وثائقي",
-      "messages": "المراسلات"
+      "messages": "المراسلات",
+      "reviews": "التقييمات"
     },
     "dashboard": {
       "welcome": "مرحباً بك",
@@ -548,6 +568,22 @@
       "empty": "لا توجد رسائل بعد. ابدأ المحادثة.",
       "placeholder": "اكتب رسالتك...",
       "send": "إرسال"
+    },
+    "reviews": {
+      "title": "تقييماتي",
+      "subtitle": "قيّم تجربة الاستقدام بعد إتمامها.",
+      "yourRating": "تقييمك",
+      "commentPlaceholder": "اكتب تعليقك (اختياري)...",
+      "submit": "إرسال التقييم",
+      "submitting": "جارٍ الإرسال...",
+      "submitted": "تم إرسال تقييمك وسيظهر بعد المراجعة.",
+      "mine": "تقييماتي",
+      "empty": "لا توجد تقييمات بعد.",
+      "status": {
+        "pending": "قيد المراجعة",
+        "approved": "منشور",
+        "rejected": "مرفوض"
+      }
     }
   }
 }

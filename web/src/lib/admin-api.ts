@@ -284,3 +284,27 @@ export function fetchMessageThread(customerId: number) {
 export function sendAdminMessage(customerId: number, body: string) {
   return adminRequest<ChatMessage>(`/admin/messages/${customerId}`, { method: "POST", body: JSON.stringify({ body }) });
 }
+
+// ---- Review moderation ----
+
+export type AdminReview = {
+  id: number;
+  rating: number;
+  comment: string | null;
+  status: "pending" | "approved" | "rejected";
+  agency: string | null;
+  customer: string | null;
+  created_at: string | null;
+};
+
+export function fetchReviews(status?: string) {
+  const qs = status ? `?status=${status}` : "";
+  return adminRequest<AdminReview[]>(`/admin/reviews${qs}`);
+}
+
+export function moderateReview(id: number, status: "approved" | "rejected") {
+  return adminRequest<{ id: number; status: string }>(`/admin/reviews/${id}/moderate`, {
+    method: "POST",
+    body: JSON.stringify({ status }),
+  });
+}

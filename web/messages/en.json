@@ -265,7 +265,8 @@
       "referenceData": "Reference Data",
       "activity": "Activity Log",
       "workflow": "Workflow",
-      "messages": "Messages"
+      "messages": "Messages",
+      "reviews": "Reviews"
     },
     "dashboard": {
       "title": "Dashboard",
@@ -424,6 +425,24 @@
       "empty": "No conversations.",
       "placeholder": "Type your reply...",
       "send": "Send"
+    },
+    "reviews": {
+      "title": "Review Moderation",
+      "subtitle": "Approve or reject customer reviews before publishing.",
+      "empty": "No reviews.",
+      "approve": "Approve",
+      "reject": "Reject",
+      "filters": {
+        "pending": "Pending",
+        "approved": "Published",
+        "rejected": "Rejected",
+        "all": "All"
+      },
+      "status": {
+        "pending": "Pending review",
+        "approved": "Published",
+        "rejected": "Rejected"
+      }
     }
   },
   "customer": {
@@ -440,7 +459,8 @@
       "notifications": "Notifications",
       "recruitment": "My Recruitment",
       "documents": "My Documents",
-      "messages": "Messages"
+      "messages": "Messages",
+      "reviews": "Reviews"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -548,6 +568,22 @@
       "empty": "No messages yet. Start the conversation.",
       "placeholder": "Type your message...",
       "send": "Send"
+    },
+    "reviews": {
+      "title": "My Reviews",
+      "subtitle": "Rate your recruitment experience after completion.",
+      "yourRating": "Your rating",
+      "commentPlaceholder": "Write your comment (optional)...",
+      "submit": "Submit Review",
+      "submitting": "Submitting...",
+      "submitted": "Your review was submitted and will appear after moderation.",
+      "mine": "My Reviews",
+      "empty": "No reviews yet.",
+      "status": {
+        "pending": "Pending review",
+        "approved": "Published",
+        "rejected": "Rejected"
+      }
     }
   }
 }

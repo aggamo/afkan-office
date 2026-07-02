@@ -181,6 +181,26 @@ export function fetchCustomerMessages() {
   return customerRequest<ChatMessage[]>("/customer/messages");
 }
 
+export type CustomerReview = {
+  id: number;
+  rating: number;
+  comment: string | null;
+  status: "pending" | "approved" | "rejected";
+  agency: string | null;
+  created_at: string | null;
+};
+
+export function fetchCustomerReviews() {
+  return customerRequest<CustomerReview[]>("/customer/reviews");
+}
+
+export function submitCustomerReview(rating: number, comment: string) {
+  return customerRequest<CustomerReview>("/customer/reviews", {
+    method: "POST",
+    body: JSON.stringify({ rating, comment: comment || undefined }),
+  });
+}
+
 export function sendCustomerMessage(body: string) {
   return customerRequest<ChatMessage>("/customer/messages", { method: "POST", body: JSON.stringify({ body }) });
 }
