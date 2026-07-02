@@ -10,7 +10,9 @@ use App\Http\Controllers\Api\Agency\AuthorizationController as AgencyAuthorizati
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
 use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Api\CustomerDocumentController;
+use App\Http\Controllers\Api\CustomerMessageController;
 use App\Http\Controllers\Api\CustomerPortalController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\NotificationController;
@@ -54,6 +56,9 @@ Route::prefix('v1')->group(function () {
             Route::get('/customer/documents/{customerDocument}/download', [CustomerDocumentController::class, 'download']);
             Route::delete('/customer/documents/{customerDocument}', [CustomerDocumentController::class, 'destroy']);
 
+            Route::get('/customer/messages', [CustomerMessageController::class, 'index']);
+            Route::post('/customer/messages', [CustomerMessageController::class, 'store']);
+
             Route::get('/favorites', [FavoriteController::class, 'index']);
             Route::post('/favorites/{worker}', [FavoriteController::class, 'store']);
             Route::delete('/favorites/{worker}', [FavoriteController::class, 'destroy']);
@@ -77,6 +82,10 @@ Route::prefix('v1')->group(function () {
         Route::middleware('role:employee,super_admin')->prefix('admin')->group(function () {
             Route::get('/dashboard', [DashboardController::class, 'index']);
             Route::get('/activity', [DashboardController::class, 'activity']);
+
+            Route::get('/messages', [AdminMessageController::class, 'index']);
+            Route::get('/messages/{customer}', [AdminMessageController::class, 'show']);
+            Route::post('/messages/{customer}', [AdminMessageController::class, 'store']);
 
             Route::get('/workers', [WorkerAdminController::class, 'index']);
             Route::post('/workers', [WorkerAdminController::class, 'store']);

@@ -169,6 +169,22 @@ export function deleteCustomerDocument(id: number) {
   return customerRequest<null>(`/customer/documents/${id}`, { method: "DELETE" });
 }
 
+export type ChatMessage = {
+  id: number;
+  body: string;
+  is_from_staff: boolean;
+  sender: string | null;
+  created_at: string | null;
+};
+
+export function fetchCustomerMessages() {
+  return customerRequest<ChatMessage[]>("/customer/messages");
+}
+
+export function sendCustomerMessage(body: string) {
+  return customerRequest<ChatMessage>("/customer/messages", { method: "POST", body: JSON.stringify({ body }) });
+}
+
 export async function downloadCustomerDocument(doc: CustomerDocument): Promise<void> {
   const token = getAuthToken();
   const res = await fetch(`${API_BASE_URL}/customer/documents/${doc.id}/download`, {

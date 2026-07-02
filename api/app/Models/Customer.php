@@ -23,4 +23,9 @@ class Customer extends Model
     {
         return $this->hasMany(Reservation::class);
     }
+
+    public function messages(): HasMany
+    {
+        return $this->hasMany(Message::class);
+    }
 }

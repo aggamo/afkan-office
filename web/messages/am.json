@@ -264,7 +264,8 @@
       "dashboard": "ዳሽቦርድ",
       "referenceData": "የማጣቀሻ መረጃ",
       "activity": "የእንቅስቃሴ መዝገብ",
-      "workflow": "የሥራ ፍሰት"
+      "workflow": "የሥራ ፍሰት",
+      "messages": "መልእክቶች"
     },
     "dashboard": {
       "title": "ዳሽቦርድ",
@@ -416,6 +417,13 @@
         "medium": "መካከለኛ እርግጠኝነት",
         "low": "ዝቅተኛ እርግጠኝነት"
       }
+    },
+    "messages": {
+      "title": "የድጋፍ መልእክቶች",
+      "subtitle": "የደንበኞች ውይይቶች ከድጋፍ ጋር።",
+      "empty": "ውይይቶች የሉም።",
+      "placeholder": "ምላሽዎን ይጻፉ...",
+      "send": "ላክ"
     }
   },
   "customer": {
@@ -431,7 +439,8 @@
       "profile": "የግል መገለጫዬ",
       "notifications": "ማሳወቂያዎች",
       "recruitment": "የእኔ ቅጥር",
-      "documents": "ሰነዶቼ"
+      "documents": "ሰነዶቼ",
+      "messages": "መልእክቶች"
     },
     "dashboard": {
       "welcome": "እንኳን ደህና መጡ",
@@ -532,6 +541,13 @@
         "verified": "የተረጋገጠ",
         "rejected": "ተቀባይነት አላገኘም"
       }
+    },
+    "messages": {
+      "title": "የድጋፍ ውይይት",
+      "subtitle": "ከአፍካን ድጋፍ ቡድን ጋር ይነጋገሩ።",
+      "empty": "እስካሁን መልእክቶች የሉም። ውይይቱን ይጀምሩ።",
+      "placeholder": "መልእክትዎን ይጻፉ...",
+      "send": "ላክ"
     }
   }
 }

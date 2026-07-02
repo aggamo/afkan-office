@@ -264,7 +264,8 @@
       "dashboard": "الرئيسية",
       "referenceData": "البيانات المرجعية",
       "activity": "سجل النشاط",
-      "workflow": "سير العمل"
+      "workflow": "سير العمل",
+      "messages": "المراسلات"
     },
     "dashboard": {
       "title": "لوحة التحكم",
@@ -416,6 +417,13 @@
         "medium": "دقة متوسطة",
         "low": "دقة منخفضة"
       }
+    },
+    "messages": {
+      "title": "رسائل الدعم",
+      "subtitle": "محادثات العملاء مع الدعم.",
+      "empty": "لا توجد محادثات.",
+      "placeholder": "اكتب ردك...",
+      "send": "إرسال"
     }
   },
   "customer": {
@@ -431,7 +439,8 @@
       "profile": "ملفي الشخصي",
       "notifications": "الإشعارات",
       "recruitment": "استقدامي",
-      "documents": "وثائقي"
+      "documents": "وثائقي",
+      "messages": "المراسلات"
     },
     "dashboard": {
       "welcome": "مرحباً بك",
@@ -532,6 +541,13 @@
         "verified": "موثّقة",
         "rejected": "مرفوضة"
       }
+    },
+    "messages": {
+      "title": "مراسلة الدعم",
+      "subtitle": "تواصل مع فريق دعم أفكان.",
+      "empty": "لا توجد رسائل بعد. ابدأ المحادثة.",
+      "placeholder": "اكتب رسالتك...",
+      "send": "إرسال"
     }
   }
 }

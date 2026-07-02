@@ -264,7 +264,8 @@
       "dashboard": "Dashboard",
       "referenceData": "Reference Data",
       "activity": "Activity Log",
-      "workflow": "Workflow"
+      "workflow": "Workflow",
+      "messages": "Messages"
     },
     "dashboard": {
       "title": "Dashboard",
@@ -416,6 +417,13 @@
         "medium": "medium confidence",
         "low": "low confidence"
       }
+    },
+    "messages": {
+      "title": "Support Messages",
+      "subtitle": "Customer conversations with support.",
+      "empty": "No conversations.",
+      "placeholder": "Type your reply...",
+      "send": "Send"
     }
   },
   "customer": {
@@ -431,7 +439,8 @@
       "profile": "My Profile",
       "notifications": "Notifications",
       "recruitment": "My Recruitment",
-      "documents": "My Documents"
+      "documents": "My Documents",
+      "messages": "Messages"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -532,6 +541,13 @@
         "verified": "Verified",
         "rejected": "Rejected"
       }
+    },
+    "messages": {
+      "title": "Support Chat",
+      "subtitle": "Chat with the Afkan support team.",
+      "empty": "No messages yet. Start the conversation.",
+      "placeholder": "Type your message...",
+      "send": "Send"
     }
   }
 }

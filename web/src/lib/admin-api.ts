@@ -252,3 +252,35 @@ export function advanceWorkerStage(workerId: number, stageId: number, notes?: st
     body: JSON.stringify({ stage_id: stageId, notes: notes || undefined }),
   });
 }
+
+// ---- Support Messages ----
+
+export type MessageThread = {
+  customer_id: number;
+  name: string | null;
+  unread: number;
+  last_body: string | null;
+  last_at: string | null;
+};
+
+export type ChatMessage = {
+  id: number;
+  body: string;
+  is_from_staff: boolean;
+  sender: string | null;
+  created_at: string | null;
+};
+
+export function fetchMessageThreads() {
+  return adminRequest<MessageThread[]>("/admin/messages");
+}
+
+export function fetchMessageThread(customerId: number) {
+  return adminRequest<{ customer: { id: number; name: string | null }; messages: ChatMessage[] }>(
+    `/admin/messages/${customerId}`,
+  );
+}
+
+export function sendAdminMessage(customerId: number, body: string) {
+  return adminRequest<ChatMessage>(`/admin/messages/${customerId}`, { method: "POST", body: JSON.stringify({ body }) });
+}
