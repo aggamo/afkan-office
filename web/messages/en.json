@@ -267,7 +267,8 @@
       "workflow": "Workflow",
       "messages": "Messages",
       "reviews": "Reviews",
-      "analytics": "Analytics"
+      "analytics": "Analytics",
+      "agencies": "Agencies"
     },
     "dashboard": {
       "title": "Dashboard",
@@ -462,6 +463,30 @@
         "workers": "Workers",
         "reservations": "Reservations",
         "reviews": "Reviews"
+      }
+    },
+    "agencies": {
+      "title": "Agency Management",
+      "subtitle": "Verify and suspend Saudi agencies. Customers can only choose approved agencies.",
+      "search": "Search an agency...",
+      "empty": "No agencies.",
+      "name": "Name",
+      "license": "License",
+      "city": "City",
+      "workers": "Workers",
+      "status": "Status",
+      "actions": "Actions",
+      "verified": "Verified",
+      "pending": "Pending",
+      "suspended": "Suspended",
+      "verify": "Verify",
+      "suspend": "Suspend",
+      "activate": "Activate",
+      "filters": {
+        "all": "All",
+        "pending": "Pending",
+        "verified": "Verified",
+        "suspended": "Suspended"
       }
     }
   },

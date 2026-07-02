@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\AgencyController as AdminAgencyController;
 use App\Http\Controllers\Api\Admin\DashboardController;
 use App\Http\Controllers\Api\Admin\ExportController;
 use App\Http\Controllers\Api\Admin\InvoiceController as AdminInvoiceController;
@@ -98,6 +99,9 @@ Route::prefix('v1')->group(function () {
             Route::post('/reviews/{review}/moderate', [AdminReviewController::class, 'moderate']);
 
             Route::get('/export/{resource}', [ExportController::class, 'csv']);
+
+            Route::get('/agencies', [AdminAgencyController::class, 'index']);
+            Route::put('/agencies/{agency}', [AdminAgencyController::class, 'update']);
 
             Route::get('/workers', [WorkerAdminController::class, 'index']);
             Route::post('/workers', [WorkerAdminController::class, 'store']);

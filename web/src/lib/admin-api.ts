@@ -328,6 +328,35 @@ export function fetchAnalytics() {
   return adminRequest<Analytics>("/admin/analytics");
 }
 
+export type AdminAgency = {
+  id: number;
+  name: string;
+  license_number: string;
+  country: string | null;
+  city: string | null;
+  phone: string | null;
+  email: string | null;
+  rating: number;
+  completed_cases: number;
+  is_verified: boolean;
+  is_active: boolean;
+  workers_count: number;
+  active_reservations: number;
+  created_at: string | null;
+};
+
+export function fetchAdminAgencies(q?: string, status?: string) {
+  const params = new URLSearchParams();
+  if (q) params.set("q", q);
+  if (status) params.set("status", status);
+  const qs = params.toString();
+  return adminRequest<AdminAgency[]>(`/admin/agencies${qs ? `?${qs}` : ""}`);
+}
+
+export function updateAgencyStatus(id: number, payload: { is_verified?: boolean; is_active?: boolean }) {
+  return adminRequest<AdminAgency>(`/admin/agencies/${id}`, { method: "PUT", body: JSON.stringify(payload) });
+}
+
 export async function downloadExport(resource: "workers" | "reservations" | "reviews"): Promise<void> {
   const token = getAuthToken();
   const res = await fetch(`${API_BASE_URL}/admin/export/${resource}`, {

@@ -267,7 +267,8 @@
       "workflow": "የሥራ ፍሰት",
       "messages": "መልእክቶች",
       "reviews": "ግምገማዎች",
-      "analytics": "ትንታኔ"
+      "analytics": "ትንታኔ",
+      "agencies": "ኤጀንሲዎች"
     },
     "dashboard": {
       "title": "ዳሽቦርድ",
@@ -462,6 +463,30 @@
         "workers": "ሰራተኞች",
         "reservations": "ማስያዣዎች",
         "reviews": "ግምገማዎች"
+      }
+    },
+    "agencies": {
+      "title": "የኤጀንሲ አስተዳደር",
+      "subtitle": "የሳዑዲ ኤጀንሲዎችን ያጽድቁ ወይም ያግዱ። ደንበኞች የተመሰከረላቸውን ብቻ ይመርጣሉ።",
+      "search": "ኤጀንሲ ይፈልጉ...",
+      "empty": "ኤጀንሲዎች የሉም።",
+      "name": "ስም",
+      "license": "ፈቃድ",
+      "city": "ከተማ",
+      "workers": "ሰራተኞች",
+      "status": "ሁኔታ",
+      "actions": "ድርጊቶች",
+      "verified": "የተመሰከረ",
+      "pending": "በመጠባበቅ ላይ",
+      "suspended": "የታገደ",
+      "verify": "አጽድቅ",
+      "suspend": "አግድ",
+      "activate": "አግብር",
+      "filters": {
+        "all": "ሁሉም",
+        "pending": "በመጠባበቅ",
+        "verified": "የተመሰከረ",
+        "suspended": "የታገደ"
       }
     }
   },
