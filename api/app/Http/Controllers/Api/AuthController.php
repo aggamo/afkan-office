@@ -12,10 +12,14 @@ use App\Models\AgencyUser;
 use App\Models\Customer;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rules\Password as PasswordRule;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -126,5 +130,48 @@ class AuthController extends Controller
     public function me(Request $request)
     {
         return $this->success($request->user()->load('role'));
+    }
+
+    public function forgotPassword(Request $request)
+    {
+        $request->validate(['email' => ['required', 'email']]);
+
+        // Send the reset link. We always return the same generic response so
+        // the endpoint cannot be used to probe which emails are registered.
+        Password::sendResetLink($request->only('email'));
+
+        return $this->success(null, 'إن كان البريد مسجّلاً لدينا فستصلك رسالة لإعادة تعيين كلمة المرور.');
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'token' => ['required', 'string'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'confirmed', PasswordRule::min(8)->letters()->numbers()],
+        ]);
+
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function (User $user, string $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password),
+                    'remember_token' => Str::random(60),
+                ])->save();
+
+                // Revoke every existing session/token after a password change.
+                $user->tokens()->delete();
+
+                event(new PasswordReset($user));
+            }
+        );
+
+        if ($status !== Password::PasswordReset) {
+            throw ValidationException::withMessages([
+                'email' => [__($status)],
+            ]);
+        }
+
+        return $this->success(null, 'تم تحديث كلمة المرور بنجاح. يمكنك تسجيل الدخول الآن.');
     }
 }

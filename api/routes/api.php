@@ -29,6 +29,8 @@ Route::prefix('v1')->group(function () {
     Route::post('/auth/register', [AuthController::class, 'registerCustomer']);
     Route::post('/auth/register-agency', [AuthController::class, 'registerAgency']);
     Route::post('/auth/login', [AuthController::class, 'login']);
+    Route::post('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:6,1');
+    Route::post('/auth/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:6,1');
 
     Route::get('/workers', [WorkerController::class, 'index']);
     Route::get('/workers/track', [WorkerController::class, 'track']);

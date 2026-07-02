@@ -151,6 +151,14 @@ export type RegisterAgencyPayload = {
   position?: string;
 };
 
+export function forgotPassword(email: string) {
+  return request<null>("/auth/forgot-password", { method: "POST", body: JSON.stringify({ email }) });
+}
+
+export function resetPassword(payload: { token: string; email: string; password: string; password_confirmation: string }) {
+  return request<null>("/auth/reset-password", { method: "POST", body: JSON.stringify(payload) });
+}
+
 export function registerCustomer(payload: RegisterCustomerPayload) {
   return request<AuthResult>("/auth/register", { method: "POST", body: JSON.stringify(payload) });
 }

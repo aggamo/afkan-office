@@ -31,6 +31,26 @@
             "submit": "Create account",
             "submitting": "Creating...",
             "haveAccount": "Already have an account?"
+        },
+        "forgot": {
+            "title": "Reset Password",
+            "hint": "Enter your email and we will send you a reset link.",
+            "submit": "Send link",
+            "submitting": "Sending...",
+            "sent": "If the email is registered, a message will arrive shortly. Check your inbox.",
+            "backToLogin": "Back to login",
+            "link": "Forgot password?"
+        },
+        "reset": {
+            "title": "Set a new password",
+            "newPassword": "New password",
+            "confirmPassword": "Confirm password",
+            "submit": "Update password",
+            "submitting": "Updating...",
+            "mismatch": "Passwords do not match",
+            "done": "Password updated successfully, redirecting to login.",
+            "invalidLink": "Invalid or expired link.",
+            "invalid": "Invalid link"
         }
     },
     "nav": {
