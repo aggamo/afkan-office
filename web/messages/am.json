@@ -418,7 +418,10 @@
         "high": "ከፍተኛ እርግጠኝነት",
         "medium": "መካከለኛ እርግጠኝነት",
         "low": "ዝቅተኛ እርግጠኝነት"
-      }
+      },
+      "requiredDocuments": "ለዚህ ደረጃ የሚያስፈልጉ ሰነዶች",
+      "docPresent": "አለ",
+      "docMissing": "የለም"
     },
     "messages": {
       "title": "የድጋፍ መልእክቶች",

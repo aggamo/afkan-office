@@ -120,6 +120,16 @@ class MasterDataSeeder extends Seeder
             ['slug' => 'warranty_period', 'name_ar' => 'فترة الضمان (90 يوماً)', 'name_en' => 'Warranty Period (90 Days)', 'name_am' => 'የዋስትና ጊዜ (90 ቀናት)', 'sla_days' => 90, 'color' => '#7C3AED'],
         ];
 
+        // Document types that should be on file by the time a stage is reached.
+        $required = [
+            'file_received' => ['passport', 'photo'],
+            'medical_examination' => ['medical_report'],
+            'waiting_medical_result' => ['medical_report'],
+            'visa_issued' => ['visa'],
+            'passport_returned' => ['passport'],
+            'documents_delivered' => ['passport', 'visa'],
+        ];
+
         foreach ($stages as $index => $data) {
             RecruitmentStage::updateOrCreate(
                 ['slug' => $data['slug']],
@@ -128,6 +138,7 @@ class MasterDataSeeder extends Seeder
                     'is_core' => true,
                     'is_public' => true,
                     'is_active' => true,
+                    'required_document_slugs' => $required[$data['slug']] ?? null,
                 ])
             );
         }

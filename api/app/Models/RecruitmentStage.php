@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'slug', 'name_ar', 'name_en', 'name_am', 'step_number',
-    'is_core', 'is_public', 'color', 'sla_days', 'is_active',
+    'is_core', 'is_public', 'color', 'sla_days', 'required_document_slugs', 'is_active',
 ])]
 class RecruitmentStage extends Model
 {
@@ -21,6 +21,7 @@ class RecruitmentStage extends Model
             'is_active' => 'boolean',
             'is_core' => 'boolean',
             'is_public' => 'boolean',
+            'required_document_slugs' => 'array',
         ];
     }
 

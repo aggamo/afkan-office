@@ -418,7 +418,10 @@
         "high": "دقة عالية",
         "medium": "دقة متوسطة",
         "low": "دقة منخفضة"
-      }
+      },
+      "requiredDocuments": "الوثائق المطلوبة لهذه المرحلة",
+      "docPresent": "متوفرة",
+      "docMissing": "ناقصة"
     },
     "messages": {
       "title": "رسائل الدعم",

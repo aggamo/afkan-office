@@ -418,7 +418,10 @@
         "high": "high confidence",
         "medium": "medium confidence",
         "low": "low confidence"
-      }
+      },
+      "requiredDocuments": "Required documents for this stage",
+      "docPresent": "present",
+      "docMissing": "missing"
     },
     "messages": {
       "title": "Support Messages",

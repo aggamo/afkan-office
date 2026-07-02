@@ -109,8 +109,37 @@ class WorkflowController extends Controller
                     ? (int) ceil(now()->diffInDays($worker->warranty_ends_at, absolute: true))
                     : 0,
             ],
+            'required_documents' => $this->requiredDocuments($worker),
             'timeline' => $this->workflow->timeline($worker, $publicOnly),
             'history' => $history,
         ];
+    }
+
+    /**
+     * Required document types for the current stage, each flagged present or
+     * missing based on the worker's uploaded documents (Document 8).
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private function requiredDocuments(Worker $worker): array
+    {
+        $slugs = $worker->currentRecruitmentStage?->required_document_slugs ?? [];
+        if (empty($slugs)) {
+            return [];
+        }
+
+        $types = \App\Models\DocumentType::whereIn('slug', $slugs)->get()->keyBy('slug');
+
+        $ownedTypeIds = $worker->documents()->pluck('document_type_id')->all();
+
+        return collect($slugs)->map(function (string $slug) use ($types, $ownedTypeIds) {
+            $type = $types->get($slug);
+
+            return [
+                'slug' => $slug,
+                'name' => $type ? ['ar' => $type->name_ar, 'en' => $type->name_en, 'am' => $type->name_am] : ['ar' => $slug, 'en' => $slug, 'am' => $slug],
+                'present' => $type ? in_array($type->id, $ownedTypeIds, true) : false,
+            ];
+        })->all();
     }
 }

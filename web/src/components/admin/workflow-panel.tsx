@@ -169,6 +169,28 @@ export function WorkflowPanel({ workerId, stages }: { workerId: number; stages: 
         )}
       </div>
 
+      {/* Required documents for the current stage */}
+      {data.required_documents.length > 0 && (
+        <div className="rounded-xl border border-gray-100 bg-white p-5">
+          <h4 className="mb-3 text-sm font-semibold text-gray-500">{t("workflow.requiredDocuments")}</h4>
+          <ul className="space-y-2">
+            {data.required_documents.map((doc) => (
+              <li key={doc.slug} className="flex items-center gap-2 text-sm">
+                {doc.present ? (
+                  <CheckCircle2 size={16} className="text-emerald-600" />
+                ) : (
+                  <AlertTriangle size={16} className="text-orange-500" />
+                )}
+                <span className={doc.present ? "text-brand-dark" : "text-orange-600"}>{doc.name[locale]}</span>
+                <span className="text-xs text-gray-400">
+                  {doc.present ? t("workflow.docPresent") : t("workflow.docMissing")}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Timeline */}
       <div className="rounded-xl border border-gray-100 bg-white p-5">
         <h4 className="mb-3 text-sm font-semibold text-gray-500">{t("workflow.timeline")}</h4>

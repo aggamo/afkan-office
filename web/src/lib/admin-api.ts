@@ -214,6 +214,7 @@ export type WorkerWorkflow = {
   eta: { estimated_completion: string | null; remaining_days: number; confidence: string };
   is_delayed: boolean;
   warranty: { started_at: string | null; ends_at: string | null; remaining_days: number };
+  required_documents: { slug: string; name: LocalizedName; present: boolean }[];
   timeline: WorkflowTimelineStage[];
   history: WorkflowHistoryEntry[];
 };
