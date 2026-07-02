@@ -452,7 +452,13 @@
       "completed": "የተጠናቀቁ ጉዳዮች",
       "days": "ቀናት",
       "perStage": "የእያንዳንዱ ደረጃ አማካይ ጊዜ",
-      "noData": "እስካሁን በቂ መረጃ የለም።"
+      "noData": "እስካሁን በቂ መረጃ የለም።",
+      "exports": "ወደ ውጭ ላክ (CSV)",
+      "export": {
+        "workers": "ሰራተኞች",
+        "reservations": "ማስያዣዎች",
+        "reviews": "ግምገማዎች"
+      }
     }
   },
   "customer": {

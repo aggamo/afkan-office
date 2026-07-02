@@ -452,7 +452,13 @@
       "completed": "Completed cases",
       "days": "days",
       "perStage": "Average time per stage",
-      "noData": "Not enough data yet."
+      "noData": "Not enough data yet.",
+      "exports": "Exports (CSV)",
+      "export": {
+        "workers": "Workers",
+        "reservations": "Reservations",
+        "reviews": "Reviews"
+      }
     }
   },
   "customer": {

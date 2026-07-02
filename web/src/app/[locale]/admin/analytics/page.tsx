@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Download } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { ApiError } from "@/lib/api";
-import { fetchAnalytics, type Analytics } from "@/lib/admin-api";
+import { downloadExport, fetchAnalytics, type Analytics } from "@/lib/admin-api";
 import { StatCard } from "@/components/admin/stat-card";
 
 export default function AdminAnalyticsPage() {
@@ -79,6 +79,22 @@ export default function AdminAnalyticsPage() {
             })}
           </div>
         )}
+      </section>
+
+      <section>
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-400">{t("analytics.exports")}</h2>
+        <div className="flex flex-wrap gap-2">
+          {(["workers", "reservations", "reviews"] as const).map((resource) => (
+            <button
+              key={resource}
+              type="button"
+              onClick={() => downloadExport(resource).catch(() => undefined)}
+              className="flex items-center gap-2 rounded-md border border-gray-200 px-4 py-2 text-sm font-medium text-brand-dark hover:border-brand-green hover:text-brand-green"
+            >
+              <Download size={15} /> {t(`analytics.export.${resource}`)}
+            </button>
+          ))}
+        </div>
       </section>
     </div>
   );

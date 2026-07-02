@@ -326,3 +326,20 @@ export type Analytics = {
 export function fetchAnalytics() {
   return adminRequest<Analytics>("/admin/analytics");
 }
+
+export async function downloadExport(resource: "workers" | "reservations" | "reviews"): Promise<void> {
+  const token = getAuthToken();
+  const res = await fetch(`${API_BASE_URL}/admin/export/${resource}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new ApiError("Export failed", res.status);
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `afkan-${resource}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
