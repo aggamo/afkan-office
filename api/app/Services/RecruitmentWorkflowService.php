@@ -3,11 +3,13 @@
 namespace App\Services;
 
 use App\Exceptions\WorkflowException;
+use App\Models\Notification;
 use App\Models\RecruitmentStage;
 use App\Models\User;
 use App\Models\Worker;
 use App\Models\WorkerStageHistory;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -203,6 +205,114 @@ class RecruitmentWorkflowService
                 ];
             })
             ->all();
+    }
+
+    /**
+     * Scheduled maintenance (Document 8 automation): flag overdue stages to
+     * staff and announce warranties that have reached their 90-day end. Both
+     * are de-duplicated so the same alert is not repeated.
+     *
+     * @return array{delays_notified: int, warranties_closed: int}
+     */
+    public function runDailyMaintenance(): array
+    {
+        $staff = $this->staffUsers();
+
+        return [
+            'delays_notified' => $this->notifyDelays($staff),
+            'warranties_closed' => $this->notifyEndedWarranties($staff),
+        ];
+    }
+
+    private function notifyDelays(Collection $staff): int
+    {
+        $since = now()->startOfDay();
+        $count = 0;
+
+        Worker::query()
+            ->whereNotNull('current_recruitment_stage_id')
+            ->whereNull('warranty_ends_at')
+            ->with('currentRecruitmentStage')
+            ->get()
+            ->each(function (Worker $worker) use ($staff, $since, &$count) {
+                if (! $this->isDelayed($worker)) {
+                    return;
+                }
+
+                $notified = false;
+                foreach ($staff as $user) {
+                    if ($this->notificationExists($user->id, 'workflow.delayed', $worker, $since)) {
+                        continue;
+                    }
+                    $this->notifications->send($user, 'workflow.delayed', [
+                        'ar' => 'ملف متأخر يحتاج متابعة',
+                        'en' => 'Delayed file needs attention',
+                        'am' => 'የዘገየ ፋይል ትኩረት ይፈልጋል',
+                    ], [
+                        'ar' => 'العاملة '.$worker->internal_number.' متأخرة في مرحلة: '.($worker->currentRecruitmentStage?->name_ar ?? ''),
+                        'en' => 'Worker '.$worker->internal_number.' is delayed at stage: '.($worker->currentRecruitmentStage?->name_en ?? ''),
+                        'am' => 'ሰራተኛ '.$worker->internal_number.' በደረጃ ዘግይታለች: '.($worker->currentRecruitmentStage?->name_am ?? ''),
+                    ], $worker);
+                    $notified = true;
+                }
+
+                if ($notified) {
+                    $count++;
+                }
+            });
+
+        return $count;
+    }
+
+    private function notifyEndedWarranties(Collection $staff): int
+    {
+        $count = 0;
+
+        Worker::query()
+            ->whereNotNull('warranty_ends_at')
+            ->where('warranty_ends_at', '<=', now())
+            ->get()
+            ->each(function (Worker $worker) use ($staff, &$count) {
+                $notified = false;
+                foreach ($staff as $user) {
+                    // One-time closure notice (deduped for the lifetime of the file).
+                    if ($this->notificationExists($user->id, 'workflow.warranty_ended', $worker)) {
+                        continue;
+                    }
+                    $this->notifications->send($user, 'workflow.warranty_ended', [
+                        'ar' => 'انتهت فترة الضمان',
+                        'en' => 'Warranty period ended',
+                        'am' => 'የዋስትና ጊዜ አብቅቷል',
+                    ], [
+                        'ar' => 'انتهت فترة ضمان العاملة '.$worker->internal_number.' (90 يوماً).',
+                        'en' => 'Warranty period for worker '.$worker->internal_number.' has ended (90 days).',
+                        'am' => 'የሰራተኛ '.$worker->internal_number.' የዋስትና ጊዜ አብቅቷል (90 ቀናት)።',
+                    ], $worker);
+                    $notified = true;
+                }
+
+                if ($notified) {
+                    $count++;
+                }
+            });
+
+        return $count;
+    }
+
+    private function staffUsers(): Collection
+    {
+        return User::whereHas('role', fn ($q) => $q->whereIn('slug', ['employee', 'super_admin']))->get();
+    }
+
+    private function notificationExists(int $userId, string $event, Worker $worker, ?Carbon $since = null): bool
+    {
+        return Notification::query()
+            ->where('user_id', $userId)
+            ->where('event', $event)
+            ->where('notifiable_type', Worker::class)
+            ->where('notifiable_id', $worker->id)
+            ->when($since, fn ($q) => $q->where('created_at', '>=', $since))
+            ->exists();
     }
 
     private function notifyStageChange(Worker $worker, RecruitmentStage $stage): void

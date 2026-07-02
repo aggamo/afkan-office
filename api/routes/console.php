@@ -9,3 +9,6 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Schedule::command('reservations:expire')->everyMinute()->withoutOverlapping();
+
+// Detect delayed recruitment files and announce ended warranties (Document 8).
+Schedule::command('workflow:maintain')->hourly()->withoutOverlapping();
