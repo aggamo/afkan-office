@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Search, CheckCircle2, Circle, LoaderCircle, AlertTriangle } from "lucide-react";
-import { ApiError, trackWorker, type ApiTrackResult } from "@/lib/api";
+import { trackWorker, type ApiTrackResult } from "@/lib/api";
+import { TrackingQr } from "@/components/ui/tracking-qr";
 import type { Locale } from "@/i18n/config";
 
 const STATUS_ICON = {
@@ -21,23 +22,42 @@ export function TrackForm() {
   const [searched, setSearched] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  async function handleSearch() {
-    if (!value.trim()) return;
+  async function runSearch(term: string) {
+    const q = term.trim();
+    if (!q) return;
     setLoading(true);
     setSearched(true);
     try {
-      const data = await trackWorker(value.trim());
+      const data = await trackWorker(q);
       setResult(data);
-    } catch (error) {
-      if (error instanceof ApiError && error.status === 404) {
-        setResult(null);
-      } else {
-        setResult(null);
-      }
+    } catch {
+      setResult(null);
     } finally {
       setLoading(false);
     }
   }
+
+  function handleSearch() {
+    runSearch(value);
+  }
+
+  // Auto-load when arriving via a QR link (…/track?tracking=AFK-…).
+  useEffect(() => {
+    let cancelled = false;
+    async function fromQuery() {
+      await Promise.resolve();
+      if (cancelled) return;
+      const tracking = new URLSearchParams(window.location.search).get("tracking");
+      if (tracking) {
+        setValue(tracking);
+        runSearch(tracking);
+      }
+    }
+    fromQuery();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const eta = result?.eta;
 
@@ -82,7 +102,10 @@ export function TrackForm() {
           </div>
 
           {result.tracking_number && (
-            <p className="mb-4 text-xs text-gray-400">{result.tracking_number}</p>
+            <div className="mb-4 flex items-center gap-4">
+              <p className="text-xs text-gray-400">{result.tracking_number}</p>
+              <TrackingQr value={`${window.location.origin}${window.location.pathname}?tracking=${result.tracking_number}`} size={96} />
+            </div>
           )}
 
           {result.is_delayed && (

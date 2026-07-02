@@ -12,6 +12,7 @@ import {
   type WorkerWorkflow,
   type WorkflowStage,
 } from "@/lib/admin-api";
+import { TrackingQr } from "@/components/ui/tracking-qr";
 
 const STATUS_ICON = {
   completed: <CheckCircle2 size={16} className="text-emerald-600" />,
@@ -121,6 +122,16 @@ export function WorkflowPanel({ workerId, stages }: { workerId: number; stages: 
           <p className="mt-1 flex items-center gap-1 text-xs text-purple-600">
             <ShieldCheck size={13} /> {t("workflow.warranty")}: {data.warranty.remaining_days} {t("workflow.days")}
           </p>
+        )}
+
+        {data.worker.tracking_number && (
+          <div className="mt-4 flex items-center gap-3 border-t border-gray-50 pt-4">
+            <TrackingQr
+              value={`${window.location.origin}/${locale}/track?tracking=${data.worker.tracking_number}`}
+              size={92}
+            />
+            <span className="text-xs text-gray-400">{t("workflow.scanToTrack")}</span>
+          </div>
         )}
       </div>
 

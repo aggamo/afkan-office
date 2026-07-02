@@ -421,7 +421,8 @@
       },
       "requiredDocuments": "Required documents for this stage",
       "docPresent": "present",
-      "docMissing": "missing"
+      "docMissing": "missing",
+      "scanToTrack": "Scan to track"
     },
     "messages": {
       "title": "Support Messages",

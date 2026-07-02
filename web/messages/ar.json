@@ -421,7 +421,8 @@
       },
       "requiredDocuments": "الوثائق المطلوبة لهذه المرحلة",
       "docPresent": "متوفرة",
-      "docMissing": "ناقصة"
+      "docMissing": "ناقصة",
+      "scanToTrack": "امسح للتتبع"
     },
     "messages": {
       "title": "رسائل الدعم",

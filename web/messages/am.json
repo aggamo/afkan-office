@@ -421,7 +421,8 @@
       },
       "requiredDocuments": "ለዚህ ደረጃ የሚያስፈልጉ ሰነዶች",
       "docPresent": "አለ",
-      "docMissing": "የለም"
+      "docMissing": "የለም",
+      "scanToTrack": "ለመከታተል ይቃኙ"
     },
     "messages": {
       "title": "የድጋፍ መልእክቶች",
