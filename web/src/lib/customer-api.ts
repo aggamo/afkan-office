@@ -132,3 +132,56 @@ export type CustomerRecruitment = {
 export function fetchCustomerRecruitment() {
   return customerRequest<CustomerRecruitment>("/customer/recruitment");
 }
+
+export type CustomerDocument = {
+  id: number;
+  uuid: string;
+  category: "passport" | "national_id" | "family" | "other";
+  original_name: string;
+  mime_type: string | null;
+  size: number;
+  status: "pending" | "verified" | "rejected";
+  created_at: string | null;
+};
+
+export function fetchCustomerDocuments() {
+  return customerRequest<CustomerDocument[]>("/customer/documents");
+}
+
+export async function uploadCustomerDocument(category: string, file: File): Promise<CustomerDocument> {
+  const token = getAuthToken();
+  const form = new FormData();
+  form.append("category", category);
+  form.append("file", file);
+  const res = await fetch(`${API_BASE_URL}/customer/documents`, {
+    method: "POST",
+    headers: { Accept: "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    body: form,
+  });
+  const body = (await res.json()) as ApiEnvelope<CustomerDocument>;
+  if (!res.ok || body.status === "error") {
+    throw new ApiError(body.message ?? "Upload failed", res.status, body.errors);
+  }
+  return body.data;
+}
+
+export function deleteCustomerDocument(id: number) {
+  return customerRequest<null>(`/customer/documents/${id}`, { method: "DELETE" });
+}
+
+export async function downloadCustomerDocument(doc: CustomerDocument): Promise<void> {
+  const token = getAuthToken();
+  const res = await fetch(`${API_BASE_URL}/customer/documents/${doc.id}/download`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new ApiError("Download failed", res.status);
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = doc.original_name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}

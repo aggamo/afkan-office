@@ -430,7 +430,8 @@
       "reservations": "ማስያዣዎቼ",
       "profile": "የግል መገለጫዬ",
       "notifications": "ማሳወቂያዎች",
-      "recruitment": "የእኔ ቅጥር"
+      "recruitment": "የእኔ ቅጥር",
+      "documents": "ሰነዶቼ"
     },
     "dashboard": {
       "welcome": "እንኳን ደህና መጡ",
@@ -507,6 +508,30 @@
       "agency": "ኤጀንሲ",
       "progress": "መሻሻል",
       "eta": "የሚጠበቀው መጨረሻ"
+    },
+    "documents": {
+      "title": "ሰነዶቼ",
+      "hint": "ፓስፖርትዎን፣ መታወቂያዎን እና ደጋፊ ሰነዶችን ይስቀሉ።",
+      "category": "የሰነድ ዓይነት",
+      "upload": "ስቀል",
+      "uploading": "በመስቀል ላይ...",
+      "uploaded": "ሰነድ ተስቅሏል",
+      "deleted": "ተሰርዟል",
+      "download": "አውርድ",
+      "delete": "ሰርዝ",
+      "empty": "እስካሁን ሰነዶች የሉም።",
+      "allowed": "የተፈቀዱ፦ PDF ወይም ምስል፣ እስከ 5 ሜባ።",
+      "categories": {
+        "passport": "ፓስፖርት",
+        "national_id": "ብሔራዊ መታወቂያ",
+        "family": "የቤተሰብ መረጃ",
+        "other": "ሌላ"
+      },
+      "status": {
+        "pending": "በግምገማ ላይ",
+        "verified": "የተረጋገጠ",
+        "rejected": "ተቀባይነት አላገኘም"
+      }
     }
   }
 }

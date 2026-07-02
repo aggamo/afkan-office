@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\Agency\AuthorizationController as AgencyAuthorizati
 use App\Http\Controllers\Api\Agency\InvoiceController as AgencyInvoiceController;
 use App\Http\Controllers\Api\AgencyController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CustomerDocumentController;
 use App\Http\Controllers\Api\CustomerPortalController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\NotificationController;
@@ -47,6 +48,11 @@ Route::prefix('v1')->group(function () {
             Route::get('/customer/recruitment', [CustomerPortalController::class, 'recruitment']);
             Route::get('/customer/profile', [CustomerPortalController::class, 'profile']);
             Route::put('/customer/profile', [CustomerPortalController::class, 'updateProfile']);
+
+            Route::get('/customer/documents', [CustomerDocumentController::class, 'index']);
+            Route::post('/customer/documents', [CustomerDocumentController::class, 'store']);
+            Route::get('/customer/documents/{customerDocument}/download', [CustomerDocumentController::class, 'download']);
+            Route::delete('/customer/documents/{customerDocument}', [CustomerDocumentController::class, 'destroy']);
 
             Route::get('/favorites', [FavoriteController::class, 'index']);
             Route::post('/favorites/{worker}', [FavoriteController::class, 'store']);

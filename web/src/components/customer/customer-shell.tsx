@@ -1,13 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { LayoutDashboard, ClipboardList, Route, Bell, User } from "lucide-react";
+import { LayoutDashboard, ClipboardList, Route, FileText, Bell, User } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { href: "/customer", key: "dashboard", icon: LayoutDashboard, exact: true },
   { href: "/customer/reservations", key: "reservations", icon: ClipboardList, exact: false },
   { href: "/customer/recruitment", key: "recruitment", icon: Route, exact: false },
+  { href: "/customer/documents", key: "documents", icon: FileText, exact: false },
   { href: "/customer/notifications", key: "notifications", icon: Bell, exact: false },
   { href: "/customer/profile", key: "profile", icon: User, exact: false },
 ] as const;

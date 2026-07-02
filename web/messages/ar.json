@@ -430,7 +430,8 @@
       "reservations": "حجوزاتي",
       "profile": "ملفي الشخصي",
       "notifications": "الإشعارات",
-      "recruitment": "استقدامي"
+      "recruitment": "استقدامي",
+      "documents": "وثائقي"
     },
     "dashboard": {
       "welcome": "مرحباً بك",
@@ -507,6 +508,30 @@
       "agency": "المكتب",
       "progress": "نسبة التقدم",
       "eta": "التاريخ المتوقع للإنجاز"
+    },
+    "documents": {
+      "title": "وثائقي",
+      "hint": "ارفع نسخة الجواز والهوية والوثائق الداعمة.",
+      "category": "نوع الوثيقة",
+      "upload": "رفع",
+      "uploading": "جارٍ الرفع...",
+      "uploaded": "تم رفع الوثيقة",
+      "deleted": "تم الحذف",
+      "download": "تنزيل",
+      "delete": "حذف",
+      "empty": "لا توجد وثائق بعد.",
+      "allowed": "الصيغ المسموحة: PDF أو صورة، بحد أقصى 5 ميجابايت.",
+      "categories": {
+        "passport": "جواز السفر",
+        "national_id": "الهوية الوطنية",
+        "family": "معلومات العائلة",
+        "other": "أخرى"
+      },
+      "status": {
+        "pending": "قيد المراجعة",
+        "verified": "موثّقة",
+        "rejected": "مرفوضة"
+      }
     }
   }
 }

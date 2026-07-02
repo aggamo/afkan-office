@@ -430,7 +430,8 @@
       "reservations": "My Reservations",
       "profile": "My Profile",
       "notifications": "Notifications",
-      "recruitment": "My Recruitment"
+      "recruitment": "My Recruitment",
+      "documents": "My Documents"
     },
     "dashboard": {
       "welcome": "Welcome",
@@ -507,6 +508,30 @@
       "agency": "Agency",
       "progress": "Progress",
       "eta": "Estimated completion"
+    },
+    "documents": {
+      "title": "My Documents",
+      "hint": "Upload your passport, ID and supporting documents.",
+      "category": "Document type",
+      "upload": "Upload",
+      "uploading": "Uploading...",
+      "uploaded": "Document uploaded",
+      "deleted": "Deleted",
+      "download": "Download",
+      "delete": "Delete",
+      "empty": "No documents yet.",
+      "allowed": "Allowed: PDF or image, up to 5 MB.",
+      "categories": {
+        "passport": "Passport",
+        "national_id": "National ID",
+        "family": "Family Information",
+        "other": "Other"
+      },
+      "status": {
+        "pending": "Pending review",
+        "verified": "Verified",
+        "rejected": "Rejected"
+      }
     }
   }
 }
