@@ -69,7 +69,8 @@
         "requestWorker": "Request a Worker",
         "favorites": "Favorites",
         "admin": "Admin Panel",
-        "account": "My Account"
+        "account": "My Account",
+        "agencyPortal": "Agency Portal"
     },
     "home": {
         "hero": {
@@ -755,6 +756,51 @@
                 "pending": "Pending review",
                 "approved": "Published",
                 "rejected": "Rejected"
+            }
+        }
+    },
+    "agency": {
+        "title": "Agency Portal",
+        "loading": "Loading...",
+        "loginRequired": "You must log in to access the agency portal",
+        "loginCta": "Log in",
+        "accessDenied": "This portal is for recruitment agencies only",
+        "backHome": "Back home",
+        "nav": {
+            "dashboard": "Dashboard",
+            "authorizations": "Authorization requests",
+            "invoices": "Invoices"
+        },
+        "dashboard": {
+            "title": "Agency Dashboard",
+            "subtitle": "Summary of authorization requests and invoices",
+            "pending": "Pending authorizations",
+            "unpaid": "Unpaid invoices",
+            "invoices": "Total invoices"
+        },
+        "authorizations": {
+            "title": "Authorization Requests",
+            "subtitle": "Customer requests authorizing your agency to complete recruitment",
+            "empty": "No pending requests",
+            "customer": "Customer",
+            "expiresAt": "Expires at",
+            "accept": "Accept",
+            "reject": "Reject"
+        },
+        "invoices": {
+            "title": "Agency Invoices",
+            "subtitle": "Invoices issued to your agency",
+            "empty": "No invoices",
+            "number": "Invoice No.",
+            "worker": "Worker",
+            "amount": "Amount",
+            "status": "Status",
+            "issuedAt": "Issued at",
+            "statuses": {
+                "all": "All",
+                "issued": "Issued",
+                "paid": "Paid",
+                "cancelled": "Cancelled"
             }
         }
     }

@@ -23,7 +23,15 @@ export function LoginForm() {
       setAuthToken(token);
       setAuthRole(user.role.slug);
       window.dispatchEvent(new Event("afkan-auth-changed"));
-      router.push("/");
+      const dest =
+        user.role.slug === "agency"
+          ? "/agency"
+          : user.role.slug === "customer"
+            ? "/customer"
+            : user.role.slug === "employee" || user.role.slug === "super_admin"
+              ? "/admin"
+              : "/";
+      router.push(dest);
     } catch (err) {
       setError(err instanceof ApiError ? err.message : t("error"));
     } finally {

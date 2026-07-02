@@ -75,7 +75,7 @@ export function RegisterForm() {
       setAuthToken(result.token);
       setAuthRole(result.user.role.slug);
       window.dispatchEvent(new Event("afkan-auth-changed"));
-      router.push(mode === "customer" ? "/customer" : "/");
+      router.push(mode === "customer" ? "/customer" : "/agency");
     } catch (err) {
       setError(err instanceof ApiError ? err.message : t("error"));
     } finally {

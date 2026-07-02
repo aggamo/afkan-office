@@ -69,7 +69,8 @@
         "requestWorker": "ሰራተኛ ይጠይቁ",
         "favorites": "ተወዳጆች",
         "admin": "የአስተዳደር ፓነል",
-        "account": "መለያዬ"
+        "account": "መለያዬ",
+        "agencyPortal": "የኤጀንሲ መግቢያ"
     },
     "home": {
         "hero": {
@@ -755,6 +756,51 @@
                 "pending": "በግምገማ ላይ",
                 "approved": "ታትሟል",
                 "rejected": "ተቀባይነት አላገኘም"
+            }
+        }
+    },
+    "agency": {
+        "title": "የኤጀንሲ መግቢያ",
+        "loading": "በመጫን ላይ...",
+        "loginRequired": "ወደ ኤጀንሲ መግቢያ ለመድረስ መግባት አለብዎት",
+        "loginCta": "ግባ",
+        "accessDenied": "ይህ መግቢያ ለቅጥር ኤጀንሲዎች ብቻ ነው",
+        "backHome": "ወደ መነሻ ተመለስ",
+        "nav": {
+            "dashboard": "ዳሽቦርድ",
+            "authorizations": "የፍቃድ ጥያቄዎች",
+            "invoices": "ደረሰኞች"
+        },
+        "dashboard": {
+            "title": "የኤጀንሲ ዳሽቦርድ",
+            "subtitle": "የፍቃድ ጥያቄዎች እና ደረሰኞች ማጠቃለያ",
+            "pending": "በመጠባበቅ ላይ ያሉ ፍቃዶች",
+            "unpaid": "ያልተከፈሉ ደረሰኞች",
+            "invoices": "ጠቅላላ ደረሰኞች"
+        },
+        "authorizations": {
+            "title": "የፍቃድ ጥያቄዎች",
+            "subtitle": "ደንበኞች ኤጀንሲዎን ቅጥር እንዲያጠናቅቅ የሚፈቅዱ ጥያቄዎች",
+            "empty": "በመጠባበቅ ላይ ያለ ጥያቄ የለም",
+            "customer": "ደንበኛ",
+            "expiresAt": "የሚያበቃበት",
+            "accept": "ተቀበል",
+            "reject": "አትቀበል"
+        },
+        "invoices": {
+            "title": "የኤጀንሲ ደረሰኞች",
+            "subtitle": "ለኤጀንሲዎ የተሰጡ ደረሰኞች",
+            "empty": "ደረሰኝ የለም",
+            "number": "የደረሰኝ ቁጥር",
+            "worker": "ሰራተኛ",
+            "amount": "መጠን",
+            "status": "ሁኔታ",
+            "issuedAt": "የተሰጠበት",
+            "statuses": {
+                "all": "ሁሉም",
+                "issued": "ተሰጥቷል",
+                "paid": "ተከፍሏል",
+                "cancelled": "ተሰርዟል"
             }
         }
     }
