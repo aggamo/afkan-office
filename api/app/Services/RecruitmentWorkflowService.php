@@ -208,6 +208,64 @@ class RecruitmentWorkflowService
     }
 
     /**
+     * Management operations overview (Documents 8 & 9): counts of files in
+     * recruitment, delayed and under warranty, plus an "attention" list of the
+     * most overdue files. Computed in a bounded, N+1-free way.
+     *
+     * @return array{in_recruitment: int, delayed: int, warranty_active: int, attention: array<int, array<string, mixed>>}
+     */
+    public function operationsOverview(int $attentionLimit = 8): array
+    {
+        $inWorkflow = Worker::query()
+            ->whereNotNull('current_recruitment_stage_id')
+            ->whereNull('warranty_ends_at')
+            ->with('currentRecruitmentStage')
+            ->get();
+
+        $historyByWorker = WorkerStageHistory::query()
+            ->whereIn('worker_id', $inWorkflow->pluck('id'))
+            ->get()
+            ->groupBy('worker_id');
+
+        $delayed = [];
+        foreach ($inWorkflow as $worker) {
+            $stage = $worker->currentRecruitmentStage;
+            if (! $stage || ! $stage->sla_days) {
+                continue;
+            }
+
+            $enteredAt = optional($historyByWorker->get($worker->id))
+                ->where('to_stage_id', $worker->current_recruitment_stage_id)
+                ->max('entered_at');
+
+            if (! $enteredAt) {
+                continue;
+            }
+
+            $due = Carbon::parse($enteredAt)->addDays($stage->sla_days);
+            if ($due->isPast()) {
+                $delayed[] = [
+                    'worker_id' => $worker->id,
+                    'internal_number' => $worker->internal_number,
+                    'tracking_number' => $worker->tracking_number,
+                    'full_name' => ['ar' => $worker->full_name_ar, 'en' => $worker->full_name_en, 'am' => $worker->full_name_am],
+                    'stage' => ['ar' => $stage->name_ar, 'en' => $stage->name_en, 'am' => $stage->name_am],
+                    'days_overdue' => (int) ceil($due->diffInDays(now(), absolute: true)),
+                ];
+            }
+        }
+
+        usort($delayed, fn ($a, $b) => $b['days_overdue'] <=> $a['days_overdue']);
+
+        return [
+            'in_recruitment' => $inWorkflow->count(),
+            'delayed' => count($delayed),
+            'warranty_active' => Worker::whereNotNull('warranty_ends_at')->where('warranty_ends_at', '>', now())->count(),
+            'attention' => array_slice($delayed, 0, $attentionLimit),
+        ];
+    }
+
+    /**
      * Scheduled maintenance (Document 8 automation): flag overdue stages to
      * staff and announce warranties that have reached their 90-day end. Both
      * are de-duplicated so the same alert is not repeated.

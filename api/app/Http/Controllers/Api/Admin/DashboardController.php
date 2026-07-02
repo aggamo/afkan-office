@@ -11,6 +11,7 @@ use App\Models\Invoice;
 use App\Models\Reservation;
 use App\Models\User;
 use App\Models\Worker;
+use App\Services\RecruitmentWorkflowService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -27,13 +28,14 @@ class DashboardController extends Controller
 
     private const FINANCE_CURRENCY = 'SAR';
 
-    public function index(Request $request)
+    public function index(Request $request, RecruitmentWorkflowService $workflow)
     {
         return $this->success([
             'workers' => $this->workerStats(),
             'reservations' => $this->reservationStats(),
             'finance' => $this->financeStats(),
             'entities' => $this->entityStats(),
+            'workflow' => $workflow->operationsOverview(),
             'charts' => [
                 'worker_status' => $this->workerStatusDistribution(),
                 'monthly' => $this->monthlyTrend(),

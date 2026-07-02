@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Activity,
+  AlertTriangle,
   Building2,
   CalendarClock,
   CheckCircle2,
@@ -11,6 +12,8 @@ import {
   Database,
   FileText,
   Home,
+  Route,
+  ShieldCheck,
   UserCheck,
   Users,
   Wallet,
@@ -140,6 +143,38 @@ export function DashboardView() {
           <StatCard label={t("dashboard.entities.customers")} value={nf.format(e.customers)} icon={Users} tone="green" />
           <StatCard label={t("dashboard.entities.employees")} value={nf.format(e.employees)} icon={UserCheck} tone="purple" />
         </div>
+      </Section>
+
+      {/* Recruitment operations */}
+      <Section title={t("dashboard.sections.operations")}>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <StatCard label={t("dashboard.operations.inRecruitment")} value={nf.format(data.workflow.in_recruitment)} icon={Route} tone="blue" />
+          <StatCard label={t("dashboard.operations.delayed")} value={nf.format(data.workflow.delayed)} icon={AlertTriangle} tone="red" />
+          <StatCard label={t("dashboard.operations.warrantyActive")} value={nf.format(data.workflow.warranty_active)} icon={ShieldCheck} tone="purple" />
+        </div>
+        {data.workflow.attention.length > 0 && (
+          <div className="mt-3 rounded-xl border border-gray-100 bg-white p-2">
+            <p className="px-2 py-1 text-xs font-semibold uppercase text-gray-400">{t("dashboard.operations.attention")}</p>
+            <ul className="divide-y divide-gray-50">
+              {data.workflow.attention.map((item) => (
+                <li key={item.worker_id} className="flex items-center justify-between gap-2 p-3 text-sm">
+                  <span className="min-w-0">
+                    <span className="block truncate font-medium text-brand-dark">{item.full_name[locale]}</span>
+                    <span className="text-xs text-gray-400">
+                      {item.internal_number} · {item.stage[locale]}
+                    </span>
+                  </span>
+                  <span className="shrink-0 rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-600">
+                    {item.days_overdue} {t("dashboard.operations.daysOverdue")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <Link href="/admin/workflow" className="mt-1 block p-2 text-center text-xs font-semibold text-brand-green hover:underline">
+              {t("nav.workflow")}
+            </Link>
+          </div>
+        )}
       </Section>
 
       <div className="grid gap-6 lg:grid-cols-2">

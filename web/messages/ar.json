@@ -278,7 +278,8 @@
         "monthly": "الاتجاه الشهري",
         "topAgencies": "أكثر المكاتب نشاطاً",
         "recentActivity": "النشاط الأخير",
-        "quickActions": "إجراءات سريعة"
+        "quickActions": "إجراءات سريعة",
+        "operations": "عمليات الاستقدام"
       },
       "workers": {
         "total": "إجمالي العاملات",
@@ -328,7 +329,15 @@
         "invoices": "الفواتير"
       },
       "noActivity": "لا يوجد نشاط بعد.",
-      "empty": "لا توجد بيانات."
+      "empty": "لا توجد بيانات.",
+      "operations": {
+        "inRecruitment": "قيد الاستقدام",
+        "delayed": "ملفات متأخرة",
+        "warrantyActive": "تحت الضمان",
+        "attention": "ملفات تحتاج متابعة",
+        "daysOverdue": "يوم تأخير",
+        "noDelayed": "لا توجد ملفات متأخرة."
+      }
     },
     "activity": {
       "title": "سجل النشاط",

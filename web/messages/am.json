@@ -278,7 +278,8 @@
         "monthly": "ወርሃዊ አዝማሚያ",
         "topAgencies": "እጅግ ንቁ ኤጀንሲዎች",
         "recentActivity": "የቅርብ ጊዜ እንቅስቃሴ",
-        "quickActions": "ፈጣን ድርጊቶች"
+        "quickActions": "ፈጣን ድርጊቶች",
+        "operations": "የቅጥር ክንዋኔዎች"
       },
       "workers": {
         "total": "ጠቅላላ ሰራተኞች",
@@ -328,7 +329,15 @@
         "invoices": "ደረሰኞች"
       },
       "noActivity": "እስካሁን ምንም እንቅስቃሴ የለም።",
-      "empty": "ምንም መረጃ የለም።"
+      "empty": "ምንም መረጃ የለም።",
+      "operations": {
+        "inRecruitment": "በቅጥር ሂደት",
+        "delayed": "የዘገዩ ፋይሎች",
+        "warrantyActive": "በዋስትና ስር",
+        "attention": "ትኩረት የሚሹ ፋይሎች",
+        "daysOverdue": "ቀናት ዘግይቷል",
+        "noDelayed": "የዘገዩ ፋይሎች የሉም።"
+      }
     },
     "activity": {
       "title": "የእንቅስቃሴ መዝገብ",

@@ -278,7 +278,8 @@
         "monthly": "Monthly Trend",
         "topAgencies": "Most Active Agencies",
         "recentActivity": "Recent Activity",
-        "quickActions": "Quick Actions"
+        "quickActions": "Quick Actions",
+        "operations": "Recruitment Operations"
       },
       "workers": {
         "total": "Total Workers",
@@ -328,7 +329,15 @@
         "invoices": "Invoices"
       },
       "noActivity": "No activity yet.",
-      "empty": "No data."
+      "empty": "No data.",
+      "operations": {
+        "inRecruitment": "In Recruitment",
+        "delayed": "Delayed Files",
+        "warrantyActive": "Under Warranty",
+        "attention": "Files Needing Attention",
+        "daysOverdue": "days overdue",
+        "noDelayed": "No delayed files."
+      }
     },
     "activity": {
       "title": "Activity Log",

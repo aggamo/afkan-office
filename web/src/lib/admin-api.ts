@@ -136,6 +136,19 @@ export type DashboardData = {
     customers: number;
     employees: number;
   };
+  workflow: {
+    in_recruitment: number;
+    delayed: number;
+    warranty_active: number;
+    attention: {
+      worker_id: number;
+      internal_number: string;
+      tracking_number: string | null;
+      full_name: { ar: string; en: string; am: string };
+      stage: { ar: string; en: string; am: string };
+      days_overdue: number;
+    }[];
+  };
   charts: {
     worker_status: { key: string; count: number }[];
     monthly: { month: string; workers_created: number; completed: number }[];
