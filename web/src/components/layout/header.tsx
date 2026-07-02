@@ -82,6 +82,9 @@ export function Header() {
           <Link href="/login" className="text-sm font-medium text-brand-dark hover:text-brand-green">
             {t("login")}
           </Link>
+          <Link href="/register" className="text-sm font-medium text-brand-dark hover:text-brand-green">
+            {t("register")}
+          </Link>
           <Link
             href="/track"
             className="rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-green-dark"
@@ -128,6 +131,9 @@ export function Header() {
             )}
             <Link href="/login" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
               {t("login")}
+            </Link>
+            <Link href="/register" onClick={() => setMenuOpen(false)} className="text-sm font-medium text-brand-dark">
+              {t("register")}
             </Link>
             <Link
               href="/track"

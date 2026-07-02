@@ -124,6 +124,41 @@ export function login(email: string, password: string) {
   );
 }
 
+export type AuthResult = { user: { id: number; name: string; email: string; role: { slug: string } }; token: string };
+
+export type RegisterCustomerPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  password: string;
+  password_confirmation: string;
+  country?: string;
+  city?: string;
+};
+
+export type RegisterAgencyPayload = {
+  agency_name: string;
+  license_number: string;
+  country?: string;
+  city?: string;
+  agency_phone?: string;
+  agency_email?: string;
+  name: string;
+  email: string;
+  phone?: string;
+  password: string;
+  password_confirmation: string;
+  position?: string;
+};
+
+export function registerCustomer(payload: RegisterCustomerPayload) {
+  return request<AuthResult>("/auth/register", { method: "POST", body: JSON.stringify(payload) });
+}
+
+export function registerAgency(payload: RegisterAgencyPayload) {
+  return request<AuthResult>("/auth/register-agency", { method: "POST", body: JSON.stringify(payload) });
+}
+
 function authHeaders(token: string) {
   return { Authorization: `Bearer ${token}` };
 }
