@@ -86,6 +86,7 @@ Route::prefix('v1')->group(function () {
 
         Route::middleware('role:employee,super_admin')->prefix('admin')->group(function () {
             Route::get('/dashboard', [DashboardController::class, 'index']);
+            Route::get('/analytics', [DashboardController::class, 'analytics']);
             Route::get('/activity', [DashboardController::class, 'activity']);
 
             Route::get('/messages', [AdminMessageController::class, 'index']);

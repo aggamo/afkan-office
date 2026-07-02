@@ -266,7 +266,8 @@
       "activity": "የእንቅስቃሴ መዝገብ",
       "workflow": "የሥራ ፍሰት",
       "messages": "መልእክቶች",
-      "reviews": "ግምገማዎች"
+      "reviews": "ግምገማዎች",
+      "analytics": "ትንታኔ"
     },
     "dashboard": {
       "title": "ዳሽቦርድ",
@@ -443,6 +444,15 @@
         "approved": "ታትሟል",
         "rejected": "ተቀባይነት አላገኘም"
       }
+    },
+    "analytics": {
+      "title": "የአፈጻጸም ትንታኔ",
+      "subtitle": "የእያንዳንዱ ደረጃ አማካይ ጊዜ እና አጠቃላይ የቅጥር ጊዜ።",
+      "overallAvg": "አማካይ የቅጥር ጊዜ",
+      "completed": "የተጠናቀቁ ጉዳዮች",
+      "days": "ቀናት",
+      "perStage": "የእያንዳንዱ ደረጃ አማካይ ጊዜ",
+      "noData": "እስካሁን በቂ መረጃ የለም።"
     }
   },
   "customer": {

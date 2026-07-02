@@ -308,3 +308,21 @@ export function moderateReview(id: number, status: "approved" | "rejected") {
     body: JSON.stringify({ status }),
   });
 }
+
+// ---- Performance analytics ----
+
+export type Analytics = {
+  stages: {
+    slug: string;
+    name: { ar: string; en: string; am: string };
+    avg_days: number;
+    sla_days: number | null;
+    count: number;
+  }[];
+  overall_avg_days: number;
+  completed_count: number;
+};
+
+export function fetchAnalytics() {
+  return adminRequest<Analytics>("/admin/analytics");
+}

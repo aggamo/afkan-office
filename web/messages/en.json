@@ -266,7 +266,8 @@
       "activity": "Activity Log",
       "workflow": "Workflow",
       "messages": "Messages",
-      "reviews": "Reviews"
+      "reviews": "Reviews",
+      "analytics": "Analytics"
     },
     "dashboard": {
       "title": "Dashboard",
@@ -443,6 +444,15 @@
         "approved": "Published",
         "rejected": "Rejected"
       }
+    },
+    "analytics": {
+      "title": "Performance Analytics",
+      "subtitle": "Average time per stage and overall recruitment duration.",
+      "overallAvg": "Avg. recruitment time",
+      "completed": "Completed cases",
+      "days": "days",
+      "perStage": "Average time per stage",
+      "noData": "Not enough data yet."
     }
   },
   "customer": {

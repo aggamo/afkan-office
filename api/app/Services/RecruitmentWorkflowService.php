@@ -208,6 +208,66 @@ class RecruitmentWorkflowService
     }
 
     /**
+     * Performance analytics (Documents 8 & 9): average time spent in each
+     * stage and the overall average recruitment duration, derived from the
+     * immutable stage history. Durations are computed in PHP (DB-agnostic).
+     *
+     * @return array{stages: array<int, array<string, mixed>>, overall_avg_days: float, completed_count: int}
+     */
+    public function analytics(): array
+    {
+        $stages = RecruitmentStage::orderBy('step_number')->get()->keyBy('id');
+
+        $history = WorkerStageHistory::query()
+            ->orderBy('worker_id')
+            ->orderBy('entered_at')
+            ->get(['worker_id', 'to_stage_id', 'entered_at'])
+            ->groupBy('worker_id');
+
+        $durations = [];       // stage_id => [days, ...]
+        $completedTotals = []; // total file→arrival days per completed worker
+
+        foreach ($history as $rows) {
+            $rows = $rows->values();
+            for ($i = 0; $i < $rows->count() - 1; $i++) {
+                $stageId = $rows[$i]->to_stage_id;
+                if (! $stageId) {
+                    continue;
+                }
+                $days = Carbon::parse($rows[$i]->entered_at)->diffInHours(Carbon::parse($rows[$i + 1]->entered_at)) / 24;
+                $durations[$stageId][] = $days;
+            }
+
+            // Overall duration for workers that reached the arrival stage.
+            $arrival = $rows->first(fn ($r) => optional($stages->get($r->to_stage_id))->slug === 'worker_arrived');
+            if ($arrival) {
+                $completedTotals[] = Carbon::parse($rows->first()->entered_at)->diffInHours(Carbon::parse($arrival->entered_at)) / 24;
+            }
+        }
+
+        $stageStats = [];
+        foreach ($stages as $stage) {
+            if (! isset($durations[$stage->id])) {
+                continue;
+            }
+            $arr = $durations[$stage->id];
+            $stageStats[] = [
+                'slug' => $stage->slug,
+                'name' => ['ar' => $stage->name_ar, 'en' => $stage->name_en, 'am' => $stage->name_am],
+                'avg_days' => round(array_sum($arr) / count($arr), 1),
+                'sla_days' => $stage->sla_days,
+                'count' => count($arr),
+            ];
+        }
+
+        return [
+            'stages' => $stageStats,
+            'overall_avg_days' => $completedTotals ? round(array_sum($completedTotals) / count($completedTotals), 1) : 0.0,
+            'completed_count' => count($completedTotals),
+        ];
+    }
+
+    /**
      * Management operations overview (Documents 8 & 9): counts of files in
      * recruitment, delayed and under warranty, plus an "attention" list of the
      * most overdue files. Computed in a bounded, N+1-free way.

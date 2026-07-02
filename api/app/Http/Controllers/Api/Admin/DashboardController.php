@@ -46,6 +46,14 @@ class DashboardController extends Controller
     }
 
     /**
+     * Recruitment performance analytics (Documents 8 & 9).
+     */
+    public function analytics(RecruitmentWorkflowService $workflow)
+    {
+        return $this->success($workflow->analytics());
+    }
+
+    /**
      * Paginated audit-log feed for the activity page (Doc 9 — Audit Log,
      * readable by staff, immutable).
      */
