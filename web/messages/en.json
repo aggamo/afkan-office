@@ -1,0 +1,807 @@
+{
+    "meta": {
+        "siteName": "Afkan Foreign Employment Agency",
+        "tagline": "Connecting Ethiopian Talent with Trusted Recruitment Partners"
+    },
+    "auth": {
+        "email": "Email",
+        "password": "Password",
+        "submit": "Log In",
+        "submitting": "Logging in...",
+        "error": "Invalid login credentials.",
+        "register": {
+            "title": "Create Account",
+            "subtitle": "Register as a customer to find a worker, or as a Saudi recruitment agency",
+            "customer": "Customer",
+            "agency": "Recruitment Agency",
+            "agencyInfo": "Agency details",
+            "contactInfo": "Contact person",
+            "agencyName": "Agency name",
+            "licenseNumber": "License number",
+            "agencyPhone": "Agency phone",
+            "agencyEmail": "Agency email",
+            "position": "Position",
+            "name": "Full name",
+            "phone": "Phone number",
+            "country": "Country",
+            "city": "City",
+            "confirmPassword": "Confirm password",
+            "passwordMismatch": "Passwords do not match",
+            "agencyNotice": "The agency account will be reviewed and verified before full permissions are enabled.",
+            "submit": "Create account",
+            "submitting": "Creating...",
+            "haveAccount": "Already have an account?"
+        },
+        "forgot": {
+            "title": "Reset Password",
+            "hint": "Enter your email and we will send you a reset link.",
+            "submit": "Send link",
+            "submitting": "Sending...",
+            "sent": "If the email is registered, a message will arrive shortly. Check your inbox.",
+            "backToLogin": "Back to login",
+            "link": "Forgot password?"
+        },
+        "reset": {
+            "title": "Set a new password",
+            "newPassword": "New password",
+            "confirmPassword": "Confirm password",
+            "submit": "Update password",
+            "submitting": "Updating...",
+            "mismatch": "Passwords do not match",
+            "done": "Password updated successfully, redirecting to login.",
+            "invalidLink": "Invalid or expired link.",
+            "invalid": "Invalid link"
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "workers": "Workers",
+        "agencies": "Agencies",
+        "process": "Recruitment Process",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "contact": "Contact",
+        "track": "Track",
+        "login": "Login",
+        "register": "Register",
+        "requestWorker": "Request a Worker",
+        "favorites": "Favorites",
+        "admin": "Admin Panel",
+        "account": "My Account",
+        "agencyPortal": "Agency Portal"
+    },
+    "home": {
+        "hero": {
+            "headline": "Connecting Ethiopian Talent with Trusted Recruitment Partners",
+            "subheadline": "Licensed Ethiopian Foreign Employment Agency serving Saudi Arabia, UAE and Kuwait.",
+            "browseWorkers": "Browse Workers",
+            "requestRecruitment": "Request Recruitment",
+            "trackApplication": "Track Application",
+            "becomeAgency": "Become an Agency Partner"
+        },
+        "stats": {
+            "available": "Workers Available",
+            "recruited": "Workers Successfully Recruited",
+            "agencies": "Partner Agencies",
+            "experience": "Years of Experience",
+            "countries": "Countries Served",
+            "satisfaction": "Customer Satisfaction"
+        },
+        "why": {
+            "title": "Why Choose Afkan",
+            "licensed": {
+                "title": "Licensed Agency",
+                "desc": "Fully licensed by the Ethiopian government."
+            },
+            "verified": {
+                "title": "Verified Workers",
+                "desc": "Every worker profile is verified and documented."
+            },
+            "transparent": {
+                "title": "Transparent Process",
+                "desc": "Clear stages from reservation to arrival."
+            },
+            "fast": {
+                "title": "Fast Recruitment",
+                "desc": "Streamlined workflow reduces processing time."
+            },
+            "support": {
+                "title": "Professional Support",
+                "desc": "Dedicated support throughout the journey."
+            },
+            "secure": {
+                "title": "Secure Documentation",
+                "desc": "All documents handled with strict confidentiality."
+            }
+        },
+        "services": {
+            "title": "Our Services",
+            "domestic": "Domestic Workers",
+            "agencyRecruitment": "Recruitment for Agencies",
+            "customerRecruitment": "Customer Recruitment",
+            "documents": "Document Processing",
+            "visa": "Visa Coordination",
+            "travel": "Travel Arrangement"
+        },
+        "featured": {
+            "title": "Featured Workers",
+            "viewProfile": "View Profile"
+        },
+        "process": {
+            "title": "Recruitment Process",
+            "step1": "Choose Worker",
+            "step2": "Reserve Worker",
+            "step3": "Agency Confirmation",
+            "step4": "Medical Examination",
+            "step5": "Visa",
+            "step6": "Travel",
+            "step7": "Arrival"
+        },
+        "agencies": {
+            "title": "Partner Agencies",
+            "viewAgency": "View Agency"
+        },
+        "testimonials": {
+            "title": "Customer Testimonials"
+        },
+        "faq": {
+            "title": "Frequently Asked Questions"
+        },
+        "cta": {
+            "title": "Ready to Start Recruitment?",
+            "browse": "Browse Workers",
+            "contact": "Contact Us"
+        }
+    },
+    "footer": {
+        "companyInfo": "Licensed Ethiopian Foreign Employment Agency headquartered in Addis Ababa, serving Saudi Arabia, UAE and Kuwait.",
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "social": "Follow Us",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "rights": "All rights reserved."
+    },
+    "workers": {
+        "title": "Workers",
+        "search": "Search by name, skill or worker ID",
+        "filters": {
+            "title": "Filters",
+            "age": "Age",
+            "experience": "Experience",
+            "language": "Language",
+            "skills": "Skills",
+            "maritalStatus": "Marital Status",
+            "availability": "Availability",
+            "reservationStatus": "Reservation Status",
+            "country": "Country",
+            "apply": "Apply Filters",
+            "reset": "Reset"
+        },
+        "card": {
+            "age": "Age",
+            "experience": "Experience",
+            "viewDetails": "View Details",
+            "reserveNow": "Reserve Now",
+            "favorite": "Add to favorites",
+            "compare": "Add to compare"
+        },
+        "noResults": "No workers match your search.",
+        "status": {
+            "available": "Available",
+            "reserved_agency": "Reserved by Agency",
+            "reserved_customer": "Reserved by Customer",
+            "in_progress": "Recruitment in Progress"
+        }
+    },
+    "workerProfile": {
+        "backToWorkers": "Back to Workers",
+        "personalInfo": "Personal Information",
+        "skills": "Skills",
+        "languages": "Languages",
+        "experience": "Experience",
+        "video": "Video Introduction",
+        "availability": "Availability",
+        "timeline": "Recruitment Timeline",
+        "reserve": "Reserve Worker",
+        "share": "Share Profile",
+        "print": "Print Profile",
+        "reservedUntil": "Reserved Until",
+        "reservedByCustomer": "Reserved by Customer",
+        "inProgress": "Recruitment In Progress",
+        "fields": {
+            "workerId": "Worker ID",
+            "age": "Age",
+            "nationality": "Nationality",
+            "maritalStatus": "Marital Status",
+            "children": "Children",
+            "education": "Education",
+            "religion": "Religion",
+            "experienceYears": "Years of Experience"
+        }
+    },
+    "track": {
+        "title": "Track Your Application",
+        "subtitle": "Enter your tracking number or passport number to view current status.",
+        "inputLabel": "Tracking Number or Passport Number",
+        "button": "Track",
+        "currentStage": "Current Stage",
+        "progress": "Progress",
+        "estimatedCompletion": "Estimated Completion",
+        "support": "Need Help?",
+        "notFound": "No record found for this number. Please check and try again.",
+        "delayed": "This stage is delayed",
+        "confidence": {
+            "high": "high confidence",
+            "medium": "medium confidence",
+            "low": "low confidence"
+        }
+    },
+    "about": {
+        "title": "About Afkan",
+        "mission": "Our Mission",
+        "missionText": "To connect skilled, verified Ethiopian domestic workers with trusted Saudi recruitment partners through a transparent, professional process.",
+        "vision": "Our Vision",
+        "visionText": "To become the most trusted Ethiopian foreign employment agency in the region.",
+        "history": "Company History",
+        "license": "License Information",
+        "message": "Management Message",
+        "values": "Our Values"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "address": "Office Address",
+        "phone": "Phone",
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "email": "Email",
+        "hours": "Working Hours",
+        "form": {
+            "name": "Full Name",
+            "email": "Email",
+            "phone": "Phone",
+            "message": "Message",
+            "send": "Send Message",
+            "success": "Your message has been sent. We will contact you soon."
+        }
+    },
+    "common": {
+        "loading": "Loading...",
+        "currency": "Price available on invoice only"
+    },
+    "favorites": {
+        "title": "Favorite Workers",
+        "empty": "No favorite workers yet.",
+        "loginRequired": "You must be logged in as a customer to use favorites.",
+        "browse": "Browse Workers"
+    },
+    "compare": {
+        "title": "Compare Workers",
+        "selected": "{count, plural, =0{No workers selected} other {# worker(s) selected}}",
+        "remove": "Remove",
+        "clear": "Clear list",
+        "viewComparison": "View Comparison",
+        "empty": "Add workers to compare from the workers page.",
+        "browse": "Browse Workers",
+        "fields": {
+            "age": "Age",
+            "experience": "Years of Experience",
+            "languages": "Languages",
+            "skills": "Skills",
+            "education": "Education",
+            "readinessScore": "Readiness Score",
+            "reservationStatus": "Reservation Status"
+        }
+    },
+    "admin": {
+        "title": "Admin Panel",
+        "welcome": "Welcome to the admin panel",
+        "welcomeSubtitle": "Manage the platform data from one place.",
+        "loading": "Loading...",
+        "loginRequired": "You must be logged in to access the admin panel.",
+        "loginCta": "Log In",
+        "accessDenied": "You do not have permission to access this page.",
+        "backHome": "Back to Home",
+        "nav": {
+            "dashboard": "Dashboard",
+            "referenceData": "Reference Data",
+            "activity": "Activity Log",
+            "workflow": "Workflow",
+            "messages": "Messages",
+            "reviews": "Reviews",
+            "analytics": "Analytics",
+            "agencies": "Agencies",
+            "workersManage": "Workers",
+            "reservations": "Reservations",
+            "invoices": "Invoices"
+        },
+        "dashboard": {
+            "title": "Dashboard",
+            "subtitle": "Real-time overview of platform performance.",
+            "sections": {
+                "workers": "Workers",
+                "reservations": "Reservations",
+                "finance": "Finance",
+                "entities": "Entities",
+                "workerStatus": "Worker Status Distribution",
+                "monthly": "Monthly Trend",
+                "topAgencies": "Most Active Agencies",
+                "recentActivity": "Recent Activity",
+                "quickActions": "Quick Actions",
+                "operations": "Recruitment Operations"
+            },
+            "workers": {
+                "total": "Total Workers",
+                "available": "Available",
+                "reserved_customer": "Reserved by Customer",
+                "reserved_agency": "Reserved by Agency",
+                "hired": "In Recruitment",
+                "unavailable": "Unavailable",
+                "published": "Published",
+                "unpublished": "Unpublished"
+            },
+            "reservations": {
+                "active": "Active Reservations",
+                "activeCustomer": "Active (Customers)",
+                "activeAgency": "Active (Agencies)",
+                "createdToday": "Created Today",
+                "expiringToday": "Expiring Today",
+                "expiredTotal": "Expired (Total)",
+                "convertedTotal": "Converted to Agency",
+                "conversionRate": "Conversion Rate"
+            },
+            "finance": {
+                "outstanding": "Outstanding Invoices",
+                "paidThisMonth": "Paid This Month",
+                "revenueTotal": "Total Revenue",
+                "drafts": "Drafts"
+            },
+            "entities": {
+                "agencies": "Agencies",
+                "verified": "Verified",
+                "customers": "Customers",
+                "employees": "Staff"
+            },
+            "monthly": {
+                "workersCreated": "New Workers",
+                "completed": "Completed Cases"
+            },
+            "agency": {
+                "activeReservations": "Active Reservations",
+                "completedCases": "Completed Cases",
+                "rating": "Rating"
+            },
+            "quick": {
+                "referenceData": "Reference Data",
+                "viewActivity": "Activity Log",
+                "browseWorkers": "Browse Workers",
+                "invoices": "Invoices"
+            },
+            "noActivity": "No activity yet.",
+            "empty": "No data.",
+            "operations": {
+                "inRecruitment": "In Recruitment",
+                "delayed": "Delayed Files",
+                "warrantyActive": "Under Warranty",
+                "attention": "Files Needing Attention",
+                "daysOverdue": "days overdue",
+                "noDelayed": "No delayed files."
+            }
+        },
+        "activity": {
+            "title": "Activity Log",
+            "subtitle": "Permanent audit trail of every important operation.",
+            "action": "Action",
+            "type": "Type",
+            "user": "User",
+            "ip": "IP Address",
+            "date": "Date",
+            "empty": "No recorded activity.",
+            "system": "System",
+            "filterPlaceholder": "Filter by action...",
+            "prev": "Previous",
+            "next": "Next",
+            "page": "Page {page} of {total}"
+        },
+        "reference": {
+            "title": "Reference Data",
+            "subtitle": "Manage the core lists: countries, cities, languages, skills, worker types, document types, notification channels.",
+            "search": "Search...",
+            "add": "Add Item",
+            "addTitle": "Add New Item",
+            "editTitle": "Edit Item",
+            "edit": "Edit",
+            "delete": "Delete",
+            "save": "Save",
+            "cancel": "Cancel",
+            "saving": "Saving...",
+            "activate": "Activate",
+            "deactivate": "Deactivate",
+            "active": "Active",
+            "inactive": "Inactive",
+            "status": "Status",
+            "actions": "Actions",
+            "order": "Order",
+            "name": "Name",
+            "identifier": "Identifier",
+            "inUse": "In use",
+            "empty": "No items.",
+            "deleteConfirm": "Confirm delete?",
+            "confirm": "Confirm",
+            "created": "Added successfully",
+            "updated": "Updated successfully",
+            "deleted": "Deleted successfully",
+            "fields": {
+                "slug": "Identifier",
+                "iso_code": "Country Code",
+                "name_ar": "Name (Arabic)",
+                "name_en": "Name (English)",
+                "name_am": "Name (Amharic)",
+                "is_active": "Active",
+                "is_required": "Required",
+                "is_public": "Public",
+                "sort_order": "Order",
+                "country_id": "Country"
+            }
+        },
+        "workflow": {
+            "title": "Recruitment Workflow",
+            "subtitle": "Manage and track the 17 official recruitment stages.",
+            "search": "Search a worker...",
+            "noWorkers": "No workers.",
+            "currentStage": "Current stage",
+            "eta": "Estimated completion",
+            "warranty": "Warranty",
+            "days": "days",
+            "delayed": "Delayed",
+            "start": "Start recruitment file",
+            "moveTo": "Move to",
+            "notes": "Notes (optional)",
+            "advance": "Update stage",
+            "timeline": "Timeline",
+            "history": "Stage history",
+            "confidence": {
+                "high": "high confidence",
+                "medium": "medium confidence",
+                "low": "low confidence"
+            },
+            "requiredDocuments": "Required documents for this stage",
+            "docPresent": "present",
+            "docMissing": "missing",
+            "scanToTrack": "Scan to track"
+        },
+        "messages": {
+            "title": "Support Messages",
+            "subtitle": "Customer conversations with support.",
+            "empty": "No conversations.",
+            "placeholder": "Type your reply...",
+            "send": "Send"
+        },
+        "reviews": {
+            "title": "Review Moderation",
+            "subtitle": "Approve or reject customer reviews before publishing.",
+            "empty": "No reviews.",
+            "approve": "Approve",
+            "reject": "Reject",
+            "filters": {
+                "pending": "Pending",
+                "approved": "Published",
+                "rejected": "Rejected",
+                "all": "All"
+            },
+            "status": {
+                "pending": "Pending review",
+                "approved": "Published",
+                "rejected": "Rejected"
+            }
+        },
+        "analytics": {
+            "title": "Performance Analytics",
+            "subtitle": "Average time per stage and overall recruitment duration.",
+            "overallAvg": "Avg. recruitment time",
+            "completed": "Completed cases",
+            "days": "days",
+            "perStage": "Average time per stage",
+            "noData": "Not enough data yet.",
+            "exports": "Exports (CSV)",
+            "export": {
+                "workers": "Workers",
+                "reservations": "Reservations",
+                "reviews": "Reviews"
+            }
+        },
+        "agencies": {
+            "title": "Agency Management",
+            "subtitle": "Verify and suspend Saudi agencies. Customers can only choose approved agencies.",
+            "search": "Search an agency...",
+            "empty": "No agencies.",
+            "name": "Name",
+            "license": "License",
+            "city": "City",
+            "workers": "Workers",
+            "status": "Status",
+            "actions": "Actions",
+            "verified": "Verified",
+            "pending": "Pending",
+            "suspended": "Suspended",
+            "verify": "Verify",
+            "suspend": "Suspend",
+            "activate": "Activate",
+            "filters": {
+                "all": "All",
+                "pending": "Pending",
+                "verified": "Verified",
+                "suspended": "Suspended"
+            }
+        },
+        "workersManage": {
+            "title": "Workers Management",
+            "subtitle": "Add, edit and archive worker profiles",
+            "add": "Add worker",
+            "search": "Search by name, number or passport",
+            "empty": "No workers",
+            "internalNumber": "Internal No.",
+            "name": "Name",
+            "nationality": "Nationality",
+            "workerType": "Worker type",
+            "status": "Status",
+            "published": "Published",
+            "draft": "Draft",
+            "active": "Active",
+            "editTitle": "Edit worker profile",
+            "gender": "Gender",
+            "female": "Female",
+            "male": "Male",
+            "nameAr": "Name (Arabic)",
+            "nameEn": "Name (English)",
+            "nameAm": "Name (Amharic)",
+            "dateOfBirth": "Date of birth",
+            "passportNumber": "Passport number",
+            "passportExpiry": "Passport expiry",
+            "agency": "Agency",
+            "experienceYears": "Years of experience",
+            "price": "Price",
+            "currency": "Currency",
+            "confirmDelete": "Are you sure you want to delete this worker profile?",
+            "cancel": "Cancel",
+            "save": "Save",
+            "saving": "Saving..."
+        },
+        "reservations": {
+            "title": "Reservations",
+            "subtitle": "Monitor all reservations and their statuses",
+            "empty": "No reservations",
+            "worker": "Worker",
+            "reservedBy": "Reserved by",
+            "party": "Party",
+            "status": "Status",
+            "expiresAt": "Expires at",
+            "by": {
+                "customer": "Customer",
+                "agency": "Agency"
+            },
+            "statuses": {
+                "all": "All",
+                "reserved": "Reserved",
+                "authorized": "Authorized",
+                "expired": "Expired",
+                "cancelled": "Cancelled",
+                "completed": "Completed"
+            }
+        },
+        "invoices": {
+            "title": "Invoices",
+            "subtitle": "Create and track agency invoices",
+            "create": "New invoice",
+            "empty": "No invoices",
+            "number": "Invoice No.",
+            "agency": "Agency",
+            "worker": "Worker",
+            "amount": "Amount",
+            "amountHint": "Leave empty to use worker price",
+            "status": "Status",
+            "notes": "Notes",
+            "markPaid": "Mark paid",
+            "cancel": "Cancel",
+            "cancelForm": "Cancel",
+            "save": "Save",
+            "saving": "Saving...",
+            "selectRequired": "Please select agency and worker",
+            "statuses": {
+                "all": "All",
+                "draft": "Draft",
+                "issued": "Issued",
+                "paid": "Paid",
+                "cancelled": "Cancelled"
+            }
+        }
+    },
+    "customer": {
+        "title": "My Account",
+        "loading": "Loading...",
+        "loginRequired": "You must be logged in to access your account.",
+        "loginCta": "Log In",
+        "accessDenied": "This page is for customers only.",
+        "backHome": "Back to Home",
+        "nav": {
+            "dashboard": "Dashboard",
+            "reservations": "My Reservations",
+            "profile": "My Profile",
+            "notifications": "Notifications",
+            "recruitment": "My Recruitment",
+            "documents": "My Documents",
+            "messages": "Messages",
+            "reviews": "Reviews"
+        },
+        "dashboard": {
+            "welcome": "Welcome",
+            "subtitle": "Track your reservations and recruitment in one place.",
+            "activeReservations": "Active Reservations",
+            "pendingAuthorization": "Awaiting Agency Response",
+            "inRecruitment": "In Recruitment",
+            "completed": "Completed",
+            "favorites": "Favorites",
+            "quick": {
+                "browse": "Browse Workers",
+                "reservations": "My Reservations",
+                "favorites": "Favorites",
+                "profile": "My Profile"
+            }
+        },
+        "reservations": {
+            "title": "My Reservations",
+            "empty": "No reservations yet.",
+            "browse": "Browse Workers",
+            "status": {
+                "active": "Active",
+                "converted": "Handed to Agency",
+                "expired": "Expired",
+                "cancelled": "Cancelled",
+                "completed": "Completed"
+            },
+            "authStatus": {
+                "none": "No agency chosen",
+                "pending": "Awaiting agency response",
+                "accepted": "Agency accepted",
+                "rejected": "Agency declined"
+            },
+            "expiresIn": "Expires in",
+            "expired": "Expired",
+            "selectAgency": "Select an approved recruitment agency",
+            "selectAgencyHint": "After reserving you must choose an approved Saudi agency to complete the recruitment.",
+            "chooseAgencyPlaceholder": "— Choose an agency —",
+            "authorize": "Authorize Agency",
+            "authorizing": "Authorizing...",
+            "authorizedTo": "Authorized agency",
+            "awaitingResponse": "Awaiting the agency's response to your request.",
+            "rejectedRetry": "The agency declined; you may choose another agency.",
+            "acceptedInfo": "The agency accepted your request and recruitment has started.",
+            "changeAgency": "Change Agency",
+            "cancel": "Cancel Reservation",
+            "cancelConfirm": "Confirm cancellation?",
+            "confirm": "Confirm",
+            "back": "Back",
+            "rating": "Rating",
+            "completedCases": "Completed Cases"
+        },
+        "profile": {
+            "title": "My Profile",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "country": "Country",
+            "city": "City",
+            "nationalId": "National ID",
+            "save": "Save",
+            "saving": "Saving...",
+            "saved": "Changes saved"
+        },
+        "notifications": {
+            "title": "Notifications",
+            "empty": "No notifications.",
+            "markRead": "Mark as read"
+        },
+        "recruitment": {
+            "title": "My Recruitment",
+            "empty": "No active recruitment yet.",
+            "currentStage": "Current stage",
+            "agency": "Agency",
+            "progress": "Progress",
+            "eta": "Estimated completion"
+        },
+        "documents": {
+            "title": "My Documents",
+            "hint": "Upload your passport, ID and supporting documents.",
+            "category": "Document type",
+            "upload": "Upload",
+            "uploading": "Uploading...",
+            "uploaded": "Document uploaded",
+            "deleted": "Deleted",
+            "download": "Download",
+            "delete": "Delete",
+            "empty": "No documents yet.",
+            "allowed": "Allowed: PDF or image, up to 5 MB.",
+            "categories": {
+                "passport": "Passport",
+                "national_id": "National ID",
+                "family": "Family Information",
+                "other": "Other"
+            },
+            "status": {
+                "pending": "Pending review",
+                "verified": "Verified",
+                "rejected": "Rejected"
+            }
+        },
+        "messages": {
+            "title": "Support Chat",
+            "subtitle": "Chat with the Afkan support team.",
+            "empty": "No messages yet. Start the conversation.",
+            "placeholder": "Type your message...",
+            "send": "Send"
+        },
+        "reviews": {
+            "title": "My Reviews",
+            "subtitle": "Rate your recruitment experience after completion.",
+            "yourRating": "Your rating",
+            "commentPlaceholder": "Write your comment (optional)...",
+            "submit": "Submit Review",
+            "submitting": "Submitting...",
+            "submitted": "Your review was submitted and will appear after moderation.",
+            "mine": "My Reviews",
+            "empty": "No reviews yet.",
+            "status": {
+                "pending": "Pending review",
+                "approved": "Published",
+                "rejected": "Rejected"
+            }
+        }
+    },
+    "agency": {
+        "title": "Agency Portal",
+        "loading": "Loading...",
+        "loginRequired": "You must log in to access the agency portal",
+        "loginCta": "Log in",
+        "accessDenied": "This portal is for recruitment agencies only",
+        "backHome": "Back home",
+        "nav": {
+            "dashboard": "Dashboard",
+            "authorizations": "Authorization requests",
+            "invoices": "Invoices"
+        },
+        "dashboard": {
+            "title": "Agency Dashboard",
+            "subtitle": "Summary of authorization requests and invoices",
+            "pending": "Pending authorizations",
+            "unpaid": "Unpaid invoices",
+            "invoices": "Total invoices"
+        },
+        "authorizations": {
+            "title": "Authorization Requests",
+            "subtitle": "Customer requests authorizing your agency to complete recruitment",
+            "empty": "No pending requests",
+            "customer": "Customer",
+            "expiresAt": "Expires at",
+            "accept": "Accept",
+            "reject": "Reject"
+        },
+        "invoices": {
+            "title": "Agency Invoices",
+            "subtitle": "Invoices issued to your agency",
+            "empty": "No invoices",
+            "number": "Invoice No.",
+            "worker": "Worker",
+            "amount": "Amount",
+            "status": "Status",
+            "issuedAt": "Issued at",
+            "statuses": {
+                "all": "All",
+                "issued": "Issued",
+                "paid": "Paid",
+                "cancelled": "Cancelled"
+            }
+        }
+    }
+}

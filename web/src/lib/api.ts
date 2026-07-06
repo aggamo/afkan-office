@@ -1,0 +1,184 @@
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+
+export type ApiEnvelope<T> = {
+  status: "success" | "error";
+  message: string;
+  data: T;
+  errors: unknown;
+};
+
+export type ApiPaginated<T> = {
+  items: T[];
+  meta: { current_page: number; per_page: number; total: number; last_page: number };
+};
+
+export class ApiError extends Error {
+  constructor(message: string, public status: number, public errors: unknown = null) {
+    super(message);
+  }
+}
+
+async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
+  const res = await fetch(`${API_BASE_URL}${path}`, {
+    ...options,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      ...(options.headers ?? {}),
+    },
+  });
+
+  const body = (await res.json()) as ApiEnvelope<T>;
+
+  if (!res.ok || body.status === "error") {
+    throw new ApiError(body.message ?? "Request failed", res.status, body.errors);
+  }
+
+  return body.data;
+}
+
+export type ApiLocalized = { name_ar: string; name_en: string; name_am: string };
+
+export type ApiWorker = {
+  id: number;
+  uuid: string;
+  internal_number: string;
+  full_name: { ar: string; en: string; am: string };
+  date_of_birth: string | null;
+  gender: "male" | "female";
+  nationality: (ApiLocalized & { id: number }) | null;
+  worker_type: (ApiLocalized & { id: number }) | null;
+  experience_years: number | null;
+  height_cm: string | null;
+  weight_kg: string | null;
+  religion: string | null;
+  marital_status: string | null;
+  number_of_children: number | null;
+  reservation_status: string;
+  readiness_score: string | null;
+  languages: { slug: string; name_ar: string; name_en: string; name_am: string; proficiency: string | null }[] | null;
+  skills: { slug: string; name_ar: string; name_en: string; name_am: string; level: string | null }[] | null;
+};
+
+export type ApiAgency = {
+  id: number;
+  uuid: string;
+  name: string;
+  license_number: string;
+  country: string | null;
+  city: string | null;
+  rating: string;
+  completed_cases: number;
+  is_verified: boolean;
+};
+
+export type ApiLocalizedName = { ar: string; en: string; am: string };
+
+export type ApiTimelineStage = {
+  step_number: number;
+  slug: string;
+  name: ApiLocalizedName;
+  color: string | null;
+  status: "completed" | "current" | "delayed" | "upcoming";
+  entered_at: string | null;
+};
+
+export type ApiTrackResult = {
+  internal_number: string;
+  tracking_number: string | null;
+  reservation_status: string;
+  current_recruitment_stage: { slug: string; step_number: number; name_ar: string; name_en: string; name_am: string } | null;
+  progress: number;
+  eta: { estimated_completion: string | null; remaining_days: number; confidence: "high" | "medium" | "low" };
+  is_delayed: boolean;
+  timeline: ApiTimelineStage[];
+};
+
+export function fetchWorkers(params: Record<string, string | number | undefined> = {}) {
+  const query = new URLSearchParams();
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== "") query.set(key, String(value));
+  });
+  const qs = query.toString();
+  return request<ApiPaginated<ApiWorker>>(`/workers${qs ? `?${qs}` : ""}`, { cache: "no-store" });
+}
+
+export function fetchWorker(id: string | number) {
+  return request<ApiWorker>(`/workers/${id}`, { cache: "no-store" });
+}
+
+export function fetchAgencies() {
+  return request<ApiAgency[]>("/agencies", { cache: "no-store" });
+}
+
+export function trackWorker(trackingNumber: string) {
+  return request<ApiTrackResult>(`/workers/track?tracking=${encodeURIComponent(trackingNumber)}`, {
+    cache: "no-store",
+  });
+}
+
+export function login(email: string, password: string) {
+  return request<{ user: { id: number; name: string; email: string; role: { slug: string } }; token: string }>(
+    "/auth/login",
+    { method: "POST", body: JSON.stringify({ email, password }) },
+  );
+}
+
+export type AuthResult = { user: { id: number; name: string; email: string; role: { slug: string } }; token: string };
+
+export type RegisterCustomerPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  password: string;
+  password_confirmation: string;
+  country?: string;
+  city?: string;
+};
+
+export type RegisterAgencyPayload = {
+  agency_name: string;
+  license_number: string;
+  country?: string;
+  city?: string;
+  agency_phone?: string;
+  agency_email?: string;
+  name: string;
+  email: string;
+  phone?: string;
+  password: string;
+  password_confirmation: string;
+  position?: string;
+};
+
+export function forgotPassword(email: string) {
+  return request<null>("/auth/forgot-password", { method: "POST", body: JSON.stringify({ email }) });
+}
+
+export function resetPassword(payload: { token: string; email: string; password: string; password_confirmation: string }) {
+  return request<null>("/auth/reset-password", { method: "POST", body: JSON.stringify(payload) });
+}
+
+export function registerCustomer(payload: RegisterCustomerPayload) {
+  return request<AuthResult>("/auth/register", { method: "POST", body: JSON.stringify(payload) });
+}
+
+export function registerAgency(payload: RegisterAgencyPayload) {
+  return request<AuthResult>("/auth/register-agency", { method: "POST", body: JSON.stringify(payload) });
+}
+
+function authHeaders(token: string) {
+  return { Authorization: `Bearer ${token}` };
+}
+
+export function fetchFavorites(token: string) {
+  return request<ApiWorker[]>("/favorites", { cache: "no-store", headers: authHeaders(token) });
+}
+
+export function addFavorite(workerId: string | number, token: string) {
+  return request<null>(`/favorites/${workerId}`, { method: "POST", headers: authHeaders(token) });
+}
+
+export function removeFavorite(workerId: string | number, token: string) {
+  return request<null>(`/favorites/${workerId}`, { method: "DELETE", headers: authHeaders(token) });
+}

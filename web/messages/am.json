@@ -1,0 +1,807 @@
+{
+    "meta": {
+        "siteName": "አፍካን በውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ",
+        "tagline": "የኢትዮጵያ ሰራተኞችን ከታማኝ የቅጥር ኤጀንሲዎች ጋር እናገናኛለን"
+    },
+    "auth": {
+        "email": "ኢሜይል",
+        "password": "የይለፍ ቃል",
+        "submit": "ግባ",
+        "submitting": "በመግባት ላይ...",
+        "error": "የመግቢያ መረጃው ትክክል አይደለም።",
+        "register": {
+            "title": "መለያ ይፍጠሩ",
+            "subtitle": "ሰራተኛ ለማግኘት እንደ ደንበኛ፣ ወይም እንደ ሳውዲ የቅጥር ኤጀንሲ ይመዝገቡ",
+            "customer": "ደንበኛ",
+            "agency": "የቅጥር ኤጀንሲ",
+            "agencyInfo": "የኤጀንሲ ዝርዝሮች",
+            "contactInfo": "የተጠሪ ሰው",
+            "agencyName": "የኤጀንሲ ስም",
+            "licenseNumber": "የፍቃድ ቁጥር",
+            "agencyPhone": "የኤጀንሲ ስልክ",
+            "agencyEmail": "የኤጀንሲ ኢሜይል",
+            "position": "የስራ ድርሻ",
+            "name": "ሙሉ ስም",
+            "phone": "ስልክ ቁጥር",
+            "country": "አገር",
+            "city": "ከተማ",
+            "confirmPassword": "የይለፍ ቃል ያረጋግጡ",
+            "passwordMismatch": "የይለፍ ቃላት አይዛመዱም",
+            "agencyNotice": "የኤጀንሲ መለያ ሙሉ ፍቃዶች ከመንቃታቸው በፊት ይገመገማል እና ይረጋገጣል።",
+            "submit": "መለያ ይፍጠሩ",
+            "submitting": "በመፍጠር ላይ...",
+            "haveAccount": "አስቀድሞ መለያ አለዎት?"
+        },
+        "forgot": {
+            "title": "የይለፍ ቃል ዳግም ማስጀመር",
+            "hint": "ኢሜይልዎን ያስገቡ እና የዳግም ማስጀመሪያ ማገናኛ እንልክልዎታለን።",
+            "submit": "ማገናኛ ላክ",
+            "submitting": "በመላክ ላይ...",
+            "sent": "ኢሜይሉ ከተመዘገበ በቅርቡ መልእክት ይደርስዎታል። ኢሜይልዎን ይcheck ያድርጉ።",
+            "backToLogin": "ወደ መግቢያ ተመለስ",
+            "link": "የይለፍ ቃል ረሱ?"
+        },
+        "reset": {
+            "title": "አዲስ የይለፍ ቃል ያዘጋጁ",
+            "newPassword": "አዲስ የይለፍ ቃል",
+            "confirmPassword": "የይለፍ ቃል ያረጋግጡ",
+            "submit": "የይለፍ ቃል አዘምን",
+            "submitting": "በማዘመን ላይ...",
+            "mismatch": "የይለፍ ቃላት አይዛመዱም",
+            "done": "የይለፍ ቃል በተሳካ ሁኔታ ተዘምኗል፣ ወደ መግቢያ በማዞር ላይ።",
+            "invalidLink": "ልክ ያልሆነ ወይም ጊዜው ያለፈበት ማገናኛ።",
+            "invalid": "ልክ ያልሆነ ማገናኛ"
+        }
+    },
+    "nav": {
+        "home": "መነሻ",
+        "about": "ስለ እኛ",
+        "services": "አገልግሎቶች",
+        "workers": "ሰራተኞች",
+        "agencies": "ኤጀንሲዎች",
+        "process": "የቅጥር ሂደት",
+        "faq": "ተደጋጋሚ ጥያቄዎች",
+        "blog": "ጦማር",
+        "contact": "አግኙን",
+        "track": "ይከታተሉ",
+        "login": "ግባ",
+        "register": "ተመዝገብ",
+        "requestWorker": "ሰራተኛ ይጠይቁ",
+        "favorites": "ተወዳጆች",
+        "admin": "የአስተዳደር ፓነል",
+        "account": "መለያዬ",
+        "agencyPortal": "የኤጀንሲ መግቢያ"
+    },
+    "home": {
+        "hero": {
+            "headline": "የኢትዮጵያ ሰራተኞችን ከታማኝ የቅጥር ኤጀንሲዎች ጋር እናገናኛለን",
+            "subheadline": "ለሳዑዲ አረቢያ፣ ለተባበሩት አረብ ኤምሬትስ እና ለኩዌት የሚያገልግል ፈቃድ ያለው የኢትዮጵያ የውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ።",
+            "browseWorkers": "ሰራተኞችን ይዩ",
+            "requestRecruitment": "ቅጥር ይጠይቁ",
+            "trackApplication": "ማመልከቻ ይከታተሉ",
+            "becomeAgency": "የስራ ተባባሪ ይሁኑ"
+        },
+        "stats": {
+            "available": "ዝግጁ ሰራተኞች",
+            "recruited": "በተሳካ ሁኔታ የተቀጠሩ",
+            "agencies": "የስራ ተባባሪ ኤጀንሲዎች",
+            "experience": "የስራ ልምድ ዓመታት",
+            "countries": "የምናገልግላቸው ሀገሮች",
+            "satisfaction": "የደንበኞች እርካታ"
+        },
+        "why": {
+            "title": "ለምን አፍካንን ይምረጡ",
+            "licensed": {
+                "title": "ፈቃድ ያለው ኤጀንሲ",
+                "desc": "ከኢትዮጵያ መንግስት ሙሉ ፈቃድ ያለው።"
+            },
+            "verified": {
+                "title": "የተረጋገጡ ሰራተኞች",
+                "desc": "እያንዳንዱ የሰራተኛ መረጃ የተረጋገጠ ነው።"
+            },
+            "transparent": {
+                "title": "ግልጽ ሂደት",
+                "desc": "ከመያዝ እስከ መድረሻ ግልጽ ደረጃዎች።"
+            },
+            "fast": {
+                "title": "ፈጣን ቅጥር",
+                "desc": "የተደራጀ ስርዓት ጊዜን ይቀንሳል።"
+            },
+            "support": {
+                "title": "ሙያዊ ድጋፍ",
+                "desc": "በሙሉ ሂደቱ የተወሰነ ድጋፍ ቡድን።"
+            },
+            "secure": {
+                "title": "ደህንነቱ የተጠበቀ ሰነድ አስተዳደር",
+                "desc": "ሁሉም ሰነዶች በሚስጥራዊነት ይያዛሉ።"
+            }
+        },
+        "services": {
+            "title": "አገልግሎቶቻችን",
+            "domestic": "የቤት ሰራተኞች",
+            "agencyRecruitment": "ለኤጀንሲዎች ቅጥር",
+            "customerRecruitment": "ለግል ደንበኞች ቅጥር",
+            "documents": "ሰነድ ማስተናገድ",
+            "visa": "ቪዛ ማስተባበር",
+            "travel": "የመንገድ ዝግጅት"
+        },
+        "featured": {
+            "title": "ተለይተው የቀረቡ ሰራተኞች",
+            "viewProfile": "መገለጫ ይዩ"
+        },
+        "process": {
+            "title": "የቅጥር ሂደት",
+            "step1": "ሰራተኛ ይምረጡ",
+            "step2": "ሰራተኛ ይያዙ",
+            "step3": "የኤጀንሲ ማረጋገጫ",
+            "step4": "የጤና ምርመራ",
+            "step5": "ቪዛ",
+            "step6": "ጉዞ",
+            "step7": "መድረሻ"
+        },
+        "agencies": {
+            "title": "የስራ ተባባሪ ኤጀንሲዎች",
+            "viewAgency": "ኤጀንሲ ይዩ"
+        },
+        "testimonials": {
+            "title": "የደንበኞች አስተያየት"
+        },
+        "faq": {
+            "title": "ተደጋጋሚ ጥያቄዎች"
+        },
+        "cta": {
+            "title": "ቅጥር ለመጀመር ዝግጁ ነዎት?",
+            "browse": "ሰራተኞችን ይዩ",
+            "contact": "አግኙን"
+        }
+    },
+    "footer": {
+        "companyInfo": "በአዲስ አበባ የተመሰረተ ፈቃድ ያለው የኢትዮጵያ የውጭ ሀገር ስራና ሰራተኛ አገናኝ አጀንሲ፣ ለሳዑዲ አረቢያ፣ ኤምሬትስ እና ኩዌት የሚያገልግል።",
+        "navigation": "አሰሳ",
+        "contact": "አግኙን",
+        "social": "ይከተሉን",
+        "privacy": "የግላዊነት መርሆ",
+        "terms": "የአገልግሎት ውሎች",
+        "rights": "ሁሉም መብቶች የተጠበቁ ናቸው።"
+    },
+    "workers": {
+        "title": "ሰራተኞች",
+        "search": "በስም፣ ችሎታ ወይም መታወቂያ ቁጥር ይፈልጉ",
+        "filters": {
+            "title": "ማጣሪያዎች",
+            "age": "ዕድሜ",
+            "experience": "ልምድ",
+            "language": "ቋንቋ",
+            "skills": "ችሎታዎች",
+            "maritalStatus": "የትዳር ሁኔታ",
+            "availability": "ዝግጁነት",
+            "reservationStatus": "የመያዝ ሁኔታ",
+            "country": "ሀገር",
+            "apply": "ማጣሪያ ይተግብሩ",
+            "reset": "ዳግም አስጀምር"
+        },
+        "card": {
+            "age": "ዕድሜ",
+            "experience": "ልምድ",
+            "viewDetails": "ዝርዝር ይዩ",
+            "reserveNow": "አሁን ይያዙ",
+            "favorite": "ወደ ተወዳጆች ጨምር",
+            "compare": "ለማነፃፅር ጨምር"
+        },
+        "noResults": "ከፍለጋዎ ጋር የሚስማማ ሰራተኛ አልተገኘም።",
+        "status": {
+            "available": "ዝግጁ",
+            "reserved_agency": "በኤጀንሲ ተይዟል",
+            "reserved_customer": "በደንበኛ ተይዟል",
+            "in_progress": "ቅጥር በሂደት ላይ"
+        }
+    },
+    "workerProfile": {
+        "backToWorkers": "ወደ ሰራተኞች ተመለስ",
+        "personalInfo": "የግል መረጃ",
+        "skills": "ችሎታዎች",
+        "languages": "ቋንቋዎች",
+        "experience": "ልምድ",
+        "video": "የመግቢያ ቪዲዮ",
+        "availability": "ዝግጁነት",
+        "timeline": "የቅጥር የጊዜ መስመር",
+        "reserve": "ሰራተኛ ይያዙ",
+        "share": "መገለጫ ያጋሩ",
+        "print": "መገለጫ ያትሙ",
+        "reservedUntil": "እስከ ተይዟል",
+        "reservedByCustomer": "በደንበኛ ተይዟል",
+        "inProgress": "ቅጥር በሂደት ላይ",
+        "fields": {
+            "workerId": "የሰራተኛ መታወቂያ",
+            "age": "ዕድሜ",
+            "nationality": "ዜግነት",
+            "maritalStatus": "የትዳር ሁኔታ",
+            "children": "የልጆች ቁጥር",
+            "education": "የትምህርት ደረጃ",
+            "religion": "ሃይማኖት",
+            "experienceYears": "የልምድ ዓመታት"
+        }
+    },
+    "track": {
+        "title": "ማመልከቻዎን ይከታተሉ",
+        "subtitle": "የአሁኑን ሁኔታ ለማየት የመከታተያ ቁጥር ወይም የፓስፖርት ቁጥር ያስገቡ።",
+        "inputLabel": "የመከታተያ ቁጥር ወይም የፓስፖርት ቁጥር",
+        "button": "ይከታተሉ",
+        "currentStage": "የአሁኑ ደረጃ",
+        "progress": "የመጓዣ መጠን",
+        "estimatedCompletion": "የሚጠበቀው የመጨረሻ ቀን",
+        "support": "እርዳታ ይፈልጋሉ?",
+        "notFound": "ለዚህ ቁጥር ምንም መዝገብ አልተገኘም። እባክዎ ያረጋግጡ እና እንደገና ይሞክሩ።",
+        "delayed": "ይህ ደረጃ ዘግይቷል",
+        "confidence": {
+            "high": "ከፍተኛ እርግጠኝነት",
+            "medium": "መካከለኛ እርግጠኝነት",
+            "low": "ዝቅተኛ እርግጠኝነት"
+        }
+    },
+    "about": {
+        "title": "ስለ አፍካን",
+        "mission": "ተልዕኮአችን",
+        "missionText": "የተመረቱና የተረጋገጡ የኢትዮጵያ የቤት ሰራተኞችን ከታማኝ የሳዑዲ ቅጥር ተባባሪዎች ጋር በግልጽና ሙያዊ ሂደት ማገናኘት።",
+        "vision": "ራዕያችን",
+        "visionText": "በአካባቢው በቅጥር ዘርፍ በጣም ታማኝ የኢትዮጵያ ኤጀንሲ መሆን።",
+        "history": "የድርጅት ታሪክ",
+        "license": "የፈቃድ መረጃ",
+        "message": "የአስተዳደር መልዕክት",
+        "values": "እሴቶቻችን"
+    },
+    "contact": {
+        "title": "አግኙን",
+        "address": "የቢሮ አድራሻ",
+        "phone": "ስልክ",
+        "whatsapp": "ዋትስአፕ",
+        "telegram": "ቴሌግራም",
+        "email": "ኢሜይል",
+        "hours": "የስራ ሰዓቶች",
+        "form": {
+            "name": "ሙሉ ስም",
+            "email": "ኢሜይል",
+            "phone": "ስልክ ቁጥር",
+            "message": "መልዕክት",
+            "send": "መልዕክት ይላኩ",
+            "success": "መልዕክትዎ በተሳካ ሁኔታ ተልኳል። በቅርቡ እናገኝዎታለን።"
+        }
+    },
+    "common": {
+        "loading": "በመጫን ላይ...",
+        "currency": "ዋጋ የሚታየው በደረሰኝ ላይ ብቻ ነው"
+    },
+    "favorites": {
+        "title": "ተወዳጅ ሰራተኞች",
+        "empty": "እስካሁን ምንም ተወዳጅ ሰራተኛ የለም።",
+        "loginRequired": "ተወዳጆችን ለመጠቀም እንደ ደንበኛ መግባት አለብዎት።",
+        "browse": "ሰራተኞችን ይዩ"
+    },
+    "compare": {
+        "title": "ሰራተኞችን ያነፃፅሩ",
+        "selected": "{count, plural, =0{ምንም ሰራተኛ አልተመረጠም} other {# ሰራተኛ ተመርጧል}}",
+        "remove": "አስወግድ",
+        "clear": "ዝርዝሩን አጽዳ",
+        "viewComparison": "ማነፃፅሩን ይዩ",
+        "empty": "ለማነፃፅር ከሰራተኞች ገጽ ሰራተኞችን ይጨምሩ።",
+        "browse": "ሰራተኞችን ይዩ",
+        "fields": {
+            "age": "ዕድሜ",
+            "experience": "የልምድ ዓመታት",
+            "languages": "ቋንቋዎች",
+            "skills": "ችሎታዎች",
+            "education": "የትምህርት ደረጃ",
+            "readinessScore": "የዝግጁነት ደረጅ",
+            "reservationStatus": "የመያዝ ሁኔታ"
+        }
+    },
+    "admin": {
+        "title": "የአስተዳደር ፓነል",
+        "welcome": "ወደ አስተዳደር ፓነል እንኳን በደህና መጡ",
+        "welcomeSubtitle": "የመድረኩን መረጃ ከአንድ ቦታ ያስተዳድሩ።",
+        "loading": "በመጫን ላይ...",
+        "loginRequired": "ወደ አስተዳደር ፓነል ለመግባት መግባት አለብዎት።",
+        "loginCta": "ግባ",
+        "accessDenied": "ይህን ገጽ ለመድረስ ፈቃድ የለዎትም።",
+        "backHome": "ወደ መነሻ ተመለስ",
+        "nav": {
+            "dashboard": "ዳሽቦርድ",
+            "referenceData": "የማጣቀሻ መረጃ",
+            "activity": "የእንቅስቃሴ መዝገብ",
+            "workflow": "የሥራ ፍሰት",
+            "messages": "መልእክቶች",
+            "reviews": "ግምገማዎች",
+            "analytics": "ትንታኔ",
+            "agencies": "ኤጀንሲዎች",
+            "workersManage": "ሰራተኞች",
+            "reservations": "ቦታ ማስያዣዎች",
+            "invoices": "ደረሰኞች"
+        },
+        "dashboard": {
+            "title": "ዳሽቦርድ",
+            "subtitle": "የመድረኩ አፈጻጸም ቀጥታ አጠቃላይ እይታ።",
+            "sections": {
+                "workers": "ሰራተኞች",
+                "reservations": "ማስያዣዎች",
+                "finance": "ፋይናንስ",
+                "entities": "አካላት",
+                "workerStatus": "የሰራተኛ ሁኔታ ስርጭት",
+                "monthly": "ወርሃዊ አዝማሚያ",
+                "topAgencies": "እጅግ ንቁ ኤጀንሲዎች",
+                "recentActivity": "የቅርብ ጊዜ እንቅስቃሴ",
+                "quickActions": "ፈጣን ድርጊቶች",
+                "operations": "የቅጥር ክንዋኔዎች"
+            },
+            "workers": {
+                "total": "ጠቅላላ ሰራተኞች",
+                "available": "ዝግጁ",
+                "reserved_customer": "በደንበኛ ተይዟል",
+                "reserved_agency": "በኤጀንሲ ተይዟል",
+                "hired": "በቅጥር ሂደት",
+                "unavailable": "የማይገኝ",
+                "published": "የታተመ",
+                "unpublished": "ያልታተመ"
+            },
+            "reservations": {
+                "active": "ንቁ ማስያዣዎች",
+                "activeCustomer": "ንቁ (ደንበኞች)",
+                "activeAgency": "ንቁ (ኤጀንሲዎች)",
+                "createdToday": "ዛሬ የተፈጠሩ",
+                "expiringToday": "ዛሬ የሚያበቁ",
+                "expiredTotal": "ያለፉ (ጠቅላላ)",
+                "convertedTotal": "ወደ ኤጀንሲ የተቀየሩ",
+                "conversionRate": "የመቀየር መጠን"
+            },
+            "finance": {
+                "outstanding": "ያልተከፈሉ ደረሰኞች",
+                "paidThisMonth": "በዚህ ወር የተከፈለ",
+                "revenueTotal": "ጠቅላላ ገቢ",
+                "drafts": "ረቂቆች"
+            },
+            "entities": {
+                "agencies": "ኤጀንሲዎች",
+                "verified": "የተረጋገጠ",
+                "customers": "ደንበኞች",
+                "employees": "ሰራተኞች"
+            },
+            "monthly": {
+                "workersCreated": "አዲስ ሰራተኞች",
+                "completed": "የተጠናቀቁ ጉዳዮች"
+            },
+            "agency": {
+                "activeReservations": "ንቁ ማስያዣዎች",
+                "completedCases": "የተጠናቀቁ ጉዳዮች",
+                "rating": "ደረጃ"
+            },
+            "quick": {
+                "referenceData": "የማጣቀሻ መረጃ",
+                "viewActivity": "የእንቅስቃሴ መዝገብ",
+                "browseWorkers": "ሰራተኞችን ይዩ",
+                "invoices": "ደረሰኞች"
+            },
+            "noActivity": "እስካሁን ምንም እንቅስቃሴ የለም።",
+            "empty": "ምንም መረጃ የለም።",
+            "operations": {
+                "inRecruitment": "በቅጥር ሂደት",
+                "delayed": "የዘገዩ ፋይሎች",
+                "warrantyActive": "በዋስትና ስር",
+                "attention": "ትኩረት የሚሹ ፋይሎች",
+                "daysOverdue": "ቀናት ዘግይቷል",
+                "noDelayed": "የዘገዩ ፋይሎች የሉም።"
+            }
+        },
+        "activity": {
+            "title": "የእንቅስቃሴ መዝገብ",
+            "subtitle": "የእያንዳንዱ አስፈላጊ ክንውን ቋሚ የኦዲት መዝገብ።",
+            "action": "ድርጊት",
+            "type": "ዓይነት",
+            "user": "ተጠቃሚ",
+            "ip": "IP አድራሻ",
+            "date": "ቀን",
+            "empty": "የተመዘገበ እንቅስቃሴ የለም።",
+            "system": "ሲስተም",
+            "filterPlaceholder": "በድርጊት አጣራ...",
+            "prev": "ቀዳሚ",
+            "next": "ቀጣይ",
+            "page": "ገጽ {page} ከ {total}"
+        },
+        "reference": {
+            "title": "የማጣቀሻ መረጃ",
+            "subtitle": "ዋና ዝርዝሮችን ያስተዳድሩ፦ ሀገራት፣ ከተሞች፣ ቋንቋዎች፣ ችሎታዎች፣ የሰራተኛ ዓይነቶች፣ የሰነድ ዓይነቶች፣ የማሳወቂያ መንገዶች።",
+            "search": "ፈልግ...",
+            "add": "ንጥል ጨምር",
+            "addTitle": "አዲስ ንጥል ጨምር",
+            "editTitle": "ንጥል አርትዕ",
+            "edit": "አርትዕ",
+            "delete": "ሰርዝ",
+            "save": "አስቀምጥ",
+            "cancel": "ተወው",
+            "saving": "በማስቀመጥ ላይ...",
+            "activate": "አግብር",
+            "deactivate": "አቦዝን",
+            "active": "የነቃ",
+            "inactive": "ያልነቃ",
+            "status": "ሁኔታ",
+            "actions": "ድርጊቶች",
+            "order": "ቅደም ተከተል",
+            "name": "ስም",
+            "identifier": "መለያ",
+            "inUse": "በጥቅም ላይ",
+            "empty": "ምንም ንጥሎች የሉም።",
+            "deleteConfirm": "መሰረዙን ያረጋግጡ?",
+            "confirm": "አረጋግጥ",
+            "created": "በተሳካ ሁኔታ ተጨምሯል",
+            "updated": "በተሳካ ሁኔታ ተዘምኗል",
+            "deleted": "በተሳካ ሁኔታ ተሰርዟል",
+            "fields": {
+                "slug": "መለያ",
+                "iso_code": "የሀገር ኮድ",
+                "name_ar": "ስም (አረብኛ)",
+                "name_en": "ስም (እንግሊዝኛ)",
+                "name_am": "ስም (አማርኛ)",
+                "is_active": "የነቃ",
+                "is_required": "አስፈላጊ",
+                "is_public": "ይፋዊ",
+                "sort_order": "ቅደም ተከተል",
+                "country_id": "ሀገር"
+            }
+        },
+        "workflow": {
+            "title": "የቅጥር ሥራ ፍሰት",
+            "subtitle": "17ቱን ኦፊሴላዊ የቅጥር ደረጃዎች ያስተዳድሩ እና ይከታተሉ።",
+            "search": "ሰራተኛ ይፈልጉ...",
+            "noWorkers": "ሰራተኞች የሉም።",
+            "currentStage": "የአሁኑ ደረጃ",
+            "eta": "የሚጠበቀው መጨረሻ",
+            "warranty": "ዋስትና",
+            "days": "ቀናት",
+            "delayed": "ዘግይቷል",
+            "start": "የቅጥር ፋይል ጀምር",
+            "moveTo": "ወደ አንቀሳቅስ",
+            "notes": "ማስታወሻ (አማራጭ)",
+            "advance": "ደረጃ አዘምን",
+            "timeline": "የጊዜ መስመር",
+            "history": "የደረጃ ታሪክ",
+            "confidence": {
+                "high": "ከፍተኛ እርግጠኝነት",
+                "medium": "መካከለኛ እርግጠኝነት",
+                "low": "ዝቅተኛ እርግጠኝነት"
+            },
+            "requiredDocuments": "ለዚህ ደረጃ የሚያስፈልጉ ሰነዶች",
+            "docPresent": "አለ",
+            "docMissing": "የለም",
+            "scanToTrack": "ለመከታተል ይቃኙ"
+        },
+        "messages": {
+            "title": "የድጋፍ መልእክቶች",
+            "subtitle": "የደንበኞች ውይይቶች ከድጋፍ ጋር።",
+            "empty": "ውይይቶች የሉም።",
+            "placeholder": "ምላሽዎን ይጻፉ...",
+            "send": "ላክ"
+        },
+        "reviews": {
+            "title": "የግምገማ ማጣራት",
+            "subtitle": "ከመታተማቸው በፊት የደንበኞችን ግምገማዎች ያጽድቁ ወይም ይከልክሉ።",
+            "empty": "ግምገማዎች የሉም።",
+            "approve": "አጽድቅ",
+            "reject": "ከልክል",
+            "filters": {
+                "pending": "በመጠባበቅ ላይ",
+                "approved": "የታተመ",
+                "rejected": "የተከለከለ",
+                "all": "ሁሉም"
+            },
+            "status": {
+                "pending": "በግምገማ ላይ",
+                "approved": "ታትሟል",
+                "rejected": "ተቀባይነት አላገኘም"
+            }
+        },
+        "analytics": {
+            "title": "የአፈጻጸም ትንታኔ",
+            "subtitle": "የእያንዳንዱ ደረጃ አማካይ ጊዜ እና አጠቃላይ የቅጥር ጊዜ።",
+            "overallAvg": "አማካይ የቅጥር ጊዜ",
+            "completed": "የተጠናቀቁ ጉዳዮች",
+            "days": "ቀናት",
+            "perStage": "የእያንዳንዱ ደረጃ አማካይ ጊዜ",
+            "noData": "እስካሁን በቂ መረጃ የለም።",
+            "exports": "ወደ ውጭ ላክ (CSV)",
+            "export": {
+                "workers": "ሰራተኞች",
+                "reservations": "ማስያዣዎች",
+                "reviews": "ግምገማዎች"
+            }
+        },
+        "agencies": {
+            "title": "የኤጀንሲ አስተዳደር",
+            "subtitle": "የሳዑዲ ኤጀንሲዎችን ያጽድቁ ወይም ያግዱ። ደንበኞች የተመሰከረላቸውን ብቻ ይመርጣሉ።",
+            "search": "ኤጀንሲ ይፈልጉ...",
+            "empty": "ኤጀንሲዎች የሉም።",
+            "name": "ስም",
+            "license": "ፈቃድ",
+            "city": "ከተማ",
+            "workers": "ሰራተኞች",
+            "status": "ሁኔታ",
+            "actions": "ድርጊቶች",
+            "verified": "የተመሰከረ",
+            "pending": "በመጠባበቅ ላይ",
+            "suspended": "የታገደ",
+            "verify": "አጽድቅ",
+            "suspend": "አግድ",
+            "activate": "አግብር",
+            "filters": {
+                "all": "ሁሉም",
+                "pending": "በመጠባበቅ",
+                "verified": "የተመሰከረ",
+                "suspended": "የታገደ"
+            }
+        },
+        "workersManage": {
+            "title": "የሰራተኞች አስተዳደር",
+            "subtitle": "የሰራተኛ መገለጫዎችን ማከል፣ ማረም እና ማህደር",
+            "add": "ሰራተኛ ጨምር",
+            "search": "በስም፣ ቁጥር ወይም ፓስፖርት ይፈልጉ",
+            "empty": "ሰራተኞች የሉም",
+            "internalNumber": "የውስጥ ቁጥር",
+            "name": "ስም",
+            "nationality": "ዜግነት",
+            "workerType": "የሰራተኛ አይነት",
+            "status": "ሁኔታ",
+            "published": "ታትሟል",
+            "draft": "ረቂቅ",
+            "active": "ንቁ",
+            "editTitle": "የሰራተኛ መገለጫ ያርሙ",
+            "gender": "ጾታ",
+            "female": "ሴት",
+            "male": "ወንድ",
+            "nameAr": "ስም (አረብኛ)",
+            "nameEn": "ስም (እንግሊዝኛ)",
+            "nameAm": "ስም (አማርኛ)",
+            "dateOfBirth": "የትውልድ ቀን",
+            "passportNumber": "የፓስፖርት ቁጥር",
+            "passportExpiry": "የፓስፖርት ማብቂያ",
+            "agency": "ኤጀንሲ",
+            "experienceYears": "የልምድ ዓመታት",
+            "price": "ዋጋ",
+            "currency": "ገንዘብ",
+            "confirmDelete": "ይህን የሰራተኛ መገለጫ መሰረዝ እርግጠኛ ነዎት?",
+            "cancel": "ሰርዝ",
+            "save": "አስቀምጥ",
+            "saving": "በማስቀመጥ ላይ..."
+        },
+        "reservations": {
+            "title": "ቦታ ማስያዣዎች",
+            "subtitle": "ሁሉንም ቦታ ማስያዣዎች እና ሁኔታቸውን ይከታተሉ",
+            "empty": "ቦታ ማስያዣ የለም",
+            "worker": "ሰራተኛ",
+            "reservedBy": "የያዘው",
+            "party": "ወገን",
+            "status": "ሁኔታ",
+            "expiresAt": "የሚያበቃበት",
+            "by": {
+                "customer": "ደንበኛ",
+                "agency": "ኤጀንሲ"
+            },
+            "statuses": {
+                "all": "ሁሉም",
+                "reserved": "ተይዟል",
+                "authorized": "የተፈቀደ",
+                "expired": "ጊዜው አልፏል",
+                "cancelled": "ተሰርዟል",
+                "completed": "ተጠናቅቋል"
+            }
+        },
+        "invoices": {
+            "title": "ደረሰኞች",
+            "subtitle": "የኤጀንሲ ደረሰኞችን ይፍጠሩ እና ይከታተሉ",
+            "create": "አዲስ ደረሰኝ",
+            "empty": "ደረሰኝ የለም",
+            "number": "የደረሰኝ ቁጥር",
+            "agency": "ኤጀንሲ",
+            "worker": "ሰራተኛ",
+            "amount": "መጠን",
+            "amountHint": "የሰራተኛ ዋጋ ለመጠቀም ባዶ ይተዉ",
+            "status": "ሁኔታ",
+            "notes": "ማስታወሻዎች",
+            "markPaid": "እንደተከፈለ ምልክት",
+            "cancel": "ሰርዝ",
+            "cancelForm": "ሰርዝ",
+            "save": "አስቀምጥ",
+            "saving": "በማስቀመጥ ላይ...",
+            "selectRequired": "እባክዎ ኤጀንሲ እና ሰራተኛ ይምረጡ",
+            "statuses": {
+                "all": "ሁሉም",
+                "draft": "ረቂቅ",
+                "issued": "ተሰጥቷል",
+                "paid": "ተከፍሏል",
+                "cancelled": "ተሰርዟል"
+            }
+        }
+    },
+    "customer": {
+        "title": "የእኔ መለያ",
+        "loading": "በመጫን ላይ...",
+        "loginRequired": "መለያዎን ለመድረስ መግባት አለብዎት።",
+        "loginCta": "ግባ",
+        "accessDenied": "ይህ ገጽ ለደንበኞች ብቻ ነው።",
+        "backHome": "ወደ መነሻ ተመለስ",
+        "nav": {
+            "dashboard": "ዳሽቦርድ",
+            "reservations": "ማስያዣዎቼ",
+            "profile": "የግል መገለጫዬ",
+            "notifications": "ማሳወቂያዎች",
+            "recruitment": "የእኔ ቅጥር",
+            "documents": "ሰነዶቼ",
+            "messages": "መልእክቶች",
+            "reviews": "ግምገማዎች"
+        },
+        "dashboard": {
+            "welcome": "እንኳን ደህና መጡ",
+            "subtitle": "ማስያዣዎችዎን እና ቅጥርዎን ከአንድ ቦታ ይከታተሉ።",
+            "activeReservations": "ንቁ ማስያዣዎች",
+            "pendingAuthorization": "የኤጀንሲ ምላሽ በመጠባበቅ ላይ",
+            "inRecruitment": "በቅጥር ሂደት",
+            "completed": "የተጠናቀቀ",
+            "favorites": "ተወዳጆች",
+            "quick": {
+                "browse": "ሰራተኞችን ይዩ",
+                "reservations": "ማስያዣዎቼ",
+                "favorites": "ተወዳጆች",
+                "profile": "መገለጫዬ"
+            }
+        },
+        "reservations": {
+            "title": "ማስያዣዎቼ",
+            "empty": "እስካሁን ማስያዣ የለም።",
+            "browse": "ሰራተኞችን ይዩ",
+            "status": {
+                "active": "ንቁ",
+                "converted": "ለኤጀንሲ ተላልፏል",
+                "expired": "ጊዜው አልፎበታል",
+                "cancelled": "ተሰርዟል",
+                "completed": "ተጠናቅቋል"
+            },
+            "authStatus": {
+                "none": "ኤጀንሲ አልተመረጠም",
+                "pending": "የኤጀንሲ ምላሽ በመጠባበቅ ላይ",
+                "accepted": "ኤጀንሲው ተቀብሏል",
+                "rejected": "ኤጀንሲው አልተቀበለም"
+            },
+            "expiresIn": "የሚያበቃው በ",
+            "expired": "ጊዜው አልፏል",
+            "selectAgency": "የተመሰከረለት የቅጥር ኤጀንሲ ይምረጡ",
+            "selectAgencyHint": "ካስያዙ በኋላ ቅጥሩን ለማጠናቀቅ የተመሰከረለት የሳዑዲ ኤጀንሲ መምረጥ አለብዎት።",
+            "chooseAgencyPlaceholder": "— ኤጀንሲ ይምረጡ —",
+            "authorize": "ኤጀንሲ ፍቀድ",
+            "authorizing": "በመፍቀድ ላይ...",
+            "authorizedTo": "የተፈቀደ ኤጀንሲ",
+            "awaitingResponse": "ኤጀንሲው ለጥያቄዎ ምላሽ እስኪሰጥ በመጠባበቅ ላይ።",
+            "rejectedRetry": "ኤጀንሲው አልተቀበለም፤ ሌላ ኤጀንሲ መምረጥ ይችላሉ።",
+            "acceptedInfo": "ኤጀንሲው ጥያቄዎን ተቀብሎ ቅጥሩ ተጀምሯል።",
+            "changeAgency": "ኤጀንሲ ቀይር",
+            "cancel": "ማስያዣ ሰርዝ",
+            "cancelConfirm": "መሰረዙን ያረጋግጡ?",
+            "confirm": "አረጋግጥ",
+            "back": "ተመለስ",
+            "rating": "ደረጃ",
+            "completedCases": "የተጠናቀቁ ጉዳዮች"
+        },
+        "profile": {
+            "title": "የግል መገለጫዬ",
+            "name": "ስም",
+            "email": "ኢሜይል",
+            "phone": "ስልክ",
+            "country": "ሀገር",
+            "city": "ከተማ",
+            "nationalId": "የመታወቂያ ቁጥር",
+            "save": "አስቀምጥ",
+            "saving": "በማስቀመጥ ላይ...",
+            "saved": "ለውጦች ተቀምጠዋል"
+        },
+        "notifications": {
+            "title": "ማሳወቂያዎች",
+            "empty": "ምንም ማሳወቂያ የለም።",
+            "markRead": "እንደተነበበ ምልክት አድርግ"
+        },
+        "recruitment": {
+            "title": "የእኔ ቅጥር",
+            "empty": "እስካሁን ንቁ ቅጥር የለም።",
+            "currentStage": "የአሁኑ ደረጃ",
+            "agency": "ኤጀንሲ",
+            "progress": "መሻሻል",
+            "eta": "የሚጠበቀው መጨረሻ"
+        },
+        "documents": {
+            "title": "ሰነዶቼ",
+            "hint": "ፓስፖርትዎን፣ መታወቂያዎን እና ደጋፊ ሰነዶችን ይስቀሉ።",
+            "category": "የሰነድ ዓይነት",
+            "upload": "ስቀል",
+            "uploading": "በመስቀል ላይ...",
+            "uploaded": "ሰነድ ተስቅሏል",
+            "deleted": "ተሰርዟል",
+            "download": "አውርድ",
+            "delete": "ሰርዝ",
+            "empty": "እስካሁን ሰነዶች የሉም።",
+            "allowed": "የተፈቀዱ፦ PDF ወይም ምስል፣ እስከ 5 ሜባ።",
+            "categories": {
+                "passport": "ፓስፖርት",
+                "national_id": "ብሔራዊ መታወቂያ",
+                "family": "የቤተሰብ መረጃ",
+                "other": "ሌላ"
+            },
+            "status": {
+                "pending": "በግምገማ ላይ",
+                "verified": "የተረጋገጠ",
+                "rejected": "ተቀባይነት አላገኘም"
+            }
+        },
+        "messages": {
+            "title": "የድጋፍ ውይይት",
+            "subtitle": "ከአፍካን ድጋፍ ቡድን ጋር ይነጋገሩ።",
+            "empty": "እስካሁን መልእክቶች የሉም። ውይይቱን ይጀምሩ።",
+            "placeholder": "መልእክትዎን ይጻፉ...",
+            "send": "ላክ"
+        },
+        "reviews": {
+            "title": "ግምገማዎቼ",
+            "subtitle": "ከተጠናቀቀ በኋላ የቅጥር ተሞክሮዎን ይገምግሙ።",
+            "yourRating": "ደረጃዎ",
+            "commentPlaceholder": "አስተያየትዎን ይጻፉ (አማራጭ)...",
+            "submit": "ግምገማ ላክ",
+            "submitting": "በመላክ ላይ...",
+            "submitted": "ግምገማዎ ተልኳል፤ ከግምገማ በኋላ ይታያል።",
+            "mine": "ግምገማዎቼ",
+            "empty": "እስካሁን ግምገማዎች የሉም።",
+            "status": {
+                "pending": "በግምገማ ላይ",
+                "approved": "ታትሟል",
+                "rejected": "ተቀባይነት አላገኘም"
+            }
+        }
+    },
+    "agency": {
+        "title": "የኤጀንሲ መግቢያ",
+        "loading": "በመጫን ላይ...",
+        "loginRequired": "ወደ ኤጀንሲ መግቢያ ለመድረስ መግባት አለብዎት",
+        "loginCta": "ግባ",
+        "accessDenied": "ይህ መግቢያ ለቅጥር ኤጀንሲዎች ብቻ ነው",
+        "backHome": "ወደ መነሻ ተመለስ",
+        "nav": {
+            "dashboard": "ዳሽቦርድ",
+            "authorizations": "የፍቃድ ጥያቄዎች",
+            "invoices": "ደረሰኞች"
+        },
+        "dashboard": {
+            "title": "የኤጀንሲ ዳሽቦርድ",
+            "subtitle": "የፍቃድ ጥያቄዎች እና ደረሰኞች ማጠቃለያ",
+            "pending": "በመጠባበቅ ላይ ያሉ ፍቃዶች",
+            "unpaid": "ያልተከፈሉ ደረሰኞች",
+            "invoices": "ጠቅላላ ደረሰኞች"
+        },
+        "authorizations": {
+            "title": "የፍቃድ ጥያቄዎች",
+            "subtitle": "ደንበኞች ኤጀንሲዎን ቅጥር እንዲያጠናቅቅ የሚፈቅዱ ጥያቄዎች",
+            "empty": "በመጠባበቅ ላይ ያለ ጥያቄ የለም",
+            "customer": "ደንበኛ",
+            "expiresAt": "የሚያበቃበት",
+            "accept": "ተቀበል",
+            "reject": "አትቀበል"
+        },
+        "invoices": {
+            "title": "የኤጀንሲ ደረሰኞች",
+            "subtitle": "ለኤጀንሲዎ የተሰጡ ደረሰኞች",
+            "empty": "ደረሰኝ የለም",
+            "number": "የደረሰኝ ቁጥር",
+            "worker": "ሰራተኛ",
+            "amount": "መጠን",
+            "status": "ሁኔታ",
+            "issuedAt": "የተሰጠበት",
+            "statuses": {
+                "all": "ሁሉም",
+                "issued": "ተሰጥቷል",
+                "paid": "ተከፍሏል",
+                "cancelled": "ተሰርዟል"
+            }
+        }
+    }
+}

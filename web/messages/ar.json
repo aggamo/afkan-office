@@ -1,0 +1,807 @@
+{
+    "meta": {
+        "siteName": "أفكان لتوظيف العمالة المنزلية",
+        "tagline": "نربط الكفاءات الإثيوبية بشركاء استقدام موثوقين"
+    },
+    "auth": {
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "submit": "تسجيل الدخول",
+        "submitting": "جارٍ تسجيل الدخول...",
+        "error": "بيانات الدخول غير صحيحة.",
+        "register": {
+            "title": "إنشاء حساب",
+            "subtitle": "سجّل كعميل للبحث عن عاملة، أو كمكتب توظيف سعودي",
+            "customer": "عميل",
+            "agency": "مكتب توظيف",
+            "agencyInfo": "بيانات المكتب",
+            "contactInfo": "بيانات المسؤول",
+            "agencyName": "اسم المكتب",
+            "licenseNumber": "رقم الترخيص",
+            "agencyPhone": "هاتف المكتب",
+            "agencyEmail": "بريد المكتب",
+            "position": "المسمى الوظيفي",
+            "name": "الاسم الكامل",
+            "phone": "رقم الهاتف",
+            "country": "الدولة",
+            "city": "المدينة",
+            "confirmPassword": "تأكيد كلمة المرور",
+            "passwordMismatch": "كلمتا المرور غير متطابقتين",
+            "agencyNotice": "سيتم مراجعة حساب المكتب والتحقق منه قبل تفعيل كامل الصلاحيات.",
+            "submit": "إنشاء الحساب",
+            "submitting": "جارٍ الإنشاء...",
+            "haveAccount": "لديك حساب بالفعل؟"
+        },
+        "forgot": {
+            "title": "استعادة كلمة المرور",
+            "hint": "أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين.",
+            "submit": "إرسال الرابط",
+            "submitting": "جارٍ الإرسال...",
+            "sent": "إن كان البريد مسجّلاً فستصلك رسالة قريباً. تفقّد بريدك.",
+            "backToLogin": "العودة لتسجيل الدخول",
+            "link": "نسيت كلمة المرور؟"
+        },
+        "reset": {
+            "title": "تعيين كلمة مرور جديدة",
+            "newPassword": "كلمة المرور الجديدة",
+            "confirmPassword": "تأكيد كلمة المرور",
+            "submit": "تحديث كلمة المرور",
+            "submitting": "جارٍ التحديث...",
+            "mismatch": "كلمتا المرور غير متطابقتين",
+            "done": "تم تحديث كلمة المرور بنجاح، سيتم تحويلك لتسجيل الدخول.",
+            "invalidLink": "رابط غير صالح أو منتهٍ.",
+            "invalid": "رابط غير صالح"
+        }
+    },
+    "nav": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "services": "خدماتنا",
+        "workers": "العاملات",
+        "agencies": "المكاتب",
+        "process": "خطوات الاستقدام",
+        "faq": "الأسئلة الشائعة",
+        "blog": "المدونة",
+        "contact": "تواصل معنا",
+        "track": "تتبع الطلب",
+        "login": "تسجيل الدخول",
+        "register": "إنشاء حساب",
+        "requestWorker": "طلب عاملة",
+        "favorites": "المفضلة",
+        "admin": "لوحة الإدارة",
+        "account": "حسابي",
+        "agencyPortal": "بوابة المكتب"
+    },
+    "home": {
+        "hero": {
+            "headline": "نربط الكفاءات الإثيوبية بشركاء استقدام موثوقين",
+            "subheadline": "وكالة استقدام إثيوبية مرخصة تخدم السعودية والإمارات والكويت.",
+            "browseWorkers": "تصفح العاملات",
+            "requestRecruitment": "طلب استقدام",
+            "trackApplication": "تتبع الطلب",
+            "becomeAgency": "كن مكتبًا شريكًا"
+        },
+        "stats": {
+            "available": "عاملة متاحة",
+            "recruited": "حالة استقدام ناجحة",
+            "agencies": "مكتب شريك",
+            "experience": "سنوات خبرة",
+            "countries": "دول نخدمها",
+            "satisfaction": "رضا العملاء"
+        },
+        "why": {
+            "title": "لماذا تختار أفكان",
+            "licensed": {
+                "title": "مكتب مرخّص",
+                "desc": "مرخّص بالكامل من الحكومة الإثيوبية."
+            },
+            "verified": {
+                "title": "عاملات موثقات",
+                "desc": "كل ملف عاملة موثّق ومُحقق منه."
+            },
+            "transparent": {
+                "title": "إجراءات شفافة",
+                "desc": "مراحل واضحة من الحجز حتى الوصول."
+            },
+            "fast": {
+                "title": "استقدام سريع",
+                "desc": "إجراءات منظمة تقلل زمن المعالجة."
+            },
+            "support": {
+                "title": "دعم متخصص",
+                "desc": "فريق دعم مخصص خلال كل الرحلة."
+            },
+            "secure": {
+                "title": "حفظ آمن للوثائق",
+                "desc": "كل الوثائق تُعامل بسرية تامة."
+            }
+        },
+        "services": {
+            "title": "خدماتنا",
+            "domestic": "عمالة منزلية",
+            "agencyRecruitment": "استقدام للمكاتب",
+            "customerRecruitment": "استقدام للعملاء الأفراد",
+            "documents": "معالجة المستندات",
+            "visa": "تنسيق التأشيرات",
+            "travel": "ترتيب السفر"
+        },
+        "featured": {
+            "title": "عاملات مميزات",
+            "viewProfile": "عرض الملف"
+        },
+        "process": {
+            "title": "خطوات الاستقدام",
+            "step1": "اختيار العاملة",
+            "step2": "حجز العاملة",
+            "step3": "تأكيد المكتب",
+            "step4": "الفحص الطبي",
+            "step5": "التأشيرة",
+            "step6": "السفر",
+            "step7": "الوصول"
+        },
+        "agencies": {
+            "title": "المكاتب الشريكة",
+            "viewAgency": "عرض المكتب"
+        },
+        "testimonials": {
+            "title": "آراء عملائنا"
+        },
+        "faq": {
+            "title": "الأسئلة الشائعة"
+        },
+        "cta": {
+            "title": "مستعد لبدء الاستقدام؟",
+            "browse": "تصفح العاملات",
+            "contact": "تواصل معنا"
+        }
+    },
+    "footer": {
+        "companyInfo": "وكالة استقدام إثيوبية مرخصة مقرها أديس أبابا، تخدم السعودية والإمارات والكويت.",
+        "navigation": "روابط سريعة",
+        "contact": "تواصل معنا",
+        "social": "تابعنا",
+        "privacy": "سياسة الخصوصية",
+        "terms": "شروط الاستخدام",
+        "rights": "جميع الحقوق محفوظة."
+    },
+    "workers": {
+        "title": "العاملات",
+        "search": "بحث بالاسم أو المهارة أو رقم العاملة",
+        "filters": {
+            "title": "الفلاتر",
+            "age": "العمر",
+            "experience": "الخبرة",
+            "language": "اللغة",
+            "skills": "المهارات",
+            "maritalStatus": "الحالة الاجتماعية",
+            "availability": "التوفر",
+            "reservationStatus": "حالة الحجز",
+            "country": "الدولة",
+            "apply": "تطبيق الفلاتر",
+            "reset": "إعادة ضبط"
+        },
+        "card": {
+            "age": "العمر",
+            "experience": "الخبرة",
+            "viewDetails": "عرض التفاصيل",
+            "reserveNow": "احجز الآن",
+            "favorite": "إضافة إلى المفضلة",
+            "compare": "إضافة للمقارنة"
+        },
+        "noResults": "لا توجد عاملات مطابقة لبحثك.",
+        "status": {
+            "available": "متاحة",
+            "reserved_agency": "محجوزة من مكتب",
+            "reserved_customer": "محجوزة من عميل",
+            "in_progress": "قيد الاستقدام"
+        }
+    },
+    "workerProfile": {
+        "backToWorkers": "عودة إلى العاملات",
+        "personalInfo": "المعلومات الشخصية",
+        "skills": "المهارات",
+        "languages": "اللغات",
+        "experience": "الخبرة",
+        "video": "فيديو تعريفي",
+        "availability": "التوفر",
+        "timeline": "خط زمن الاستقدام",
+        "reserve": "حجز العاملة",
+        "share": "مشاركة الملف",
+        "print": "طباعة الملف",
+        "reservedUntil": "محجوزة حتى",
+        "reservedByCustomer": "محجوزة من عميل",
+        "inProgress": "قيد الاستقدام",
+        "fields": {
+            "workerId": "رقم العاملة",
+            "age": "العمر",
+            "nationality": "الجنسية",
+            "maritalStatus": "الحالة الاجتماعية",
+            "children": "عدد الأطفال",
+            "education": "المستوى التعليمي",
+            "religion": "الديانة",
+            "experienceYears": "سنوات الخبرة"
+        }
+    },
+    "track": {
+        "title": "تتبع طلبك",
+        "subtitle": "أدخل رقم التتبع أو رقم الجواز لمعرفة الحالة الحالية.",
+        "inputLabel": "رقم التتبع أو رقم الجواز",
+        "button": "تتبع",
+        "currentStage": "المرحلة الحالية",
+        "progress": "نسبة التقدم",
+        "estimatedCompletion": "التاريخ المتوقع للإنجاز",
+        "support": "تحتاج مساعدة؟",
+        "notFound": "لم يتم العثور على سجل بهذا الرقم. يرجى التحقق والمحاولة مرة أخرى.",
+        "delayed": "يوجد تأخير في هذه المرحلة",
+        "confidence": {
+            "high": "دقة عالية",
+            "medium": "دقة متوسطة",
+            "low": "دقة منخفضة"
+        }
+    },
+    "about": {
+        "title": "عن أفكان",
+        "mission": "رسالتنا",
+        "missionText": "ربط العاملات الإثيوبيات المؤهلات والموثقات بشركاء استقدام سعوديين موثوقين عبر إجراءات شفافة ومهنية.",
+        "vision": "رؤيتنا",
+        "visionText": "أن نكون الوكالة الإثيوبية الأكثر ثقة في مجال الاستقدام بالمنطقة.",
+        "history": "تاريخ الشركة",
+        "license": "معلومات الترخيص",
+        "message": "رسالة الإدارة",
+        "values": "قيمنا"
+    },
+    "contact": {
+        "title": "تواصل معنا",
+        "address": "عنوان المكتب",
+        "phone": "الهاتف",
+        "whatsapp": "واتساب",
+        "telegram": "تيليجرام",
+        "email": "البريد الإلكتروني",
+        "hours": "ساعات العمل",
+        "form": {
+            "name": "الاسم الكامل",
+            "email": "البريد الإلكتروني",
+            "phone": "رقم الهاتف",
+            "message": "الرسالة",
+            "send": "إرسال الرسالة",
+            "success": "تم إرسال رسالتك بنجاح. سنتواصل معك قريبًا."
+        }
+    },
+    "common": {
+        "loading": "جارٍ التحميل...",
+        "currency": "السعر متاح فقط ضمن الفاتورة"
+    },
+    "favorites": {
+        "title": "العاملات المفضلة",
+        "empty": "لا توجد عاملات في المفضلة حتى الآن.",
+        "loginRequired": "يجب تسجيل الدخول كعميل لاستخدام المفضلة.",
+        "browse": "تصفح العاملات"
+    },
+    "compare": {
+        "title": "مقارنة العاملات",
+        "selected": "{count, plural, =0{لا يوجد عاملات محددة} other {# عاملة محددة}}",
+        "remove": "إزالة",
+        "clear": "إفراغ القائمة",
+        "viewComparison": "عرض المقارنة",
+        "empty": "أضف عاملات للمقارنة من صفحة العاملات.",
+        "browse": "تصفح العاملات",
+        "fields": {
+            "age": "العمر",
+            "experience": "سنوات الخبرة",
+            "languages": "اللغات",
+            "skills": "المهارات",
+            "education": "المستوى التعليمي",
+            "readinessScore": "درجة الجاهزية",
+            "reservationStatus": "حالة الحجز"
+        }
+    },
+    "admin": {
+        "title": "لوحة الإدارة",
+        "welcome": "مرحباً بك في لوحة الإدارة",
+        "welcomeSubtitle": "أدر بيانات المنصة من مكان واحد.",
+        "loading": "جارٍ التحميل...",
+        "loginRequired": "يجب تسجيل الدخول للوصول إلى لوحة الإدارة.",
+        "loginCta": "تسجيل الدخول",
+        "accessDenied": "ليس لديك صلاحية الوصول إلى هذه الصفحة.",
+        "backHome": "العودة إلى الرئيسية",
+        "nav": {
+            "dashboard": "الرئيسية",
+            "referenceData": "البيانات المرجعية",
+            "activity": "سجل النشاط",
+            "workflow": "سير العمل",
+            "messages": "المراسلات",
+            "reviews": "التقييمات",
+            "analytics": "التحليلات",
+            "agencies": "المكاتب",
+            "workersManage": "إدارة العاملات",
+            "reservations": "الحجوزات",
+            "invoices": "الفواتير"
+        },
+        "dashboard": {
+            "title": "لوحة التحكم",
+            "subtitle": "نظرة شاملة على أداء المنصة في الوقت الفعلي.",
+            "sections": {
+                "workers": "العاملات",
+                "reservations": "الحجوزات",
+                "finance": "المالية",
+                "entities": "الكيانات",
+                "workerStatus": "توزيع حالات العاملات",
+                "monthly": "الاتجاه الشهري",
+                "topAgencies": "أكثر المكاتب نشاطاً",
+                "recentActivity": "النشاط الأخير",
+                "quickActions": "إجراءات سريعة",
+                "operations": "عمليات الاستقدام"
+            },
+            "workers": {
+                "total": "إجمالي العاملات",
+                "available": "متاحة",
+                "reserved_customer": "محجوزة من عميل",
+                "reserved_agency": "محجوزة من مكتب",
+                "hired": "قيد الاستقدام",
+                "unavailable": "غير متاحة",
+                "published": "منشورة",
+                "unpublished": "غير منشورة"
+            },
+            "reservations": {
+                "active": "حجوزات نشطة",
+                "activeCustomer": "نشطة (عملاء)",
+                "activeAgency": "نشطة (مكاتب)",
+                "createdToday": "حجوزات اليوم",
+                "expiringToday": "تنتهي اليوم",
+                "expiredTotal": "منتهية (الإجمالي)",
+                "convertedTotal": "محوّلة إلى مكتب",
+                "conversionRate": "نسبة التحويل"
+            },
+            "finance": {
+                "outstanding": "فواتير مستحقة",
+                "paidThisMonth": "مدفوعة هذا الشهر",
+                "revenueTotal": "إجمالي الإيرادات",
+                "drafts": "مسودات"
+            },
+            "entities": {
+                "agencies": "المكاتب",
+                "verified": "موثّقة",
+                "customers": "العملاء",
+                "employees": "الموظفون"
+            },
+            "monthly": {
+                "workersCreated": "عاملات جديدة",
+                "completed": "حالات مكتملة"
+            },
+            "agency": {
+                "activeReservations": "حجوزات نشطة",
+                "completedCases": "حالات مكتملة",
+                "rating": "التقييم"
+            },
+            "quick": {
+                "referenceData": "البيانات المرجعية",
+                "viewActivity": "سجل النشاط",
+                "browseWorkers": "تصفح العاملات",
+                "invoices": "الفواتير"
+            },
+            "noActivity": "لا يوجد نشاط بعد.",
+            "empty": "لا توجد بيانات.",
+            "operations": {
+                "inRecruitment": "قيد الاستقدام",
+                "delayed": "ملفات متأخرة",
+                "warrantyActive": "تحت الضمان",
+                "attention": "ملفات تحتاج متابعة",
+                "daysOverdue": "يوم تأخير",
+                "noDelayed": "لا توجد ملفات متأخرة."
+            }
+        },
+        "activity": {
+            "title": "سجل النشاط",
+            "subtitle": "سجل تدقيق دائم لكل العمليات المهمة.",
+            "action": "العملية",
+            "type": "النوع",
+            "user": "المستخدم",
+            "ip": "عنوان IP",
+            "date": "التاريخ",
+            "empty": "لا يوجد نشاط مسجل.",
+            "system": "النظام",
+            "filterPlaceholder": "تصفية حسب العملية...",
+            "prev": "السابق",
+            "next": "التالي",
+            "page": "صفحة {page} من {total}"
+        },
+        "reference": {
+            "title": "البيانات المرجعية",
+            "subtitle": "إدارة القوائم الأساسية: الدول والمدن واللغات والمهارات وأنواع العاملات وأنواع الوثائق وقنوات الإشعارات.",
+            "search": "بحث...",
+            "add": "إضافة عنصر",
+            "addTitle": "إضافة عنصر جديد",
+            "editTitle": "تعديل العنصر",
+            "edit": "تعديل",
+            "delete": "حذف",
+            "save": "حفظ",
+            "cancel": "إلغاء",
+            "saving": "جارٍ الحفظ...",
+            "activate": "تفعيل",
+            "deactivate": "تعطيل",
+            "active": "مُفعّل",
+            "inactive": "معطّل",
+            "status": "الحالة",
+            "actions": "إجراءات",
+            "order": "الترتيب",
+            "name": "الاسم",
+            "identifier": "المعرّف",
+            "inUse": "مستخدم",
+            "empty": "لا توجد عناصر.",
+            "deleteConfirm": "تأكيد الحذف؟",
+            "confirm": "تأكيد",
+            "created": "تمت الإضافة بنجاح",
+            "updated": "تم التحديث بنجاح",
+            "deleted": "تم الحذف بنجاح",
+            "fields": {
+                "slug": "المعرّف",
+                "iso_code": "رمز الدولة",
+                "name_ar": "الاسم (عربي)",
+                "name_en": "الاسم (إنجليزي)",
+                "name_am": "الاسم (أمهري)",
+                "is_active": "مُفعّل",
+                "is_required": "إلزامي",
+                "is_public": "عام",
+                "sort_order": "الترتيب",
+                "country_id": "الدولة"
+            }
+        },
+        "workflow": {
+            "title": "سير عمل الاستقدام",
+            "subtitle": "إدارة مراحل التوظيف الرسمية الـ17 وتتبعها.",
+            "search": "بحث عن عاملة...",
+            "noWorkers": "لا توجد عاملات.",
+            "currentStage": "المرحلة الحالية",
+            "eta": "التاريخ المتوقع",
+            "warranty": "الضمان",
+            "days": "يوم",
+            "delayed": "متأخر",
+            "start": "بدء ملف التوظيف",
+            "moveTo": "الانتقال إلى",
+            "notes": "ملاحظات (اختياري)",
+            "advance": "تحديث المرحلة",
+            "timeline": "الخط الزمني",
+            "history": "سجل المراحل",
+            "confidence": {
+                "high": "دقة عالية",
+                "medium": "دقة متوسطة",
+                "low": "دقة منخفضة"
+            },
+            "requiredDocuments": "الوثائق المطلوبة لهذه المرحلة",
+            "docPresent": "متوفرة",
+            "docMissing": "ناقصة",
+            "scanToTrack": "امسح للتتبع"
+        },
+        "messages": {
+            "title": "رسائل الدعم",
+            "subtitle": "محادثات العملاء مع الدعم.",
+            "empty": "لا توجد محادثات.",
+            "placeholder": "اكتب ردك...",
+            "send": "إرسال"
+        },
+        "reviews": {
+            "title": "مراجعة التقييمات",
+            "subtitle": "اعتماد أو رفض تقييمات العملاء قبل نشرها.",
+            "empty": "لا توجد تقييمات.",
+            "approve": "اعتماد",
+            "reject": "رفض",
+            "filters": {
+                "pending": "قيد المراجعة",
+                "approved": "منشورة",
+                "rejected": "مرفوضة",
+                "all": "الكل"
+            },
+            "status": {
+                "pending": "قيد المراجعة",
+                "approved": "منشور",
+                "rejected": "مرفوض"
+            }
+        },
+        "analytics": {
+            "title": "تحليلات الأداء",
+            "subtitle": "متوسط مدة كل مرحلة والمدة الكلية للاستقدام.",
+            "overallAvg": "متوسط مدة الاستقدام",
+            "completed": "حالات مكتملة",
+            "days": "يوم",
+            "perStage": "متوسط المدة لكل مرحلة",
+            "noData": "لا توجد بيانات كافية بعد.",
+            "exports": "تصدير التقارير (CSV)",
+            "export": {
+                "workers": "العاملات",
+                "reservations": "الحجوزات",
+                "reviews": "التقييمات"
+            }
+        },
+        "agencies": {
+            "title": "إدارة المكاتب",
+            "subtitle": "اعتماد وتعليق المكاتب السعودية. العملاء يختارون فقط من المكاتب المعتمدة.",
+            "search": "بحث عن مكتب...",
+            "empty": "لا توجد مكاتب.",
+            "name": "الاسم",
+            "license": "الترخيص",
+            "city": "المدينة",
+            "workers": "العاملات",
+            "status": "الحالة",
+            "actions": "إجراءات",
+            "verified": "معتمد",
+            "pending": "بانتظار الاعتماد",
+            "suspended": "معلّق",
+            "verify": "اعتماد",
+            "suspend": "تعليق",
+            "activate": "تفعيل",
+            "filters": {
+                "all": "الكل",
+                "pending": "بانتظار الاعتماد",
+                "verified": "معتمدة",
+                "suspended": "معلّقة"
+            }
+        },
+        "workersManage": {
+            "title": "إدارة العاملات",
+            "subtitle": "إضافة وتعديل وأرشفة ملفات العاملات",
+            "add": "إضافة عاملة",
+            "search": "بحث بالاسم أو الرقم أو الجواز",
+            "empty": "لا توجد عاملات",
+            "internalNumber": "الرقم الداخلي",
+            "name": "الاسم",
+            "nationality": "الجنسية",
+            "workerType": "نوع العاملة",
+            "status": "الحالة",
+            "published": "منشورة",
+            "draft": "مسودة",
+            "active": "مفعّلة",
+            "editTitle": "تعديل ملف العاملة",
+            "gender": "الجنس",
+            "female": "أنثى",
+            "male": "ذكر",
+            "nameAr": "الاسم (عربي)",
+            "nameEn": "الاسم (إنجليزي)",
+            "nameAm": "الاسم (أمهري)",
+            "dateOfBirth": "تاريخ الميلاد",
+            "passportNumber": "رقم الجواز",
+            "passportExpiry": "انتهاء الجواز",
+            "agency": "المكتب",
+            "experienceYears": "سنوات الخبرة",
+            "price": "السعر",
+            "currency": "العملة",
+            "confirmDelete": "هل أنت متأكد من حذف ملف العاملة؟",
+            "cancel": "إلغاء",
+            "save": "حفظ",
+            "saving": "جارٍ الحفظ..."
+        },
+        "reservations": {
+            "title": "إدارة الحجوزات",
+            "subtitle": "متابعة كل الحجوزات وحالاتها",
+            "empty": "لا توجد حجوزات",
+            "worker": "العاملة",
+            "reservedBy": "محجوز بواسطة",
+            "party": "الجهة",
+            "status": "الحالة",
+            "expiresAt": "ينتهي في",
+            "by": {
+                "customer": "عميل",
+                "agency": "مكتب"
+            },
+            "statuses": {
+                "all": "الكل",
+                "reserved": "محجوز",
+                "authorized": "مفوّض",
+                "expired": "منتهٍ",
+                "cancelled": "ملغى",
+                "completed": "مكتمل"
+            }
+        },
+        "invoices": {
+            "title": "إدارة الفواتير",
+            "subtitle": "إنشاء ومتابعة فواتير المكاتب",
+            "create": "فاتورة جديدة",
+            "empty": "لا توجد فواتير",
+            "number": "رقم الفاتورة",
+            "agency": "المكتب",
+            "worker": "العاملة",
+            "amount": "المبلغ",
+            "amountHint": "اتركه فارغاً لاستخدام سعر العاملة",
+            "status": "الحالة",
+            "notes": "ملاحظات",
+            "markPaid": "تعليم كمدفوعة",
+            "cancel": "إلغاء",
+            "cancelForm": "إلغاء",
+            "save": "حفظ",
+            "saving": "جارٍ الحفظ...",
+            "selectRequired": "يرجى اختيار المكتب والعاملة",
+            "statuses": {
+                "all": "الكل",
+                "draft": "مسودة",
+                "issued": "صادرة",
+                "paid": "مدفوعة",
+                "cancelled": "ملغاة"
+            }
+        }
+    },
+    "customer": {
+        "title": "حسابي",
+        "loading": "جارٍ التحميل...",
+        "loginRequired": "يجب تسجيل الدخول للوصول إلى حسابك.",
+        "loginCta": "تسجيل الدخول",
+        "accessDenied": "هذه الصفحة مخصصة للعملاء فقط.",
+        "backHome": "العودة إلى الرئيسية",
+        "nav": {
+            "dashboard": "لوحتي",
+            "reservations": "حجوزاتي",
+            "profile": "ملفي الشخصي",
+            "notifications": "الإشعارات",
+            "recruitment": "استقدامي",
+            "documents": "وثائقي",
+            "messages": "المراسلات",
+            "reviews": "التقييمات"
+        },
+        "dashboard": {
+            "welcome": "مرحباً بك",
+            "subtitle": "تابع حجوزاتك واستقداماتك من مكان واحد.",
+            "activeReservations": "حجوزات نشطة",
+            "pendingAuthorization": "بانتظار موافقة المكتب",
+            "inRecruitment": "قيد الاستقدام",
+            "completed": "مكتملة",
+            "favorites": "المفضلة",
+            "quick": {
+                "browse": "تصفح العاملات",
+                "reservations": "حجوزاتي",
+                "favorites": "المفضلة",
+                "profile": "ملفي"
+            }
+        },
+        "reservations": {
+            "title": "حجوزاتي",
+            "empty": "لا توجد حجوزات بعد.",
+            "browse": "تصفح العاملات",
+            "status": {
+                "active": "نشط",
+                "converted": "محوّل لمكتب",
+                "expired": "منتهٍ",
+                "cancelled": "ملغى",
+                "completed": "مكتمل"
+            },
+            "authStatus": {
+                "none": "لم يُختر مكتب",
+                "pending": "بانتظار موافقة المكتب",
+                "accepted": "قبل المكتب",
+                "rejected": "رفض المكتب"
+            },
+            "expiresIn": "ينتهي خلال",
+            "expired": "انتهت المدة",
+            "selectAgency": "اختر مكتب استقدام معتمد",
+            "selectAgencyHint": "بعد الحجز يجب اختيار مكتب سعودي معتمد لإتمام الاستقدام.",
+            "chooseAgencyPlaceholder": "— اختر مكتباً —",
+            "authorize": "تفويض المكتب",
+            "authorizing": "جارٍ التفويض...",
+            "authorizedTo": "المكتب المفوّض",
+            "awaitingResponse": "بانتظار رد المكتب على طلبك.",
+            "rejectedRetry": "اعتذر المكتب، يمكنك اختيار مكتب آخر.",
+            "acceptedInfo": "قبل المكتب طلبك وبدأ الاستقدام.",
+            "changeAgency": "تغيير المكتب",
+            "cancel": "إلغاء الحجز",
+            "cancelConfirm": "تأكيد إلغاء الحجز؟",
+            "confirm": "تأكيد",
+            "back": "رجوع",
+            "rating": "التقييم",
+            "completedCases": "حالات مكتملة"
+        },
+        "profile": {
+            "title": "ملفي الشخصي",
+            "name": "الاسم",
+            "email": "البريد الإلكتروني",
+            "phone": "رقم الهاتف",
+            "country": "الدولة",
+            "city": "المدينة",
+            "nationalId": "رقم الهوية",
+            "save": "حفظ",
+            "saving": "جارٍ الحفظ...",
+            "saved": "تم حفظ التغييرات"
+        },
+        "notifications": {
+            "title": "الإشعارات",
+            "empty": "لا توجد إشعارات.",
+            "markRead": "تعليم كمقروء"
+        },
+        "recruitment": {
+            "title": "استقدامي",
+            "empty": "لا يوجد استقدام نشط حالياً.",
+            "currentStage": "المرحلة الحالية",
+            "agency": "المكتب",
+            "progress": "نسبة التقدم",
+            "eta": "التاريخ المتوقع للإنجاز"
+        },
+        "documents": {
+            "title": "وثائقي",
+            "hint": "ارفع نسخة الجواز والهوية والوثائق الداعمة.",
+            "category": "نوع الوثيقة",
+            "upload": "رفع",
+            "uploading": "جارٍ الرفع...",
+            "uploaded": "تم رفع الوثيقة",
+            "deleted": "تم الحذف",
+            "download": "تنزيل",
+            "delete": "حذف",
+            "empty": "لا توجد وثائق بعد.",
+            "allowed": "الصيغ المسموحة: PDF أو صورة، بحد أقصى 5 ميجابايت.",
+            "categories": {
+                "passport": "جواز السفر",
+                "national_id": "الهوية الوطنية",
+                "family": "معلومات العائلة",
+                "other": "أخرى"
+            },
+            "status": {
+                "pending": "قيد المراجعة",
+                "verified": "موثّقة",
+                "rejected": "مرفوضة"
+            }
+        },
+        "messages": {
+            "title": "مراسلة الدعم",
+            "subtitle": "تواصل مع فريق دعم أفكان.",
+            "empty": "لا توجد رسائل بعد. ابدأ المحادثة.",
+            "placeholder": "اكتب رسالتك...",
+            "send": "إرسال"
+        },
+        "reviews": {
+            "title": "تقييماتي",
+            "subtitle": "قيّم تجربة الاستقدام بعد إتمامها.",
+            "yourRating": "تقييمك",
+            "commentPlaceholder": "اكتب تعليقك (اختياري)...",
+            "submit": "إرسال التقييم",
+            "submitting": "جارٍ الإرسال...",
+            "submitted": "تم إرسال تقييمك وسيظهر بعد المراجعة.",
+            "mine": "تقييماتي",
+            "empty": "لا توجد تقييمات بعد.",
+            "status": {
+                "pending": "قيد المراجعة",
+                "approved": "منشور",
+                "rejected": "مرفوض"
+            }
+        }
+    },
+    "agency": {
+        "title": "بوابة المكتب",
+        "loading": "جارٍ التحميل...",
+        "loginRequired": "يجب تسجيل الدخول للوصول لبوابة المكتب",
+        "loginCta": "تسجيل الدخول",
+        "accessDenied": "هذه البوابة مخصّصة لمكاتب التوظيف فقط",
+        "backHome": "العودة للرئيسية",
+        "nav": {
+            "dashboard": "لوحة التحكم",
+            "authorizations": "طلبات التفويض",
+            "invoices": "الفواتير"
+        },
+        "dashboard": {
+            "title": "لوحة تحكم المكتب",
+            "subtitle": "ملخّص طلبات التفويض والفواتير",
+            "pending": "طلبات تفويض معلّقة",
+            "unpaid": "فواتير غير مدفوعة",
+            "invoices": "إجمالي الفواتير"
+        },
+        "authorizations": {
+            "title": "طلبات التفويض",
+            "subtitle": "طلبات العملاء لتفويض مكتبك بإتمام التوظيف",
+            "empty": "لا توجد طلبات معلّقة",
+            "customer": "العميل",
+            "expiresAt": "ينتهي في",
+            "accept": "قبول",
+            "reject": "رفض"
+        },
+        "invoices": {
+            "title": "فواتير المكتب",
+            "subtitle": "الفواتير الصادرة لمكتبك",
+            "empty": "لا توجد فواتير",
+            "number": "رقم الفاتورة",
+            "worker": "العاملة",
+            "amount": "المبلغ",
+            "status": "الحالة",
+            "issuedAt": "تاريخ الإصدار",
+            "statuses": {
+                "all": "الكل",
+                "issued": "صادرة",
+                "paid": "مدفوعة",
+                "cancelled": "ملغاة"
+            }
+        }
+    }
+}
